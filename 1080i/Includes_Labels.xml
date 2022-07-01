@@ -1233,7 +1233,18 @@
     </variable>
     
     <variable name="Label_WidgetItemLimit">
-        <value condition="!String.IsEmpty(Skin.String(HomeWidgetItemLimit))">$INFO[Skin.String(HomeWidgetItemLimit)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31695])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53001)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31696])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53002)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31494])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53003)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31697])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53004)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31699])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53005)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31698])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53006)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31495])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53007)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31700])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53008)]</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Control.GetLabel(8999),$LOCALIZE[31141])">$INFO[Window(Home).Property(TMDbWidgetItemLimit_53009)]</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">$NUMBER[11]</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + Window.IsVisible(DialogVideoInfo.xml) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">$NUMBER[23]</value>
+        <value condition="!String.IsEmpty(Skin.String(HomeWidgetItemLimit)) + !Window.IsVisible(DialogVideoInfo.xml)">$INFO[Skin.String(HomeWidgetItemLimit)]</value>
         <value>$NUMBER[10]</value>
     </variable>
 

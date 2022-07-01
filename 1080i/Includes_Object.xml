@@ -7342,6 +7342,7 @@
           <visible>Skin.HasSetting(DisableWidgetIMDB) + !Skin.HasSetting(DisableWidgetStudio)</visible>
           <visible>![Window.IsVisible(4010) | Window.IsVisible(4020)]</visible>
           <visible>![Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(53001)]</visible>
+          <visible>!Container($PARAM[id]).HasFocus(4$PARAM[id]) + !Container($PARAM[id]).HasFocus(3$PARAM[id])</visible>
           <bottom>-5</bottom>
           <height>40</height>
           <include content="Object_Ratings" condition="!Window.IsVisible(DialogVideoInfo.xml)">
@@ -7386,6 +7387,7 @@
           <visible>Skin.HasSetting(DisableWidgetIMDB) + Skin.HasSetting(DisableWidgetStudio)</visible>
           <visible>![Window.IsVisible(4010) | Window.IsVisible(4020)]</visible>
           <visible>![Window.IsVisible(DialogVideoInfo.xml) + Control.HasFocus(53001)]</visible>
+          <visible>!Container($PARAM[id]).HasFocus(4$PARAM[id]) + !Container($PARAM[id]).HasFocus(3$PARAM[id])</visible>
           <bottom>-5</bottom>
           <height>40</height>
           <include content="Object_Ratings" condition="!Window.IsVisible(DialogVideoInfo.xml)">
@@ -7852,7 +7854,9 @@
     <param name="controltype" default="fixedlist" />
     <param name="search" default="false" />
     <param name="onclick" default="SetFocus(9570)" />
+    <param name="onclickcond" default="!Container($PARAM[id]).HasFocus(3$PARAM[id]) + !Container($PARAM[id]).HasFocus(4$PARAM[id])" />
     <param name="onclick2" default="RunScript(plugin.video.themoviedb.helper,add_path=$INFO[ListItem.FolderPath,,&amp;fanarttv=True],call_auto=1190,delay=0.35,prevent_del)" />
+    <param name="onclick2cond" default="!Container($PARAM[id]).HasFocus(3$PARAM[id]) + !Container($PARAM[id]).HasFocus(4$PARAM[id])" />
     <param name="onclick3" default="" />
     <param name="onclick3cond" default="" />
     <param name="onclick4" default="" />
@@ -7901,11 +7905,24 @@
         <movement>1</movement>
         <height>$PARAM[height]</height>
         <width>$PARAM[width]</width>
-        <onclick>$PARAM[onclick]</onclick>
-        <onclick>$PARAM[onclick2]</onclick>
-        <onclick condition="$PARAM[onclick3cond]">$PARAM[onclick3]</onclick>
-        <onclick condition="$PARAM[onclick4cond]">$PARAM[onclick4]</onclick>
+        <onclick condition="$PARAM[onclickcond]">$PARAM[onclick]</onclick>
+        <onclick condition="$PARAM[onclick2cond]">$PARAM[onclick2]</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(3$PARAM[id])">RunScript(script.skin.helper.service,action=decreasecount,value=$PARAM[widgetpage_value],winprop=$PARAM[widgetpage_prop])</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(4$PARAM[id])">RunScript(script.skin.helper.service,action=increasecount,value=$PARAM[widgetpage_value],winprop=$PARAM[widgetpage_prop])</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(4$PARAM[id]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Control.IsVisible(53002) + !Control.IsVisible(53004)">SetProperty(TMDbWidgetItemLimit_$PARAM[id],9,Home)</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(3$PARAM[id]) + Integer.IsEqual(Window(Home).Property(Container($PARAM[id]).WidgetPage),2) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Control.IsVisible(53002) + !Control.IsVisible(53004)">SetProperty(TMDbWidgetItemLimit_$PARAM[id],10,Home)</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(4$PARAM[id]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Control.IsVisible(53002) + !Control.IsVisible(53004)">SetProperty(TMDbWidgetItemLimit_$PARAM[id],20,Home)</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(3$PARAM[id]) + Integer.IsEqual(Window(Home).Property(Container($PARAM[id]).WidgetPage),2) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Control.IsVisible(53002) + !Control.IsVisible(53004)">SetProperty(TMDbWidgetItemLimit_$PARAM[id],21,Home)</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(3$PARAM[id]) | [Container($PARAM[id]).HasFocus(4$PARAM[id]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)]">SetFocus($PARAM[id],0,absolute)</onclick>
+        <onclick condition="Container($PARAM[id]).HasFocus(4$PARAM[id]) + !Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)">SetFocus($PARAM[id],1,absolute)</onclick>
         <visible>$PARAM[visible] + [Integer.IsGreater(Container($PARAM[id]).NumItems,0) | Container($PARAM[id]).IsUpdating | Container(300).OnNext | Container(300).OnPrevious | String.IsEmpty(Window(Home).Property(WidgetLoading))]</visible>
+        <content>
+            <item id="3$PARAM[id]">
+                <label>$LOCALIZE[31923]</label>
+                <icon>special://home/addons/plugin.video.themoviedb.helper/resources/icons/themoviedb/nextpage.png</icon>
+                <visible>Skin.HasSetting(VideoInfo.Pagination) + Integer.IsGreaterOrEqual(Window(Home).Property($PARAM[widgetpage_prop]),2)</visible>
+            </item>
+        </content>
         <include content="Widget_Items" condition="!$PARAM[submenu]">
           <param name="id" value="$PARAM[id]" />
           <param name="target" value="$PARAM[target]" />
@@ -7933,6 +7950,13 @@
           <param name="genrecondition" value="$PARAM[genrecondition]" />
           <param name="search" value="$PARAM[search]" />
         </include>
+        <content>
+            <item id="4$PARAM[id]">
+                <label>$LOCALIZE[31924]</label>
+                <icon>special://home/addons/plugin.video.themoviedb.helper/resources/icons/themoviedb/nextpage.png</icon>
+                <visible>Skin.HasSetting(VideoInfo.Pagination) + $PARAM[widgetpage_nextpage_visible]</visible>
+            </item>
+        </content>
       </control>
     </definition>
   </include>

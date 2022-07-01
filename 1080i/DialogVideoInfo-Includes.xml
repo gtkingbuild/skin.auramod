@@ -1945,7 +1945,7 @@
           <param name="onclick2" value="$VAR[videoinfo_onclick_episode]" />
         </include>
 
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.CastList)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.CastList) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53001" />
           <param name="onleft" value="8999" />
           <param name="onup" value="8999" />
@@ -1956,8 +1956,8 @@
           <param name="sortorder" value="" />
           <param name="onclick" value="SetProperty(BaseWindow,InfoDialog,Home)" />
           <param name="onclick2" value="RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(53001).ListItem.Label],type=person,call_auto=1190,prevent_del,delay=0.35)" />
-          <param name="content" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]" />
-          <param name="widgetContent" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]" />
+          <param name="content" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53001).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53001]&amp;nextpage=false" />
+          <param name="widgetContent" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53001).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53001]&amp;nextpage=false" />
           <param name="postercondition" value="true" />
           <param name="controltype" value="panel" />
           <param name="orientation" value="vertical" />
@@ -1965,8 +1965,35 @@
           <param name="width" value="1800" />
           <param name="label" value="$LOCALIZE[31695]" /> <!-- Cast -->
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31695]) + !String.IsEmpty(ListItem.Label)" /> <!-- Cast -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53001).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53001).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53001) + !Container(53001).IsUpdating + Integer.IsGreaterOrEqual(Container(53001).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Sets) + String.IsEqual(ListItem.DBType,movie)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.CastList) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53001" />
+          <param name="onleft" value="8999" />
+          <param name="onup" value="8999" />
+          <param name="onfocus" value="" />
+          <param name="onunfocus" value="" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="onclick" value="SetProperty(BaseWindow,InfoDialog,Home)" />
+          <param name="onclick2" value="RunScript(plugin.video.themoviedb.helper,add_query=$INFO[Container(53001).ListItem.Label],type=person,call_auto=1190,prevent_del,delay=0.35)" />
+          <param name="content" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53001).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53001]&amp;nextpage=false" />
+          <param name="widgetContent" value="plugin://plugin.video.themoviedb.helper/?info=cast&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53001).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53001]&amp;nextpage=false" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$LOCALIZE[31695]" /> <!-- Cast -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31695]) + !String.IsEmpty(ListItem.Label)" /> <!-- Cast -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53001).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53001).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53001) + !Container(53001).IsUpdating + Integer.IsGreaterOrEqual(Container(53001).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Sets) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53002" />
           <param name="onleft" value="8999" />
           <param name="onup" value="8999" />
@@ -1982,8 +2009,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$LOCALIZE[31696]" /> <!-- Sets -->
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31696]) + !String.IsEmpty(ListItem.Label)" /> <!-- Sets -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53002).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53002).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53002) + !Container(53002).IsUpdating + Integer.IsGreaterOrEqual(Container(53002).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Similar)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Sets) + String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53002" />
+          <param name="onleft" value="8999" />
+          <param name="onup" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_Sets]" />
+          <param name="widgetContent" value="$VAR[Info_Sets]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$LOCALIZE[31696]" /> <!-- Sets -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31696]) + !String.IsEmpty(ListItem.Label)" /> <!-- Sets -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53002).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53002).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53002) + !Container(53002).IsUpdating + Integer.IsGreaterOrEqual(Container(53002).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Similar) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53003" />
           <param name="onleft" value="8999" />
           <param name="onup" value="8999" />
@@ -1999,8 +2049,31 @@
           <param name="width" value="1800" />
           <param name="label" value="Similar" />
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31494]) + !String.IsEmpty(ListItem.Label)" /> <!-- Similar -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53003).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53003).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53003) + !Container(53003).IsUpdating + Integer.IsGreaterOrEqual(Container(53003).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.DirectorMovies)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Similar) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53003" />
+          <param name="onleft" value="8999" />
+          <param name="onup" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_Similar]" />
+          <param name="widgetContent" value="$VAR[Info_Similar]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="Similar" />
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31494]) + !String.IsEmpty(ListItem.Label)" /> <!-- Similar -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53003).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53003).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53003) + !Container(53003).IsUpdating + Integer.IsGreaterOrEqual(Container(53003).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.DirectorMovies) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53004" />
           <param name="onleft" value="8999" />
           <param name="target" value="videos" />
@@ -2016,8 +2089,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$INFO[ListItem.Director,$LOCALIZE[31780] ,]" /> <!-- Directed By -->
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31697]) + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Director))]" /> <!-- By Director -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53004).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53004).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53004) + !Container(53004).IsUpdating + Integer.IsGreaterOrEqual(Container(53004).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Year)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.DirectorMovies) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53004" />
+          <param name="onleft" value="8999" />
+          <param name="target" value="videos" />
+          <param name="onup" value="8999" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_FromDirector]" />
+          <param name="widgetContent" value="$VAR[Info_FromDirector]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$INFO[ListItem.Director,$LOCALIZE[31780] ,]" /> <!-- Directed By -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31697]) + [!String.IsEmpty(ListItem.Director) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Director))]" /> <!-- By Director -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53004).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53004).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53004) + !Container(53004).IsUpdating + Integer.IsGreaterOrEqual(Container(53004).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Year) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53005" />
           <param name="onleft" value="8999" />
           <param name="target" value="videos" />
@@ -2033,8 +2129,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$LOCALIZE[31025] $INFO[ListItem.Year]" /> <!-- From -->
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31699]) + !String.IsEmpty(ListItem.Year)" /> <!-- By Year -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53005).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53005).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53005) + !Container(53005).IsUpdating + Integer.IsGreaterOrEqual(Container(53005).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Studio) + String.IsEqual(ListItem.DBType,movie)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Year) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53005" />
+          <param name="onleft" value="8999" />
+          <param name="target" value="videos" />
+          <param name="onup" value="8999" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_FromYear]" />
+          <param name="widgetContent" value="$VAR[Info_FromYear]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$LOCALIZE[31025] $INFO[ListItem.Year]" /> <!-- From -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31699]) + !String.IsEmpty(ListItem.Year)" /> <!-- By Year -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53005).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53005).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53005) + !Container(53005).IsUpdating + Integer.IsGreaterOrEqual(Container(53005).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Studio) + String.IsEqual(ListItem.DBType,movie) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53006" />
           <param name="onup" value="8999" />
           <param name="onleft" value="8999" />
@@ -2050,8 +2169,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$INFO[ListItem.Studio]" />
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31698]) + !String.IsEmpty(ListItem.Studio)" /> <!-- By Studio -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53006).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53006).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53006) + !Container(53006).IsUpdating + Integer.IsGreaterOrEqual(Container(53006).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Recommended)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Studio) + String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53006" />
+          <param name="onup" value="8999" />
+          <param name="onleft" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_FromStudio]" />
+          <param name="widgetContent" value="$VAR[Info_FromStudio]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$INFO[ListItem.Studio]" />
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31698]) + !String.IsEmpty(ListItem.Studio)" /> <!-- By Studio -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53006).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53006).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53006) + !Container(53006).IsUpdating + Integer.IsGreaterOrEqual(Container(53006).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Recommended) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53007" />
           <param name="onup" value="8999" />
           <param name="onleft" value="8999" />
@@ -2067,8 +2209,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$LOCALIZE[31495]" /> <!-- Recommended -->
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31495]) + !String.IsEmpty(ListItem.Label)" /> <!-- Recommended -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53007).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53007).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53007) + !Container(53007).IsUpdating + Integer.IsLess(Window(Home).Property(Container(53007).WidgetPage),2) + Integer.IsGreaterOrEqual(Container(53007).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Genre)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Recommended) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53007" />
+          <param name="onup" value="8999" />
+          <param name="onleft" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_Recommended]" />
+          <param name="widgetContent" value="$VAR[Info_Recommended]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$LOCALIZE[31495]" /> <!-- Recommended -->
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31495]) + !String.IsEmpty(ListItem.Label)" /> <!-- Recommended -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53007).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53007).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53007) + !Container(53007).IsUpdating + Integer.IsLess(Window(Home).Property(Container(53007).WidgetPage),2) + Integer.IsGreaterOrEqual(Container(53007).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Genre) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53008" />
           <param name="onleft" value="8999" />
           <param name="onup" value="8999" />
@@ -2084,8 +2249,31 @@
           <param name="width" value="1800" />
           <param name="label" value="$INFO[ListItem.Genre]" />
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31700]) + !String.IsEmpty(ListItem.Genre)" /> <!-- By Genre -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53008).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53008).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53008) + !Container(53008).IsUpdating + Integer.IsGreaterOrEqual(Container(53008).NumItems,10)" />
         </include>
-        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Youtube)" content="Widget_TMDB">
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Genre) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53008" />
+          <param name="onleft" value="8999" />
+          <param name="onup" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_FromGenre]" />
+          <param name="widgetContent" value="$VAR[Info_FromGenre]" />
+          <param name="postercondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="$INFO[ListItem.Genre]" />
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31700]) + !String.IsEmpty(ListItem.Genre)" /> <!-- By Genre -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53008).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53008).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53008) + !Container(53008).IsUpdating + Integer.IsGreaterOrEqual(Container(53008).NumItems,20)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Youtube) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
           <param name="id" value="53009" />
           <param name="onleft" value="8999" />
           <param name="onup" value="8999" />
@@ -2105,6 +2293,33 @@
           <param name="onclick3" value="SetProperty(TrailerPlaying,fullscreen,home)" />
           <param name="onclick4" value="SetProperty(BaseWindow,InfoDialog,Home)" />
           <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31141])" /> <!-- Youtube -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53009).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53009).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53009) + !Container(53009).IsUpdating + Integer.IsGreaterOrEqual(Container(53009).NumItems,10)" />
+        </include>
+        <include condition="!Skin.HasSetting(VideoInfo.Disable) + !Skin.HasSetting(VideoInfo.Youtube) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)" content="Widget_TMDB">
+          <param name="id" value="53009" />
+          <param name="onleft" value="8999" />
+          <param name="onup" value="8999" />
+          <param name="target" value="videos" />
+          <param name="sortby" value="file" />
+          <param name="sortorder" value="" />
+          <param name="content" value="$VAR[Info_Youtube]" />
+          <param name="widgetContent" value="$VAR[Info_Youtube]" />
+          <param name="postercondition" value="false" />
+          <param name="landscapenetflixcondition" value="true" />
+          <param name="controltype" value="panel" />
+          <param name="orientation" value="vertical" />
+          <param name="height" value="880" />
+          <param name="width" value="1800" />
+          <param name="label" value="" />
+          <param name="onclick2" value="PlayMedia($INFO[Container(53007).ListItem.FileNameAndPath],1)" />
+          <param name="onclick3" value="SetProperty(TrailerPlaying,fullscreen,home)" />
+          <param name="onclick4" value="SetProperty(BaseWindow,InfoDialog,Home)" />
+          <param name="visible" value="String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31141])" /> <!-- Youtube -->
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53009).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53009).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53009) + !Container(53009).IsUpdating + Integer.IsGreaterOrEqual(Container(53009).NumItems,20)" />
         </include>
       </control>
       <include>Object_UpDownInfoArrows</include>

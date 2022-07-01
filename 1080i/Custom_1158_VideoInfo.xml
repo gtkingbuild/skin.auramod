@@ -51,6 +51,13 @@
                     <onclick>Skin.ToggleSetting(VideoInfo.LargePlot)</onclick>
                     <selected>Skin.HasSetting(VideoInfo.LargePlot)</selected>
                 </control>
+                <control type="radiobutton" id="9005">
+                    <label>$LOCALIZE[31922]</label> <!-- Enable Previous/Next page buttons in Lists -->
+                    <radioposx>730</radioposx>
+                    <include>Dialog_Standard_ListButton</include>
+                    <onclick>Skin.ToggleSetting(VideoInfo.Pagination)</onclick>
+                    <selected>Skin.HasSetting(VideoInfo.Pagination)</selected>
+                </control>
             </control>
         </control>
     </controls>

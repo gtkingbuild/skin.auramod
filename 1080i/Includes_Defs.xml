@@ -345,12 +345,12 @@
     </variable>
 
     <variable name="Info_Sets">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Set)">plugin://plugin.video.themoviedb.helper/?info=collection&amp;type=movie&amp;query=$INFO[ListItem.Set]&amp;page=$INFO[Window(Home).Property(Container(53002).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53002]&amp;nextpage=false</value>
         <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.DBID)">$INFO[ListItem.SetID,videodb://movies/sets/,/]</value>
     </variable>
 
     <variable name="Info_Similar">
-        <value condition="[VideoPlayer.Content(Episodes) | VideoPlayer.Content(Movies) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | Container.Content(movies) | Container.Content(tvshows)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=similar&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+        <value condition="[VideoPlayer.Content(Episodes) | VideoPlayer.Content(Movies) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | Container.Content(movies) | Container.Content(tvshows)] + !Skin.HasSetting(DisableExtendedInfo) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=similar&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53003).WidgetPage)]&amp;nextpage=false</value>
     </variable>
 
     <variable name="Info_CrewMembers">
@@ -365,29 +365,88 @@
     </variable>
 
     <variable name="Info_FromDirector">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Director) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
-        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Director)) + System.HasAddon(plugin.video.themoviedb.helper) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31697])">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[Window(Home).Property(TMDBHelper.ListItem.Director)]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value> <!-- By Director -->
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(ListItem.Director) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[ListItem.Director]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;page=$INFO[Window(Home).Property(Container(53004).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53004]&amp;nextpage=false</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Director)) + System.HasAddon(plugin.video.themoviedb.helper) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31697])">plugin://plugin.video.themoviedb.helper/?info=crew_in_movies&amp;type=person&amp;filter_key=job&amp;filter_value=Director&amp;query=$INFO[Window(Home).Property(TMDBHelper.ListItem.Director)]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;page=$INFO[Window(Home).Property(Container(53004).WidgetPage)]&amp;limit=$VAR[WidgetPage_Item_Limit_53004]&amp;nextpage=false</value> <!-- By Director -->
         <value condition="String.IsEqual(ListItem.DBType,movie)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22director%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Director]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
     </variable>
 
     <variable name="Info_FromStudio">
-        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Studio)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_companies=$INFO[ListItem.Studio]</value>
-        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31698])">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_companies=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)]</value> <!-- By Studio -->
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(ListItem.Studio)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_companies=$INFO[ListItem.Studio]&amp;page=$INFO[Window(Home).Property(Container(53006).WidgetPage)]&amp;nextpage=false</value>
+        <value condition="[String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + System.HasAddon(plugin.video.themoviedb.helper) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)) + String.IsEqual(Container(8999).ListItem.Label,$LOCALIZE[31698])">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_companies=$INFO[Window(Home).Property(TMDBHelper.ListItem.Studio.1.Name)]&amp;page=$INFO[Window(Home).Property(Container(53006).WidgetPage)]&amp;nextpage=false</value> <!-- By Studio -->
         <value condition="Container.Content(movies)">videodb://movies/titles/?xsp=%7b%22rules%22%3a%7b%22and%22%3a%5b%7b%22field%22%3a%22studio%22%2c%22operator%22%3a%22is%22%2c%22value%22%3a%5b%22$INFO[ListItem.Studio]%22%5d%7d%5d%7d%2c%22type%22%3a%22movies%22%7d</value>
     </variable>
 
     <variable name="Info_FromYear">
-        <value condition="String.IsEqual(ListItem.DBType,movie) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;primary_release_year=$INFO[ListItem.Year]</value>
-
+        <value condition="String.IsEqual(ListItem.DBType,movie) + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;primary_release_year=$INFO[ListItem.Year]&amp;page=$INFO[Window(Home).Property(Container(53005).WidgetPage)]&amp;nextpage=false</value>
     </variable>
 
     <variable name="Info_FromGenre">
-        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_genres=$INFO[ListItem.Genre]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow)] + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper?info=discover&amp;$VAR[Info_Param_Type]&amp;with_genres=$INFO[ListItem.Genre]&amp;exclude_key=title&amp;exclude_value=$INFO[ListItem.Title]&amp;page=$INFO[Window(Home).Property(Container(53008).WidgetPage)]&amp;nextpage=false</value>
     </variable>
 
     <variable name="Info_Recommended">
-        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | Container.Content(movies) | Container.Content(tvshows)] + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]</value>
+        <value condition="[String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,tvshow) | Container.Content(movies) | Container.Content(tvshows)] + System.HasAddon(plugin.video.themoviedb.helper)">plugin://plugin.video.themoviedb.helper/?info=recommendations&amp;$VAR[Info_Param_Type]&amp;$VAR[Info_Param_IMDB_or_QUERY]&amp;page=$INFO[Window(Home).Property(Container(53007).WidgetPage)]&amp;nextpage=false</value>
     </variable>
+
+    <variable name="WidgetPage_Item_Limit_53002">
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + Integer.IsLess(Window(Home).Property(Container(53002).WidgetPage),2)">10</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Integer.IsLess(Window(Home).Property(Container(53002).WidgetPage),2)">9</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + Integer.IsLess(Window(Home).Property(Container(53002).WidgetPage),2)">21</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Integer.IsLess(Window(Home).Property(Container(53002).WidgetPage),2)">20</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">11</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">23</value>
+    </variable>
+
+    <variable name="WidgetPage_Item_Limit_53004">
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + Integer.IsLess(Window(Home).Property(Container(53004).WidgetPage),2)">10</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Integer.IsLess(Window(Home).Property(Container(53004).WidgetPage),2)">9</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + Integer.IsLess(Window(Home).Property(Container(53004).WidgetPage),2)">21</value>
+        <value condition="Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10) + !Integer.IsLess(Window(Home).Property(Container(53004).WidgetPage),2)">20</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">11</value>
+        <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">23</value>
+    </variable>
+
+    <include name="Defs_WidgetPage">
+        <onload>SetProperty(TMDbWidgetItemLimit_53001,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53002,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53003,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53004,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53005,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53006,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53007,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53008,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53009,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53001,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53002,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53003,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53004,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53005,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53006,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53007,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53008,Home)</onunload>
+        <onunload>ClearProperty(TMDbWidgetItemLimit_53009,Home)</onunload>
+
+        <onload>SetProperty(Container(53001).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53002).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53003).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53004).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53005).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53006).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53007).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53008).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53009).WidgetPage,1,Home)</onload>
+
+        <onunload>ClearProperty(Container(53001).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53002).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53003).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53004).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53005).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53006).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53007).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53008).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53009).WidgetPage,Home)</onunload>
+    </include>
 
     <variable name="DefMovieDBMoviesContent">
         <value condition="String.IsEqual(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
