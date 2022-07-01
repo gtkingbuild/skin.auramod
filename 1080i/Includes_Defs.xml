@@ -264,8 +264,11 @@
         <value condition="[String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + !String.IsEmpty(ListItem.Property(imdb_id))">imdb_id=$INFO[ListItem.Property(imdb_id)]</value>
         <value condition="[String.IsEqual(ListItem.DBType,movie) | Container.Content(movies)] + !String.IsEmpty(ListItem.IMDBNumber) + String.StartsWith(ListItem.IMDBNumber,tt)">imdb_id=$INFO[ListItem.IMDBNumber]</value>
         <value condition="[String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(ListItem.TvShowTitle)">query=$INFO[ListItem.TvShowTitle]</value>
+        <value condition="[String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),season) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),tvshow) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),episode) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episodes)] + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.TvShowTitle))">query=$INFO[Window(Home).Property(TMDBHelper.ListItem.TvShowTitle)]</value>
         <value condition="!String.IsEmpty(ListItem.Title) + !String.IsEmpty(ListItem.Year)">query=$INFO[ListItem.Title]&amp;year=$INFO[ListItem.Year]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Title)) + !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Year))">query=$INFO[Window(Home).Property(TMDBHelper.ListItem.Title)]&amp;year=$INFO[Window(Home).Property(TMDBHelper.ListItem.Year)]</value>
         <value condition="!String.IsEmpty(ListItem.Title)">query=$INFO[ListItem.Title]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Title))">query=$INFO[Window(Home).Property(TMDBHelper.ListItem.Title)]</value>
         <value condition="VideoPlayer.Content(Movies)">query=$INFO[VideoPlayer.Title]</value>
         <value condition="VideoPlayer.Content(Episodes)">query=$INFO[VideoPlayer.TvShowTitle]</value>
         <value>query=$INFO[ListItem.Label]</value>
@@ -312,8 +315,8 @@
     <variable name="Info_Param_Type">
         <value condition="String.IsEmpty(Window().Property(item.info.season)) + !String.IsEmpty(Window().Property(item.info.title))">type=movie</value>
         <value condition="!String.IsEmpty(Window().Property(item.info.season)) + !String.IsEmpty(Window().Property(item.info.title))">type=tv</value>
-        <value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | Container.Content(movies) | Container.Content(set) | VideoPlayer.Content(Movies)">type=movie</value>
-        <value condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episode) | VideoPlayer.Content(Episodes)">type=tv</value>
+        <value condition="String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,set) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),movie) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),set) | Container.Content(movies) | Container.Content(set) | VideoPlayer.Content(Movies)">type=movie</value>
+        <value condition="String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,episode) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),season) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),tvshow) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),episode) | Container.Content(tvshows) | Container.Content(seasons) | Container.Content(episode) | VideoPlayer.Content(Episodes)">type=tv</value>
     </variable>
 
     <variable name="DetailsContent_1505">
