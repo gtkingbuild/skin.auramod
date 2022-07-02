@@ -6,7 +6,7 @@
     <onload condition="String.IsEmpty(Window.Property(CurrentFocus))">SetProperty(CurrentFocus,$NUMBER[9001])</onload>
     <controls>
 
-        <include>Global_Background</include>
+        <include condition="!Skin.HasSetting(DisableSettingsBackground)">Global_Background</include>
 
         <control type="group">
             <include>Dialog_Settings_Panel</include>
@@ -19,29 +19,6 @@
                     <textcolor>main_fg_30</textcolor>
                 </control>
 
-          <control type="group">
-            <left>0</left>
-            <centertop>50%</centertop>
-            <width>450</width>
-            <height>1200</height>
-	    <visible>!Skin.HasSetting(DisableSettingsBackground)</visible>
-            <control type="image">
-                <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
-                <texture border="16" colordiffuse="dialog_bg_100">common/rounded-dialog.png</texture>
-            </control>
-            </control>
-
-          <control type="group">
-            <left>450</left>
-            <centertop>50%</centertop>
-            <width>100%</width>
-            <height>1200</height>
-	    <visible>!Skin.HasSetting(DisableSettingsBackground)</visible>
-            <control type="image">
-                <include condition="!Skin.HasSetting(DisableShadows)">Defs_Shadow_24</include>
-                <texture border="16" colordiffuse="darkgrey">common/rounded-dialog.png</texture>
-            </control>
-            </control>
                 <control type="group">
                     <top>80</top>
                     <height>800</height>
