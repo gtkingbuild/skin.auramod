@@ -6934,8 +6934,9 @@
             <width>130</width>
             <height>70</height>
             <label>$LOCALIZE[31719]</label> <!-- Clear -->
-            <onclick>Skin.Reset(CustomSearchTerm)</onclick>
-            <onclick>ActivateWindow(1136)</onclick>
+            <onclick condition="Skin.HasSetting(EnableSearchDefaultKB)">Skin.Reset(CustomSearchTerm)</onclick>
+            <onclick condition="!Skin.HasSetting(EnableSearchDefaultKB)">Skin.Reset(osdCustomSearchTerm)</onclick>
+            <onclick condition="Skin.HasSetting(EnableSearchDefaultKB)">ActivateWindow(1136)</onclick>
             <include>Key</include>
         </control>
         <control type="button" id="1009">
