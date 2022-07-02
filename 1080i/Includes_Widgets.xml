@@ -276,7 +276,7 @@
         <param name="submenu" value="true" />
         <param name="aspect" value="$LOCALIZE[31263]" />
         <param name="label" value="$VAR[catlabel]" />
-        <param name="visible" value="String.IsEqual(Container(300).ListItem.Property(hasSubmenu),true)" />
+        <param name="visible" value="String.IsEqual(Container(300).ListItem.Property(hasSubmenu),true) | !Integer.IsGreater(Container(9987).NumItems,0)" />
       </include>
       <include>skinshortcuts-template-vertical-submenu</include>
       <control type="group" id="336">

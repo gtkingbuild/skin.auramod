@@ -34,6 +34,11 @@
   <onunload>SetProperty(MainMenuPosition,$INFO[Container(300).Position],home)</onunload>
   <onunload>ClearProperty(MainMenuHubFocus,home)</onunload>
   <controls>
+    <control type="list" id="9987">
+      <description>hidden container for submenu widget count</description>
+      <include>Defs_Hidden_List</include>
+      <content><include>skinshortcuts-submenu</include></content>
+    </control>
     <control type="list" id="9988">
       <description>hidden container for playlist background</description>
       <posx>-20</posx>
