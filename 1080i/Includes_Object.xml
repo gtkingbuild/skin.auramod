@@ -2033,6 +2033,7 @@
             <param name="plot" value="false" />
             <param name="studio" value="true" />
             <param name="studioid" value="1$PARAM[id]" />
+            <param name="visible" value="!Container(330).HasPrevious" />
           </include>
         </control>
         <control type="grouplist">
@@ -4740,6 +4741,7 @@
     <param name="studiotop" default="-12" />
     <param name="studioheight" default="100" />
     <param name="studiowidth" default="100" />
+    <param name="visible" default="true" />
     <definition>
       <include content="Object_Ratings_Container_Content" condition="!Skin.HasSetting(MonochromeFlags)">
         <param name="id" value="$PARAM[id]" />
@@ -4760,6 +4762,7 @@
         <param name="studiotop" value="$PARAM[studiotop]" />
         <param name="studioheight" value="$PARAM[studioheight]" />
         <param name="studiowidth" value="$PARAM[studiowidth]" />
+        <param name="visible" value="$PARAM[visible]" />
       </include>
       <include content="Object_Ratings_Container_Content" condition="Skin.HasSetting(MonochromeFlags)">
         <param name="id" value="$PARAM[id]" />
@@ -4781,6 +4784,7 @@
         <param name="studiotop" value="$PARAM[studiotop]" />
         <param name="studioheight" value="$PARAM[studioheight]" />
         <param name="studiowidth" value="$PARAM[studiowidth]" />
+        <param name="visible" value="$PARAM[visible]" />
       </include>
     </definition>
   </include>
@@ -4806,6 +4810,7 @@
     <param name="studiotop" default="-12" />
     <param name="studioheight" default="100" />
     <param name="studiowidth" default="100" />
+    <param name="visible" default="true" />
     <definition>
       <control type="grouplist">
         <width>$PARAM[width]</width>
@@ -4815,6 +4820,7 @@
         <itemgap>8</itemgap>
         <usecontrolcoords>true</usecontrolcoords>
         <height>184</height>
+        <visible>$PARAM[visible]</visible>
         <control type="image">
           <top>10</top>
           <width>32</width>
@@ -5113,8 +5119,8 @@
           <width>$PARAM[studiowidth]</width>
           <visible>$PARAM[studio]</visible>
           <visible>Skin.HasSetting(DisableWidgetStudio)</visible>
-          <visible>String.IsEqual(ListItem.DBType,tvshow) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
-          <visible>![Control.HasFocus(300) | Control.HasFocus(30222)] + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(Network.1.Name)) + !String.IsEmpty(Control.GetLabel(1$PARAM[studioid]))</visible>
+          <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,tvshow) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
+          <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Property(Network.1.Name)) + !String.IsEmpty(Control.GetLabel(1$PARAM[studioid]))</visible>
           <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
         </control>
         <control type="image" id="2$PARAM[studioid]">
@@ -5127,8 +5133,8 @@
           <width>$PARAM[studiowidth]</width>
           <visible>$PARAM[studio]</visible>
           <visible>Skin.HasSetting(DisableWidgetStudio)</visible>
-          <visible>String.IsEqual(ListItem.DBType,episode) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
-          <visible>![Control.HasFocus(300) | Control.HasFocus(30222)] + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(Network.1.Name)) + !String.IsEmpty(Control.GetLabel(2$PARAM[studioid]))</visible>
+          <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,episode) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
+          <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Property(Network.1.Name)) + !String.IsEmpty(Control.GetLabel(2$PARAM[studioid]))</visible>
           <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
         </control>
         <control type="image" id="3$PARAM[studioid]">
@@ -5141,8 +5147,8 @@
           <width>$PARAM[studiowidth]</width>
           <visible>$PARAM[studio]</visible>
           <visible>Skin.HasSetting(DisableWidgetStudio)</visible>
-          <visible>String.IsEqual(ListItem.DBType,movie) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
-          <visible>![Control.HasFocus(300) | Control.HasFocus(30222)] + !String.IsEmpty(Container($PARAM[id]).ListItem.Property(Studio.1.Name)) + !String.IsEmpty(Control.GetLabel(3$PARAM[studioid]))</visible>
+          <visible>String.IsEqual(Container($PARAM[id]).ListItem.DBType,movie) + !String.IsEqual(Container(5055).ListItem.DBType,movie)</visible>
+          <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.Property(Studio.1.Name)) + !String.IsEmpty(Control.GetLabel(3$PARAM[studioid]))</visible>
           <visible>!Window.IsVisible(DialogVideoInfo.xml)</visible>
         </control>
       </control>
