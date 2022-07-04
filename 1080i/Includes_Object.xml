@@ -2546,7 +2546,7 @@
       <animation effect="slide" end="-30,-10" time="10" condition="!Skin.HasSetting(DisableNetflixLargeWidget) + [Skin.HasSetting(DisableMenuHor) | Skin.HasSetting(DisableNetflixHomeSidemenuHide)]">Conditional</animation>
       <onup condition="Window.IsVisible(Home) + !Integer.IsGreater(Container($PARAM[id]).NumItems,0) + Integer.IsGreater(Container(1505).NumItems,0) + String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) + String.IsEqual(Container(300).ListItem.Property(widgetSpotlighttype),TVShows)">SetFocus(1505)</onup>
       <onup condition="Window.IsVisible(Home) + !Integer.IsGreater(Container($PARAM[id]).NumItems,0) + Integer.IsGreater(Container(1506).NumItems,0) + String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) + String.IsEqual(Container(300).ListItem.Property(widgetSpotlighttype),Movies)">SetFocus(1506)</onup>
-      <onup condition="!String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true)">300</onup>
+      <onup condition="!String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) | Skin.HasSetting(DisableMenuHor) + !Control.IsVisible(1505) + !Control.IsVisible(1506)">300</onup>
       <ondown>330</ondown>
       <onleft>300</onleft>
       <onback>300</onback>
@@ -2571,7 +2571,7 @@
       <ondown>330</ondown>
       <onup condition="Window.IsVisible(Home) + !Integer.IsGreater(Container($PARAM[id]).NumItems,0) + Integer.IsGreater(Container(1505).NumItems,0) + String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) + String.IsEqual(Container(300).ListItem.Property(widgetSpotlighttype),TVShows)">SetFocus(1505)</onup>
       <onup condition="Window.IsVisible(Home) + !Integer.IsGreater(Container($PARAM[id]).NumItems,0) + Integer.IsGreater(Container(1506).NumItems,0) + String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) + String.IsEqual(Container(300).ListItem.Property(widgetSpotlighttype),Movies)">SetFocus(1506)</onup>
-      <onup condition="!String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true)">300</onup>
+      <onup condition="!String.IsEqual(Container(300).ListItem.Property(widgetspotlight),true) | Skin.HasSetting(DisableMenuHor) + !Control.IsVisible(1505) + !Control.IsVisible(1506)">300</onup>
       <onup>300</onup>
       <onleft>300</onleft>
       <onback>300</onback>
