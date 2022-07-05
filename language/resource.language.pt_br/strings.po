@@ -4500,3 +4500,18 @@ msgstr "Filmes em Destaque"
 msgctxt "#31921"
 msgid "Spotlight TV"
 msgstr "Seriados em Destaque"
+
+#: /1080i/Custom_1158_VideoInfo.xml
+msgctxt "#31922"
+msgid "Enable Previous/Next page buttons in Lists"
+msgstr ""
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31923"
+msgid "Previous page"
+msgstr ""
+
+#: /1080i/Includes_Object.xml
+msgctxt "#31924"
+msgid "Next page"
+msgstr ""
