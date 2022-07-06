@@ -156,6 +156,7 @@
         <value condition="!String.IsEmpty(ListItem.Art(landscape))">$INFO[ListItem.Art(landscape)]</value>
         <value condition="!String.IsEmpty(ListItem.Art(tvshow.landscape))">$INFO[ListItem.Art(tvshow.landscape)]</value>
         <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(ListItem.Art(fanart)) + System.HasAddon(script.artwork.helper) + [Window.IsVisible(Home) | Window.IsVisible(DialogVideoInfo.xml)] + [String.IsEqual(ListItem.DBTYPE,season) | String.IsEqual(ListItem.DBTYPE,episode)]">plugin://script.artwork.helper/multiimage/listitem/?refresh=$INFO[ListItem.Label]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDbHelper.ListItem.BlurImage.Original))">$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
         <value>$INFO[ListItem.Icon]</value>
    </variable> 
 

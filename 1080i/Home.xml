@@ -20,6 +20,8 @@
   <onload condition="!String.IsEmpty(Skin.String(TMDB_Search))">ActivateWindow(1136)</onload>
   <onload condition="!Skin.HasSetting(DisableInfoRatings)">Skin.ToggleSetting(DisableInfoRatings)</onload>
   <onload>Skin.SetString(AddonContainer,false)</onload>
+  <onload condition="!Skin.HasSetting(TMDbHelper.EnableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
+  <onload>SetProperty(TMDbHelper.Blur.SourceImage,fanart,Home)</onload>
   <onunload>SetProperty(SpotReturnHome,true,Home)</onunload>
   <onunload>ClearProperty(spothubscroll)</onunload>
   <onunload>ClearProperty(TMDBHelper.WidgetContainer)</onunload>
