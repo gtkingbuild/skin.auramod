@@ -4515,3 +4515,8 @@ msgstr ""
 msgctxt "#31924"
 msgid "Next page"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31925"
+msgid "Enable notification shadow outside player"
+msgstr ""

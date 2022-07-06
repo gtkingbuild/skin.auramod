@@ -785,6 +785,14 @@
                             <onclick>Skin.ToggleSetting(DisableShadows)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9310" description="Enable notification shadow outside player">
+                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31925]</label>
+                            <selected>Skin.HasSetting(ForceDialogShadow)</selected>
+                            <onclick>Skin.ToggleSetting(ForceDialogShadow)</onclick>
+                        </control>
+
                         <control type="button" id="9309">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9003)</visible>
                             <label>$LOCALIZE[31321]</label>
