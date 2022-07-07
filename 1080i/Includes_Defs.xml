@@ -329,6 +329,10 @@
         <onunload>ClearProperty(ListItem.TvShowTitle,Home)</onunload>
         <onunload>ClearProperty(ListItem.Title,Home)</onunload>
         <onunload>ClearProperty(ListItem.Year,Home)</onunload>
+
+        <onload>SetProperty(ListItem.BlurImage.Original,"$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage.Original)]",Home)</onload>
+
+        <onunload>ClearProperty(ListItem.BlurImage.Original,Home)</onunload>
     </include>
 
     <variable name="DetailsContent_1505">
