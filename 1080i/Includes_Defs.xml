@@ -421,7 +421,7 @@
         <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">23</value>
     </variable>
 
-    <include name="Defs_WidgetPage">
+    <include name="Defs_VideoInfo_WidgetPage">
         <onload>SetProperty(TMDbWidgetItemLimit_53001,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
         <onload>SetProperty(TMDbWidgetItemLimit_53002,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
         <onload>SetProperty(TMDbWidgetItemLimit_53003,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>

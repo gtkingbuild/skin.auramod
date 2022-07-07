@@ -8,7 +8,7 @@
     <onload>ClearProperty(Header_Center_Text)</onload>
     <onload>ClearProperty(OSD_Menu,Home)</onload>
     <onload>SetProperty(TMDbTemp,$INFO[Window(Home).Property(TMDbHelper.WidgetContainer)],Home)</onload>
-    <include>Defs_WidgetPage</include>
+    <include>Defs_VideoInfo_WidgetPage</include>
     <include>Defs_VideoInfo_SetProp</include>
 
     <onunload>SetProperty(TMDbHelper.WidgetContainer,$INFO[Window(Home).Property(TMDbTemp)],Home)</onunload>
