@@ -2032,6 +2032,7 @@
             <right>10</right>
             <top>265</top>
             <visible>!Skin.HasSetting(DisableViewText)</visible>
+            <visible>!ListItem.IsParentFolder</visible>
           </control>
           <control type="label">
             <label>$INFO[ListItem.Label2]</label>
@@ -2083,6 +2084,7 @@
             <right>10</right>
             <top>265</top>
             <visible>!Skin.HasSetting(DisableViewText)</visible>
+            <visible>!ListItem.IsParentFolder</visible>
           </control>
           <control type="label">
             <label>$INFO[ListItem.Label2]</label>
@@ -3239,6 +3241,8 @@
   </include>
 
   <include name="View_Posters_Text">
+    <control type="group">
+      <visible>!ListItem.IsParentFolder</visible>
     <control type="label">
       <label>$INFO[ListItem.Label]</label>
       <align>center</align>
@@ -3281,6 +3285,7 @@
       <right>10</right>
       <top>415</top>
     </control>
+  </control>
   </include>
   <include name="View_Posters_Itemlayout_Artwork">
     <control type="group" description="ParentFolder and DefaultIcon">

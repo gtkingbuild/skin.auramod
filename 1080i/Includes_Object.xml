@@ -284,6 +284,7 @@
   <include name="Object_Episodes_Info">
     <control type="group">
       <control type="textbox">
+        <visible>!ListItem.IsParentFolder</visible>
         <visible>String.IsEmpty(Control.GetLabel(5675))</visible>
         <top>25</top>
         <left>40</left>
