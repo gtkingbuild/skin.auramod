@@ -6,6 +6,7 @@
 	<value condition="!String.Contains(ListItem.Studio,/)">$INFO[ListItem.Studio,resource://resource.images.studios.coloured/,.png]</value>
      </variable>
      <variable name="serenicons">
+       <value condition="ListItem.IsParentFolder">DefaultFolderBack.png</value>
 	<value condition="!Skin.HasSetting(SerenIcons) + String.StartsWith(ListItem.Icon,DefaultFolder)">DefaultFolder.png</value>
 	<value condition="!Skin.HasSetting(SerenIcons)">ListItem.Icon</value>
 	<value condition="Skin.HasSetting(SerenIcons) + String.IsEqual(ListItem.FileNameAndPath,plugin://plugin.video.seren/?action=moviesHome)">special://skin/media/exuary/movies.png</value>
