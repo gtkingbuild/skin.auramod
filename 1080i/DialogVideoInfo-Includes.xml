@@ -1159,8 +1159,33 @@
         <control type="textbox">
           <top>10</top>
           <visible>!Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
-          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][CR][/COLOR]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</label>
-          <height min="60" max="246">auto</height>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <height min="10" max="84">auto</height>
+          <width>750</width>
+          <aligny>top</aligny>
+          <textcolor>dimgrey</textcolor>
+          <font>font_plotbox</font>
+          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+          <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
+        </control>
+        <control type="textbox">
+          <left>0</left>
+          <description>textarea</description>
+          <height min="10" max="62">auto</height>
+          <width>90%</width>
+          <align>left</align>
+          <textcolor>main_fg_70</textcolor>
+          <font>font_overlay_plotbox</font>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
+          <visible>Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
+          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+        </control>
+        <control type="textbox">
+          <top>5</top>
+          <visible>!Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
+          <label fallback="19055">$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</label>
+          <height min="10" max="168">auto</height>
           <width>750</width>
           <aligny>top</aligny>
           <textcolor>dimgrey</textcolor>
@@ -1169,20 +1194,20 @@
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
         </control>
         <control type="textbox">
-          <left>0</left>
+          <top>16</top>
           <description>textarea</description>
-          <height min="100" max="400">auto</height>
+          <height min="10" max="376">auto</height>
           <width>90%</width>
           <align>left</align>
           <textcolor>main_fg_70</textcolor>
           <font>font_overlay_plotbox</font>
-          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][CR][/COLOR]$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</label>
+          <label fallback="19055">$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</label>
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
           <visible>Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
           <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
         </control>
 	<control type="label">
-	   <height>40</height>
+	   <height>20</height>
            <visible>Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
            <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
 	</control>
@@ -1217,7 +1242,7 @@
           <control type="grouplist">
             <visible>!Control.HasFocus(9550)</visible>
             <orientation>vertical</orientation>
-            <top>20</top>
+            <top>9</top>
             <height>300</height>
             <control type="group">
               <visible>!Control.HasFocus(9550)</visible>
