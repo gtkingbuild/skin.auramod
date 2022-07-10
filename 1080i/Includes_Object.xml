@@ -1946,7 +1946,18 @@
           <control type="textbox">
             <visible>[Window.IsVisible(Home) + [!Control.HasFocus(660) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001)]] | !Window.IsVisible(Home)</visible>
             <visible>$EXP[DBTvideos] + !Skin.HasSetting(DisableNetflixView) + ![String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(EnableFullEpInfo)]</visible>
-            <height min="20" max="180">auto</height>
+            <height min="10" max="63">auto</height>
+            <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+            <width>640</width>
+            <aligny>top</aligny>
+            <textcolor>dimgrey</textcolor>
+            <font>widget_trakt_title</font>
+            <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+          </control>
+          <control type="textbox">
+            <visible>[Window.IsVisible(Home) + [!Control.HasFocus(660) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001)]] | !Window.IsVisible(Home)</visible>
+            <visible>$EXP[DBTvideos] + !Skin.HasSetting(DisableNetflixView) + ![String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(EnableFullEpInfo)]</visible>
+            <height min="10" max="154">auto</height>
             <label fallback="19055">$VAR[Label_OverlayPlot]</label>
             <width>640</width>
             <aligny>top</aligny>
@@ -1955,7 +1966,7 @@
             <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
           </control>
           <control type="label">
-            <height>30</height>
+            <height>5</height>
           </control>
           <control type="group">
             <height>62</height>
@@ -6594,7 +6605,7 @@
       <usecontrolcoords>true</usecontrolcoords>
       <control type="group">
         <visible>!String.IsEmpty(Control.GetLabel(84))</visible>
-        <top>5</top>
+        <top>11</top>
         <height>46</height>
         <width>46</width>
         <control type="image">
@@ -6609,7 +6620,7 @@
       <control type="textbox" id="84">
         <top>-5</top>
         <animation effect="fade" time="150">Visible</animation>
-        <height>75</height>
+        <height>74</height>
         <width>550</width>
         <label>$VAR[NetflixDetailsSpin]</label>
         <textcolor>dimgrey</textcolor>
