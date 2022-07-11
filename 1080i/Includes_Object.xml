@@ -1941,12 +1941,12 @@
             <font>font_small</font>
           </control>
           <control type="label">
-            <height>20</height>
+            <height>0</height>
           </control>
           <control type="textbox">
             <visible>[Window.IsVisible(Home) + [!Control.HasFocus(660) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001)]] | !Window.IsVisible(Home)</visible>
             <visible>$EXP[DBTvideos] + !Skin.HasSetting(DisableNetflixView) + ![String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(EnableFullEpInfo)]</visible>
-            <height min="10" max="63">auto</height>
+            <height min="0" max="63">auto</height>
             <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
             <width>640</width>
             <aligny>top</aligny>
@@ -1966,7 +1966,7 @@
             <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
           </control>
           <control type="label">
-            <height>5</height>
+            <height>7</height>
           </control>
           <control type="group">
             <height>62</height>
@@ -6605,7 +6605,7 @@
       <usecontrolcoords>true</usecontrolcoords>
       <control type="group">
         <visible>!String.IsEmpty(Control.GetLabel(84))</visible>
-        <top>11</top>
+        <top>10</top>
         <height>46</height>
         <width>46</width>
         <control type="image">

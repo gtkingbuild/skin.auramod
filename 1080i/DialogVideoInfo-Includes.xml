@@ -1098,6 +1098,7 @@
         <height>1500</height>
         <left>10</left>
         <control type="image" id="55443">
+          <top>10</top>
           <left>0</left>
           <right>$PARAM[titleright]</right>
           <height>218</height>
@@ -1108,6 +1109,7 @@
           <visible>!Control.IsVisible(8999)</visible>
         </control>
         <control type="image" id="55442">
+          <top>10</top>
           <left>0</left>
           <right>$PARAM[titleright]</right>
           <height>218</height>
@@ -1151,16 +1153,16 @@
         <control type="group">
           <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
           <visible>!Control.HasFocus(9550)</visible>
-          <top>30</top>
+          <top>0</top>
           <height>60</height>
           <include>netflix_infoline</include>
         </control>
         <!-- Plot and Tagline -->
         <control type="textbox">
-          <top>10</top>
+          <top>0</top>
           <visible>!Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
           <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
-          <height min="10" max="84">auto</height>
+          <height min="0" max="84">auto</height>
           <width>750</width>
           <aligny>top</aligny>
           <textcolor>dimgrey</textcolor>
@@ -1171,7 +1173,7 @@
         <control type="textbox">
           <left>0</left>
           <description>textarea</description>
-          <height min="10" max="62">auto</height>
+          <height min="0" max="62">auto</height>
           <width>90%</width>
           <align>left</align>
           <textcolor>main_fg_70</textcolor>
@@ -1242,7 +1244,7 @@
           <control type="grouplist">
             <visible>!Control.HasFocus(9550)</visible>
             <orientation>vertical</orientation>
-            <top>9</top>
+            <top>15</top>
             <height>300</height>
             <control type="group">
               <visible>!Control.HasFocus(9550)</visible>
