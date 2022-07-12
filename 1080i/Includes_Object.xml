@@ -5704,15 +5704,13 @@
           <include>Animation_FadeIn</include>
           <visible>Control.HasFocus(9601) + $PARAM[visible] + !Skin.HasSetting(DisableNetflixVideoInfo)</visible>
           <control type="grouplist">
-            <orientation>vertical</orientation>
-            <usecontrolcoords>true</usecontrolcoords>
-            <itemgap>0</itemgap>
             <top>290</top>
+            <left>10</left>
 	    <animation effect="slide" start="0,0" end="0,-50" condition="String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
             <control type="textbox" id="9610">
-              <left>10</left>
+              <top>2</top>
               <description>textarea</description>
-              <height min="0" max="65">auto</height>
+              <height min="0" max="62">auto</height>
               <width>90%</width>
               <align>left</align>
               <textcolor>main_fg_70</textcolor>
@@ -5722,9 +5720,9 @@
               <visible>![Window.IsVisible(2111) | Window.IsVisible(2112) | Window.IsVisible(2113) | Window.IsVisible(2114) | Window.IsVisible(2115) | Window.IsVisible(2116) | Window.IsVisible(2117)]</visible>
             </control>
             <control type="textbox" id="9610">
-              <left>10</left>
+              <top>2</top>
               <description>textarea</description>
-              <height min="0" max="65">auto</height>
+              <height min="0" max="62">auto</height>
               <width>90%</width>
               <align>left</align>
               <textcolor>main_fg_70</textcolor>
@@ -5733,10 +5731,13 @@
               <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
               <visible>Window.IsVisible(2111) | Window.IsVisible(2112) | Window.IsVisible(2113) | Window.IsVisible(2114) | Window.IsVisible(2115) | Window.IsVisible(2116) | Window.IsVisible(2117)</visible>
             </control>
+            <control type="label">
+              <height>-7</height>
+            </control>
             <control type="textbox" id="9609">
-              <left>10</left>
+              <top>3</top>
               <description>textarea</description>
-              <height min="0" max="532">auto</height>
+              <height min="10" max="322">auto</height>
               <width>90%</width>
               <align>left</align>
               <textcolor>main_fg_70</textcolor>
@@ -5746,9 +5747,9 @@
               <visible>![Window.IsVisible(2111) | Window.IsVisible(2112) | Window.IsVisible(2113) | Window.IsVisible(2114) | Window.IsVisible(2115) | Window.IsVisible(2116) | Window.IsVisible(2117)]</visible>
             </control>
             <control type="textbox" id="9609">
-              <left>10</left>
+              <top>3</top>
               <description>textarea</description>
-              <height min="0" max="632">auto</height>
+              <height min="10" max="322">auto</height>
               <width>90%</width>
               <align>left</align>
               <textcolor>main_fg_70</textcolor>
@@ -5758,10 +5759,10 @@
               <visible>Window.IsVisible(2111) | Window.IsVisible(2112) | Window.IsVisible(2113) | Window.IsVisible(2114) | Window.IsVisible(2115) | Window.IsVisible(2116) | Window.IsVisible(2117)</visible>
             </control>
             <control type="label">
-              <height>15</height>
+              <height>5</height>
             </control>
             <control type="group">
-              <animation effect="zoom" end="135" time="0" condition="Control.IsVisible(9601)">Conditional</animation>
+              <animation effect="zoom" end="150" time="0" condition="Control.IsVisible(9601)">Conditional</animation>
               <height>80</height>
               <right>490</right>
               <include content="Object_Ratings" condition="Window.IsVisible(DialogVideoInfo.xml) | Window.IsVisible(MyVideoNav.xml) | Window.IsVisible(Home.xml) | Window.IsVisible(script-globalsearch.xml)">

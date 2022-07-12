@@ -1171,6 +1171,7 @@
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
         </control>
         <control type="textbox">
+          <top>2</top>
           <left>0</left>
           <description>textarea</description>
           <height min="0" max="62">auto</height>
@@ -1196,9 +1197,9 @@
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
         </control>
         <control type="textbox">
-          <top>16</top>
+          <top>3</top>
           <description>textarea</description>
-          <height min="10" max="376">auto</height>
+          <height min="10" max="322">auto</height>
           <width>90%</width>
           <align>left</align>
           <textcolor>main_fg_70</textcolor>
@@ -1206,10 +1207,10 @@
           <label fallback="19055">$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</label>
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
           <visible>Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
-          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+          <autoscroll delay="8000" time="4000" repeat="12000">true</autoscroll>
         </control>
 	<control type="label">
-	   <height>20</height>
+	   <height>15</height>
            <visible>Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
            <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
 	</control>
