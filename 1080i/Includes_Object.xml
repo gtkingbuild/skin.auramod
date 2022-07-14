@@ -1604,7 +1604,32 @@
         </control>
         <!-- Plot Low spotlight -->
         <control type="textbox">
-          <height min="50" max="122">auto</height>
+          <height min="0" max="63">auto</height>
+          <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + Skin.HasSetting(EnableFullEpInfo)]]</visible>
+          <visible>Skin.HasSetting(DisableNetflixLowSpotlight)</visible>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <width>1000</width>
+          <textcolor>dimgrey</textcolor>
+          <shadowcolor>black</shadowcolor>
+          <font>widget_trakt_title</font>
+          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+        </control>
+        <!-- Plot  -->
+        <control type="textbox">
+          <height min="0" max="63">auto</height>
+          <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + Skin.HasSetting(EnableFullEpInfo)]]</visible>
+          <visible>!Skin.HasSetting(DisableNetflixLowSpotlight)</visible>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <align>left</align>
+          <width>560</width>
+          <textcolor>dimgrey</textcolor>
+          <shadowcolor>black</shadowcolor>
+          <font>widget_trakt_title</font>
+          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+        </control>
+        <!-- Plot Low spotlight -->
+        <control type="textbox">
+          <height min="0" max="154">auto</height>
           <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + Skin.HasSetting(EnableFullEpInfo)]]</visible>
           <visible>Skin.HasSetting(DisableNetflixLowSpotlight)</visible>
           <label fallback="19055">$VAR[Label_OverlayPlot]</label>
@@ -1616,12 +1641,12 @@
         </control>
         <!-- Plot  -->
         <control type="textbox">
-          <height min="50" max="122">auto</height>
+          <height min="0" max="154">auto</height>
           <visible>!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001) + [String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | [String.IsEqual(ListItem.DBType,episode) + Skin.HasSetting(EnableFullEpInfo)]]</visible>
           <visible>!Skin.HasSetting(DisableNetflixLowSpotlight)</visible>
           <label fallback="19055">$VAR[Label_OverlayPlot]</label>
           <align>left</align>
-          <width>500</width>
+          <width>560</width>
           <textcolor>dimgrey</textcolor>
           <shadowcolor>black</shadowcolor>
           <font>widget_trakt_title</font>
@@ -1631,23 +1656,32 @@
           <height>5</height>
         </control>
         <!-- Info Spinner  -->
-        <control type="group">
+        <control type="grouplist">
           <visible>!Skin.HasSetting(DisableNetflixLowSpotlight) + [[String.IsEqual(ListItem.DBType,episode) + Skin.HasSetting(EnableFullEpInfo)] | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,season) | String.IsEqual(ListItem.DBType,tvshow) | !String.IsEmpty(ListItem.ChannelName)] + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001)]</visible>
-          <height>30</height>
+          <height>62</height>
+          <width>800</width>
+          <itemgap>25</itemgap>
+          <orientation>horizontal</orientation>
+          <usecontrolcoords>true</usecontrolcoords>
           <control type="image">
+            <top>17</top>
+            <height>30</height>
             <width>70</width>
             <left>-10</left>
             <aspectratio>keep</aspectratio>
             <texture colordiffuse="FFFF0000">netflix/fact.png</texture>
+            <visible>!String.IsEmpty(Control.GetLabel(7879))</visible>
           </control>
-          <control type="label">
-            <width>400</width>
-            <left>70</left>
+          <control type="textbox" id="7879">
+            <width>560</width>
+            <left>-22</left>
             <right>0</right>
             <label>$VAR[NetflixDetailsSpin]</label>
             <textcolor>dimgrey</textcolor>
+            <align>left</align>
+            <aligny>center</aligny>
             <font>font_tiny</font>
-            <scroll>true</scroll>
+            <autoscroll>false</autoscroll>
           </control>
         </control>
         <!-- Info Spinner  Low Spotlight -->
