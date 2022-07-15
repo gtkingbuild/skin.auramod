@@ -4521,3 +4521,8 @@ msgstr ""
 msgctxt "#31925"
 msgid "Enable notification shadow outside player"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31926"
+msgid "Disable Time header in Library Views"
+msgstr ""

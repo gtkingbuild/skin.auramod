@@ -998,6 +998,13 @@
                             <selected>Skin.HasSetting(EnableTrailerOnDown)</selected>
                             <onclick>Skin.ToggleSetting(EnableTrailerOnDown)</onclick>
                         </control>
+                        <control type="radiobutton" id="9641" description="Disable Time header in Library Views">
+                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label> - $LOCALIZE[31926]</label> <!-- Disable Time header in Library Views -->
+                            <selected>Skin.HasSetting(DisableLibraryTimeHeader)</selected>
+                            <onclick>Skin.ToggleSetting(DisableLibraryTimeHeader)</onclick>
+                        </control>
  
                         <control type="radiobutton" id="9658" description="Enable Low Spotlight Info">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9005)</visible>

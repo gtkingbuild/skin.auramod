@@ -306,6 +306,7 @@
                             <textcolor>main_fg_100</textcolor>
                             <label>$INFO[System.Time]</label>
                             <visible>!Control.HasFocus(60)</visible>
+                            <visible>!Skin.HasSetting(DisableLibraryTimeHeader)</visible>
                         </control>
                         <control type="label">
                             <visible>Control.HasFocus(60)</visible>
@@ -854,6 +855,7 @@
                             <font>font_small</font>
                             <textcolor>main_fg_100</textcolor>
                             <label>$INFO[System.Time]</label>
+                            <visible>!Skin.HasSetting(DisableLibraryTimeHeader)</visible>
                         </control>
                     </control>
                 </control>
