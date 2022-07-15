@@ -1975,7 +1975,7 @@
             <font>font_small</font>
           </control>
           <control type="label">
-            <height>0</height>
+            <height>7</height>
           </control>
           <control type="textbox">
             <visible>[Window.IsVisible(Home) + [!Control.HasFocus(660) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(3001)]] | !Window.IsVisible(Home)</visible>
@@ -2000,7 +2000,7 @@
             <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
           </control>
           <control type="label">
-            <height>7</height>
+            <height>18</height>
           </control>
           <control type="group">
             <height>62</height>
@@ -2008,7 +2008,7 @@
               <visible>$EXP[DBTvideos]</visible>
               <visible>!Integer.IsGreater(ListItem.PercentPlayed,1) + !Skin.HasSetting(DisableNetflixView) + ![String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(EnableFullEpInfo)]</visible>
               <width>600</width>
-              <left>10</left>
+              <left>0</left>
               <right>0</right>
               <include>Details_Spinner</include>
               <textcolor>dimgrey</textcolor>
