@@ -26,6 +26,7 @@
     <include name="Netflix_Fanart">
        <param name="top" default="0"/>
        <param name="bottom" default=""/>
+       <param name="left" default="0"/>
        <param name="right" default="0"/>
        <param name="height" default="650"/>
        <param name="width" default="1440"/>
@@ -35,16 +36,18 @@
           <visible>$PARAM[visible]</visible>
           <width>$PARAM[width]</width>
           <height>$PARAM[height]</height>
+          <left>$PARAM[left]</left>
           <right>$PARAM[right]</right>
           <top>$PARAM[top]</top>
           <bottom>$PARAM[bottom]</bottom>
-          <aspectratio scalediffuse="true" aligny="top" align="right">scale</aspectratio>
-          <imagepath fallback="DefaultFanartFallback.jpg" background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
+          <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
+          <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
           <timeperimage>2000</timeperimage>
           <fadetime>2000</fadetime>
           <pauseatend>10000</pauseatend>
-          <randomize>true</randomize>
+          <randomize>false</randomize>
           <loop>no</loop>
+          <include>animation_image_zoom</include>
         </control>
        </definition>
      </include>
@@ -56,9 +59,8 @@
        <param name="right" default="0"/>
        <param name="height" default="650"/>
        <param name="width" default="1440"/>
-       <param name="align" default=""/>
+       <param name="aligny" default=""/>
        <param name="visible" default=""/>
-       <param name="texture" default="$VAR[NetflixHome_ClearLogo]"/>
         <definition>
         <control type="image" id="5150">
           <visible>$PARAM[visible]</visible>
@@ -68,9 +70,8 @@
           <bottom>$PARAM[bottom]</bottom>
           <height>$PARAM[height]</height>
           <width>$PARAM[width]</width>
-          <align>$PARAM[align]</align>
-          <aspectratio align="left" aligny="center">keep</aspectratio>
-          <texture background="true">$PARAM[texture]</texture>
+          <aligny>$PARAM[aligny]</aligny>
+          <texture background="true">$VAR[NetflixHome_ClearLogo]</texture>
         </control>
        </definition>
      </include>

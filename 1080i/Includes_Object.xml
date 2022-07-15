@@ -2349,11 +2349,12 @@
         <param name="studioid" value="$PARAM[studioid]" />
           <!-- Add Netflix view Fanart with corner diffuse -->
           <include content="Netflix_Fanart">
-            <param name="top" value="-45" />
-            <param name="bottom" value="5" />
+            <param name="top" value="-40" />
+            <param name="bottom" value="0" />
+            <param name="left" value="530" />
             <param name="right" value="0" />
-            <param name="height" value="650" />
-            <param name="width" value="1440" />
+            <param name="height" value="700" />
+            <param name="width" value="1400" />
             <param name="visible" value="!Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay) + !Player.HasVideo + [Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(509) | Window.IsVisible(DialogVideoInfo.xml)]" />
           </include>
 
@@ -2385,6 +2386,8 @@
       </control>
 
       <!-- Left Info Showcase -->
+      <control type="group">
+        <left>10</left>
       <control type="grouplist">
         <top>-45</top>
         <posx>10</posx>
@@ -2398,14 +2401,13 @@
           <!-- Clearlogo -->
           <include content="Netflix_Clearlogo">
             <param name="id" value="5150" />
-            <param name="top" value="10" />
-            <param name="bottom" value="10" />
-            <param name="right" value="" />
+            <param name="top" value="15" />
+            <param name="bottom" value="0" />
+            <param name="right" value="0" />
             <param name="left" value="0" />
-            <param name="height" value="251" />
-            <param name="width" value="520" />
-            <param name="align" value="left" />
-            <param name="texture" value="$VAR[NetflixHome_ClearLogo]" />
+            <param name="height" value="218" />
+            <param name="width" value="563" />
+            <param name="aligny" value="top" />
             <param name="visible" value="!Skin.HasSetting(DisableNetflixView) + [Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(509) | Window.IsVisible(DialogVideoInfo.xml)]" />
           </include>
         <!-- Fallback Label-->
@@ -2449,16 +2451,37 @@
           <include>netflix_infoline</include>
         </control>
         <control type="label">
-          <height>10</height>
+          <height>7</height>
         </control>
         <control type="textbox">
           <visible>$EXP[DBTvideos] + !Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
-          <label fallback="19055">$VAR[Label_OverlayPlot]</label>
-          <width>630</width>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <width>640</width>
+          <height min="0" max="63">auto</height>
+          <aligny>top</aligny>
+          <textcolor>dimgrey</textcolor>
+          <font>widget_trakt_title</font>
+          <autoscroll delay="5000" time="1500" repeat="5000">false</autoscroll>
+        </control>
+
+        <control type="textbox">
+          <visible>$EXP[DBTvideos] + Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <width>1330</width>
           <height min="20" max="175">auto</height>
           <aligny>top</aligny>
           <textcolor>dimgrey</textcolor>
           <font>font_small</font>
+          <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
+        </control>
+        <control type="textbox">
+          <visible>$EXP[DBTvideos] + !Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
+          <label fallback="19055">$VAR[Label_OverlayPlot]</label>
+          <width>640</width>
+          <height min="10" max="154">auto</height>
+          <aligny>top</aligny>
+          <textcolor>dimgrey</textcolor>
+          <font>widget_trakt_title</font>
           <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
         </control>
 
@@ -2473,7 +2496,7 @@
           <autoscroll delay="5000" time="1500" repeat="5000">true</autoscroll>
         </control>
         <control type="grouplist">
-          <top>30</top>
+          <top>18</top>
           <height>62</height>
           <width>800</width>
           <itemgap>25</itemgap>
@@ -2494,7 +2517,7 @@
             </control>
           </control>
           <control type="textbox" id="841">
-	    <top>-10</top>
+	    <top>-11</top>
             <animation effect="fade" time="150">Visible</animation>
             <height>85</height>
             <width>550</width>
@@ -2507,6 +2530,7 @@
           </control>
         </control>
       </control>
+    </control>
       <control type="grouplist">
         <visible>![Container.Content(movies) | Container.Content(sets) | Container.Content(episodes) | Container.Content(tvshows) | Container.Content(videos) | Container.Content(seasons) | Window.IsVisible(script-script.extendedinfo-VideoList.xml) | $EXP[Exp_IsPluginAdvancedLauncher]]</visible>
         <visible>!Container($PARAM[id]).ListItem.IsParentFolder + !Control.HasFocus(505) + !Control.HasFocus($PARAM[id]) + !Control.HasFocus(55) + !Control.HasFocus(56) + !Control.HasFocus(509) + !Control.HasFocus(504)</visible>
