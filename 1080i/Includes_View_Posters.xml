@@ -390,9 +390,9 @@
           <animation effect="slide" end="0,20" condition="!Skin.HasSetting(DisableNetflixView)">Conditonal</animation>
           <animation effect="slide" end="0,-20" condition="Skin.HasSetting(DisableNetflixView)">Conditonal</animation>
         <onfocus>SetProperty(TMDbHelper.WidgetContainer,56,Home)</onfocus>
-          <bottom>-55</bottom>
+          <bottom>-30</bottom>
           <right>-70</right>
-          <left>-70</left>
+          <left>-50</left>
           <height>470</height>
           <focusposition>0</focusposition>
           <movement>2</movement>
@@ -2010,20 +2010,19 @@
           </control>
         </control>
       </focusedlayout>
-      <itemlayout width="606.66" height="480" condition="$PARAM[landscape]">
+      <itemlayout width="622.22" height="350" condition="$PARAM[landscape]">
         <control type="group">
           <left>view_pad</left>
           <right>-view_pad</right>
           <top>$PARAM[top_offset]</top>
           <bottom>$PARAM[bottom_offset]</bottom>
           <control type="group">
-            <height>350</height>
             <include>View_Landscape_Artwork</include>
           </control>
           <include condition="$PARAM[text] + !Skin.HasSetting(DisableViewText) + Skin.HasSetting(DisableNetflixView)">View_Landscape_Text</include>
         </control>
       </itemlayout>
-      <focusedlayout width="606.66" height="480" condition="$PARAM[landscape]">
+      <focusedlayout width="622.22" height="350" condition="$PARAM[landscape]">
         <control type="group">
           <top>$PARAM[top_offset]</top>
           <bottom>$PARAM[bottom_offset]</bottom>
@@ -2031,7 +2030,6 @@
           <right>-view_pad</right>
           <include>Animation_FocusBounce</include>
           <control type="group">
-            <height>350</height>
             <include>View_Landscape_Artwork</include>
             <!-- Highlight -->
             <control type="group">
