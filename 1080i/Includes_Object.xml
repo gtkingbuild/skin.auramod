@@ -5902,18 +5902,27 @@
               <textcolor>main_fg_100</textcolor>
               <label>$VAR[Label_OverlayTitle]</label>
             </control>
-            <control type="textbox" id="9609">
-              <description>textarea</description>
-              <left>0</left>
-              <right>0</right>
+            <control type="grouplist">
               <top>120</top>
-              <bottom>50</bottom>
-              <align>left</align>
-              <textcolor>main_fg_70</textcolor>
-              <font>font_overlay_plotbox</font>
-              <label fallback="19055">$VAR[Label_OverlayPlot]</label>
-              <pagecontrol>9601</pagecontrol>
-              <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
+              <control type="textbox" id="9610">
+                <description>textarea</description>
+                <height min="0" max="127">auto</height>
+                <align>left</align>
+                <textcolor>main_fg_70</textcolor>
+                <font>font_overlay_plotbox</font>
+                <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+                <autoscroll delay="8000" time="4000" repeat="12000">false</autoscroll>
+              </control>
+              <control type="textbox" id="9609">
+                <description>textarea</description>
+                <height min="10" max="582">auto</height>
+                <align>left</align>
+                <textcolor>main_fg_70</textcolor>
+                <font>font_overlay_plotbox</font>
+                <label fallback="19055">$VAR[Label_OverlayPlot]</label>
+                <pagecontrol>9601</pagecontrol>
+                <autoscroll delay="8000" time="4000" repeat="12000">true</autoscroll>
+              </control>
             </control>
           </control>
         </control>
