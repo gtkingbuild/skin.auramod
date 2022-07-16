@@ -2355,7 +2355,7 @@
             <param name="right" value="0" />
             <param name="height" value="700" />
             <param name="width" value="1400" />
-            <param name="visible" value="!Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay) + !Player.HasVideo + [Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(509) | Window.IsVisible(DialogVideoInfo.xml)]" />
+            <param name="visible" value="!Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay) + !Player.HasVideo + !ListItem.IsParentFolder + [Control.IsVisible(55) | Control.IsVisible(56) | Control.IsVisible(509) | Window.IsVisible(DialogVideoInfo.xml)]" />
           </include>
 
         <!-- Add Ratings below Fanart -->
