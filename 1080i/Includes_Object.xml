@@ -1,5 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <includes>
+  <include name="Object_Global_Fanart">
+    <item>
+      <property name="fanart">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</property>
+      <nested />
+    </item>
+  </include>
   <include name="Object_Info">
     <param name="hdsd_flag" default="false" />
     <param name="rottentomatoes" default="true" />

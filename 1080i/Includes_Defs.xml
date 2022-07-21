@@ -848,6 +848,13 @@
         <focusedlayout width="1" height="1"/>
     </include>
 
+    <include name="Defs_Offscreen">
+        <top>-1000</top>
+        <left>-1000</left>
+        <width>1</width>
+        <height>1</height>
+    </include>
+
     <!-- Keyboard and Numeric Keys -->
     <include name="Defs_Keyboard_Button">
         <width>85</width>
