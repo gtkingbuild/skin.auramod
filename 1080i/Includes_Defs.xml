@@ -591,7 +591,7 @@
         <top>-50</top>
         <texture>common/shadowspot.png</texture>
         <height>228</height>
-        <width>1100</width>
+        <width>1000</width>
         <include>Animation_FadeIn_Slide</include>
         <visible>VideoPlayer.IsFullscreen | Window.IsVisible(MusicVisualisation.xml) | Skin.HasSetting(ForceDialogShadow)</visible>
     </include>

@@ -132,6 +132,7 @@
         <align>right</align>
         <font>font_notification</font>
         <textcolor>main_fg_100</textcolor>
+        <shadowcolor>black</shadowcolor>
     </include>
 
 

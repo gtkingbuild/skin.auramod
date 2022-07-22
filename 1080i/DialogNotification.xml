@@ -16,6 +16,7 @@
                         <include>Dialog_Notification_Icon</include>
                         <aspectratio>keep</aspectratio>
                         <texture colordiffuse="panel_fg_100">DefaultIconInfo.png</texture>
+                        <bordertexture colordiffuse="dialog_bg_100">DefaultIconInfo.png</bordertexture>
                     </control>
                     <control type="label" id="401">
                         <include>Dialog_Notification_MainLabel</include>
