@@ -79,6 +79,7 @@
                     <!-- Left Group -->
                     <control type="grouplist" id="3">
                         <description>Button Area</description>
+                        <height>640</height>
                         <width>450</width>
                         <top>0</top>
                         <bottom>0</bottom>
