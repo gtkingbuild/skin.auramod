@@ -93,6 +93,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>10000</label>
+                            <focusedcolor />
                         </control>
 <!--
                          <control type="togglebutton" id="9013" description="Netflix View">
@@ -111,6 +112,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31423]</label>
+                            <focusedcolor />
                         </control>
                         <control type="togglebutton" id="9005" description="Views">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9005])</onfocus>
@@ -119,6 +121,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31502]</label> <!-- Library Views -->
+                            <focusedcolor />
                         </control>
 
                          <control type="togglebutton" id="9014" description="Hubs & Spotlight">
@@ -128,6 +131,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31503]</label> <!-- Hubs & Spotlight -->
+                            <focusedcolor />
                         </control>
                          <control type="togglebutton" id="9015" description="My Lists">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9015])</onfocus>
@@ -136,6 +140,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31504]</label> <!-- My Lists -->
+                            <focusedcolor />
                         </control>
                          <control type="togglebutton" id="9012" description="General Mods">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9012])</onfocus>
@@ -144,6 +149,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31436]</label>
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9007" description="OSD">
@@ -153,6 +159,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31270]</label> <!-- Video / Music OSD -->
+                            <focusedcolor />
                         </control>
                         <control type="togglebutton" id="9002" description="Background">
                             <onfocus>SetProperty(CurrentFocus,$NUMBER[9002])</onfocus>
@@ -161,6 +168,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31110]</label> <!-- Background -->
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9003" description="Background Effects">
@@ -170,6 +178,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31339]</label>
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9004" description="Colors">
@@ -179,6 +188,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31021]</label>
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9006" description="Miscellaneous">
@@ -188,6 +198,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31024]</label>
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="90081" description="Dependencies">
@@ -197,6 +208,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31505]</label> <!-- API Settings -->
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9008" description="Dependencies">
@@ -206,6 +218,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[24996]</label>
+                            <focusedcolor />
                         </control>
 
                         <control type="togglebutton" id="9009" description="Reset Backup">
@@ -215,6 +228,7 @@
                             <width>450</width>
                             <include>Defs_Settings_Button</include>
                             <label>$LOCALIZE[31030]</label>
+                            <focusedcolor />
                         </control>
                     </control>
 
