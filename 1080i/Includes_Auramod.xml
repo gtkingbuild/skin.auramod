@@ -52,6 +52,35 @@
        </definition>
      </include>
 
+     <include name="Netflix_Fanart_Container">
+        <param name="top" default="0"/>
+        <param name="bottom" default=""/>
+        <param name="left" default="0"/>
+        <param name="right" default="0"/>
+        <param name="height" default="650"/>
+        <param name="width" default="1440"/>
+        <param name="visible" default=""/>
+         <definition>
+         <control type="multiimage">
+           <visible>$PARAM[visible]</visible>
+           <width>$PARAM[width]</width>
+           <height>$PARAM[height]</height>
+           <left>$PARAM[left]</left>
+           <right>$PARAM[right]</right>
+           <top>$PARAM[top]</top>
+           <bottom>$PARAM[bottom]</bottom>
+           <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
+           <imagepath background="true" diffuse="Right Corner.png">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</imagepath>
+           <timeperimage>2000</timeperimage>
+           <fadetime>2000</fadetime>
+           <pauseatend>10000</pauseatend>
+           <randomize>false</randomize>
+           <loop>no</loop>
+           <include>animation_image_zoom</include>
+         </control>
+        </definition>
+      </include>
+
     <include name="Netflix_Clearlogo">
        <param name="id" default=""/>
        <param name="top" default="0"/>

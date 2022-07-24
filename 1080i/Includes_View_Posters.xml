@@ -869,17 +869,16 @@
       <aspectratio scalediffuse="false">scale</aspectratio>
       <visible>[Control.HasFocus(300) | Control.HasFocus(401) | Control.HasFocus(400) | Control.HasFocus(506)] </visible>
     </control>
-    <control type="image">
-      <animation effect="fade" start="10" end="100" time="6000" condition="Control.HasFocus(5056)">Conditional</animation>
-      <fadetime>500</fadetime>
-      <width>1420</width>
-      <height>630</height>
-      <left>550</left>
-      <top>-60</top>
-      <texture background="true" diffuse="Right Corner.png">$INFO[Container(5056).ListItem.Art(fanart)]</texture>
-      <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
-      <visible>Control.HasFocus(5056)</visible>
-   </control>
+    <include content="Netflix_Fanart_Container">
+      <param name="id" value="5056" />
+      <param name="top" value="-60" />
+      <param name="bottom" value="0" />
+      <param name="left" value="570" />
+      <param name="right" value="0" />
+      <param name="height" value="700" />
+      <param name="width" value="1400" />
+      <param name="visible" value="!Player.HasVideo + !ListItem.IsParentFolder + [Control.HasFocus(5055) | Control.HasFocus(5056)]" />
+    </include>
     <control type="image">
       <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
       <animation effect="slide" end="250,0" time="500" condition="Control.HasFocus(400) | Control.HasFocus(401)">Conditional</animation>
@@ -900,7 +899,7 @@
           <onright condition="!Container(5056).IsUpdating">5056</onright>
           <height>825</height>
           <top>100</top>
-          <left>40</left>
+          <left>20</left>
           <visible>!Container.Content(episodes)</visible>
           <include>View_NotTheseWindows</include>
           <viewtype label="$LOCALIZE[31480]">icon</viewtype>
@@ -932,14 +931,6 @@
 	  <visible>Control.HasFocus(506)</visible>
         </control>
         </control> 
-        <control type="image">
-          <width>90</width>
-          <height>120</height>
-          <top>720</top>
-          <left>1</left>
-          <texture background="true" colordiffuse="white">netflix/left-arrow.png</texture>
-          <visible>Control.HasFocus(5056)</visible>
-         </control>
         <control type="group" id="25056">
           <visible>Container(5056).IsUpdating + !Window.IsVisible(DialogBusy.xml)</visible>
 	  <control type="image">
@@ -959,14 +950,14 @@
       <control type="group">
         <animation effect="fade" start="0" end="100" delay="100" time="500" condition="Control.HasFocus(5056)">Conditional</animation>
 	<visible>Control.HasFocus(5056)</visible>
-	<left>80</left>
+	<left>40</left>
 	<top>-20</top>
-       <include content="addon_view_infospotlight">
+       <include content="addon_view_infospotlight_container">
          <param name="id" value="5056" />
        </include>
       </control>
       <control type="group"> 
-          <animation effect="slide" end="-400,0" time="500" condition="Control.HasFocus(5056)">Conditional</animation>
+          <animation effect="slide" end="-450,0" time="500" condition="Control.HasFocus(5056)">Conditional</animation>
           <visible>[Control.HasFocus(300) | Control.HasFocus(506) | Control.HasFocus(5056)] +  !Container(506).ListItem.IsParentFolder</visible>
           <animation effect="fade" start="100" end="0" condition="Container(5056).IsUpdating">Conditional</animation>
 	  <posy>540</posy>
@@ -980,10 +971,10 @@
             <param name="id" value="5056" />
         </include>
 
-	<top>40</top>
+	<top>55</top>
         <left>420</left>
         <movement>2</movement>
-        <width>1900</width>
+        <width>1950</width>
         <height>430</height>
         <orientation>vertical</orientation>
         <preloaditems>2</preloaditems>
@@ -998,7 +989,7 @@
           <param name="submenu" value="$PARAM[submenu]" />
         </include>
 
-        <itemlayout width="366" height="210">
+        <itemlayout width="373.33" height="210">
           <include content="Widget_Items_ItemLayout">
             <param name="landscapenetflix" value="true" />
             <param name="genres" value="$PARAM[genres]" />
@@ -1006,7 +997,7 @@
             <param name="text" value="$PARAM[text]" />
           </include>
         </itemlayout>
-        <focusedlayout width="366" height="210">
+        <focusedlayout width="373.33" height="210">
           <include content="Widget_Items_FocusedLayout">
             <param name="id" value="5056" />
             <param name="landscapenetflix" value="true" />
@@ -1043,17 +1034,16 @@
       <aspectratio scalediffuse="false">scale</aspectratio>
       <visible>[Control.HasFocus(401) | Control.HasFocus(400) | Control.HasFocus(300) | Control.HasFocus(505)]</visible>
     </control>
-    <control type="image">
-      <animation effect="fade" start="10" end="100" time="6000" condition="Control.HasFocus(5055)">Conditional</animation>
-      <fadetime>500</fadetime>
-      <width>1420</width>
-      <height>630</height>
-      <left>550</left>
-      <top>-60</top>
-      <texture background="true" diffuse="Right Corner.png">$INFO[Container(5055).ListItem.Art(fanart)]</texture>
-      <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
-      <visible>Control.HasFocus(5055)</visible>
-   </control>
+    <include content="Netflix_Fanart_Container">
+      <param name="id" value="5055" />
+      <param name="top" value="-60" />
+      <param name="bottom" value="0" />
+      <param name="left" value="570" />
+      <param name="right" value="0" />
+      <param name="height" value="700" />
+      <param name="width" value="1400" />
+      <param name="visible" value="!Player.HasVideo + !ListItem.IsParentFolder + [Control.HasFocus(5055) | Control.HasFocus(5056)]" />
+    </include>
     <control type="image">
       <animation effect="fade" start="100" end="0" time="400">Hidden</animation>
       <animation effect="slide" end="250,0" time="500" condition="Control.HasFocus(400) | Control.HasFocus(401)">Conditional</animation>
@@ -1108,14 +1098,6 @@
 	  <visible>Control.HasFocus(505)</visible>
         </control>
         </control> 
-        <control type="image">
-          <width>90</width>
-          <height>120</height>
-          <top>720</top>
-          <left>1</left>
-          <texture background="true" colordiffuse="white">netflix/left-arrow.png</texture>
-          <visible>Control.HasFocus(5055)</visible>
-         </control>
         <control type="group" id="25055">
           <visible>Container(5055).IsUpdating + !Window.IsVisible(DialogBusy.xml)</visible>
 	  <control type="image">
@@ -1135,14 +1117,14 @@
       <control type="group">
         <animation effect="fade" start="0" end="100" delay="100" time="500" condition="Control.HasFocus(5055)">Conditional</animation>
 	<visible>Control.HasFocus(5055)</visible>
-	<left>60</left>
+	<left>40</left>
 	<top>-20</top>
-       <include content="addon_view_infospotlight">
+       <include content="addon_view_infospotlight_container">
          <param name="id" value="5055" />
        </include>
       </control>
       <control type="group"> 
-          <animation effect="slide" end="-400,0" time="500" condition="Control.HasFocus(5055)">Conditional</animation>
+          <animation effect="slide" end="-430,0" time="500" condition="Control.HasFocus(5055)">Conditional</animation>
           <visible>[Control.HasFocus(300) | Control.HasFocus(505) | Control.HasFocus(5055)] +  !Container(505).ListItem.IsParentFolder</visible>
           <animation effect="fade" start="100" end="0" condition="Container(5055).IsUpdating">Conditional</animation>
 	  <posy>540</posy>
@@ -1153,9 +1135,9 @@
         <include content="view_widget_onclick" condition="!Skin.HasSetting(EnableShowInfo)">
             <param name="id" value="5055" />
         </include>
-	<top>40</top>
+	<top>60</top>
         <left>420</left>
-        <width>1900</width>
+        <width>1950</width>
         <height>420</height>
         <orientation>horizontal</orientation>
         <preloaditems>2</preloaditems>
@@ -1171,7 +1153,7 @@
           <param name="submenu" value="$PARAM[submenu]" />
         </include>
 
-        <itemlayout width="295" height="420">
+        <itemlayout width="266" height="379.31">
           <include content="Widget_Items_ItemLayout">
             <param name="poster" value="true" />
             <param name="genres" value="$PARAM[genres]" />
@@ -1179,7 +1161,7 @@
             <param name="text" value="$PARAM[text]" />
           </include>
         </itemlayout>
-        <focusedlayout width="295" height="420">
+        <focusedlayout width="266" height="379.31">
           <include content="Widget_Items_FocusedLayout">
             <param name="id" value="5055" />
             <param name="poster" value="true" />
