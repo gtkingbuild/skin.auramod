@@ -566,8 +566,8 @@
         <value condition="String.IsEqual(ListItem.Rating,9.7)">97</value>
         <value condition="String.IsEqual(ListItem.Rating,9.8)">98</value>
         <value condition="String.IsEqual(ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRatingIMDb">
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0)"/>
@@ -680,8 +680,8 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),9.7)">97</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),9.8)">98</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),9.9)">99</value>
-        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),10)"/>
-        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),10.0)"/>
+        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),10)">100</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating1505">
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,0)"/>
@@ -794,8 +794,8 @@
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,9.7)">97</value>
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,9.8)">98</value>
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(Container(1505).ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(Container(1505).ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(Container(1505).ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(Container(1505).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating1506">
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,0)"/>
@@ -908,8 +908,8 @@
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,9.7)">97</value>
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,9.8)">98</value>
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(Container(1506).ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(Container(1506).ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(Container(1506).ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(Container(1506).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating5055">
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,0)"/>
@@ -1022,8 +1022,8 @@
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,9.7)">97</value>
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,9.8)">98</value>
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(Container(5055).ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(Container(5055).ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(Container(5055).ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(Container(5055).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating5056">
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,0)"/>
@@ -1136,8 +1136,8 @@
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,9.7)">97</value>
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,9.8)">98</value>
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,9.9)">99</value>
-        <value condition="String.IsEqual(Container(5056).ListItem.Rating,10)"/>
-        <value condition="String.IsEqual(Container(5056).ListItem.Rating,10.0)"/>
+        <value condition="String.IsEqual(Container(5056).ListItem.Rating,10)">100</value>
+        <value condition="String.IsEqual(Container(5056).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="widget_label1">
    <value condition="String.IsEqual(ListItem.DBType,Episode)">S$INFO[ListItem.Season]:E$INFO[ListItem.Episode] - $INFO[ListItem.Title]$INFO[Container($PARAM[id]).ListItem.Label  ]</value> 
