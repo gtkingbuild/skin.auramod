@@ -9416,6 +9416,7 @@
             </control>
             <control type="textbox">
               <top>120</top>
+              <width>900</width>
               <label fallback="19055">$VAR[Label_Plot]</label>
               <bottom>10</bottom>
               <aligny>top</aligny>
@@ -9531,6 +9532,7 @@
             </control>
             <control type="textbox">
               <top>120</top>
+              <width>900</width>
               <label fallback="19055">$VAR[Label_Plot]</label>
               <bottom>10</bottom>
               <aligny>top</aligny>
