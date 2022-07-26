@@ -2356,7 +2356,6 @@
           <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53009) + !Container(53009).IsUpdating + Integer.IsGreaterOrEqual(Container(53009).NumItems,20)" />
         </include>
       </control>
-      <include>Object_UpDownInfoArrows</include>
     </control>
   </include>
   <include name="netflix_button">
