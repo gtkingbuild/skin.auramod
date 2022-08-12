@@ -455,6 +455,7 @@
         <onload>SetProperty(Container(53007).WidgetPage,1,Home)</onload>
         <onload>SetProperty(Container(53008).WidgetPage,1,Home)</onload>
         <onload>SetProperty(Container(53009).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53012).WidgetPage,1,Home)</onload>
 
         <onunload>ClearProperty(Container(53001).WidgetPage,Home)</onunload>
         <onunload>ClearProperty(Container(53002).WidgetPage,Home)</onunload>
@@ -465,6 +466,7 @@
         <onunload>ClearProperty(Container(53007).WidgetPage,Home)</onunload>
         <onunload>ClearProperty(Container(53008).WidgetPage,Home)</onunload>
         <onunload>ClearProperty(Container(53009).WidgetPage,Home)</onunload>
+        <onunload>ClearProperty(Container(53012).WidgetPage,Home)</onunload>
     </include>
 
     <variable name="DefMovieDBMoviesContent">

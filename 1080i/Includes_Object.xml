@@ -9293,7 +9293,9 @@
     <param name="visible" default="" />
     <param name="content" default="" />
     <param name="onclick" default="" />
+    <param name="onclickcond" default="!String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])" />
     <param name="onclick2" default="" />
+    <param name="onclick2cond" default="!String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])" />
     <definition>
       <control type="group" id="2$PARAM[id]">
         <visible>$PARAM[visible]</visible>
@@ -9315,8 +9317,15 @@
           <height>900</height>
           <visible>$PARAM[visible]</visible>
           <onleft>8999</onleft>
-	  <onclick>$PARAM[onclick]</onclick>
-	  <onclick>$PARAM[onclick2]</onclick>
+	  <onclick condition="$PARAM[onclickcond]">$PARAM[onclick]</onclick>
+	  <onclick condition="$PARAM[onclick2cond]">$PARAM[onclick2]</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923])">RunScript(script.skin.helper.service,action=decreasecount,value=$PARAM[widgetpage_value],winprop=$PARAM[widgetpage_prop])</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])">RunScript(script.skin.helper.service,action=increasecount,value=$PARAM[widgetpage_value],winprop=$PARAM[widgetpage_prop])</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923])">SetFocus($PARAM[id],0,absolute)</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)">AlarmClock(changefocus1,SetFocus($PARAM[id],2,absolute),00:00,silent)</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)">AlarmClock(changefocus2,Control.Move($PARAM[id],-1),00:00,silent)</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924]) + Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)">AlarmClock(changefocus3,Control.Move($PARAM[id],-1),00:00,silent)</onclick>
+    <onclick condition="String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924]) + !Integer.IsLess(Window(Home).Property(Container($PARAM[id]).WidgetPage),2)">SetFocus($PARAM[id],1,absolute)</onclick>
 	  <onup>$PARAM[id]</onup>
 	  <ondown>$PARAM[id]</ondown>
           <scrolltime>500</scrolltime>
@@ -9372,7 +9381,7 @@
           <control type="group">
             <height>300</height>
             <left>538</left>
-            <visible>!ListItem.IsParentFolder</visible>
+            <visible>!ListItem.IsParentFolder + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])</visible>
             <control type="label">
               <left>0</left>
               <label>$INFO[ListItem.Label]</label>
@@ -9488,7 +9497,7 @@
           <control type="group">
             <height>300</height>
             <left>538</left>
-            <visible>!ListItem.IsParentFolder</visible>
+            <visible>!ListItem.IsParentFolder + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])</visible>
             <control type="label">
               <left>0</left>
               <label>$INFO[ListItem.Label]</label>
@@ -9543,7 +9552,21 @@
           </control>
         </control>
       </focusedlayout>
+      <content>
+          <item>
+              <label>$LOCALIZE[31923]</label>
+              <thumb>special://home/addons/plugin.video.themoviedb.helper/resources/icons/themoviedb/nextpage.png</thumb>
+              <visible>Skin.HasSetting(VideoInfo.Pagination) + Integer.IsGreaterOrEqual(Window(Home).Property($PARAM[widgetpage_prop]),2)</visible>
+          </item>
+      </content>
       <content target="videos" sortby="episode" sortorder="ascending">$PARAM[content]</content>
+      <content>
+          <item>
+              <label>$LOCALIZE[31924]</label>
+              <thumb>special://home/addons/plugin.video.themoviedb.helper/resources/icons/themoviedb/nextpage.png</thumb>
+              <visible>Skin.HasSetting(VideoInfo.Pagination) + $PARAM[widgetpage_nextpage_visible]</visible>
+          </item>
+      </content>
      </control>
    </definition>
   </include>

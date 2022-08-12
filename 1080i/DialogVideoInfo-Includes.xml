@@ -1970,6 +1970,9 @@
           <param name="content" value="$VAR[nextup_content_videoinfo]" />
           <param name="onclick" value="" />
           <param name="onclick2" value="PlayMedia(plugin://plugin.video.themoviedb.helper/?info=play&amp;season=$INFO[Container.ListItem.Season]&amp;type=episode&amp;episode=$INFO[Container.ListItem.Episode]&amp;tmdb_id=$INFO[Container.ListItem.Property(tvshow.tmdb_id)])" />
+          <param name="widgetpage_value" value="$INFO[Window(Home).Property(Container(53012).WidgetPage)]" />
+          <param name="widgetpage_prop" value="Container(53012).WidgetPage" />
+          <param name="widgetpage_nextpage_visible" value="Control.IsVisible(53012) + !Container(53012).IsUpdating + [Integer.IsLess(Window(Home).Property(Container(53012).WidgetPage),2) + Integer.IsGreaterOrEqual(Container(53012).NumItems,20) | !Integer.IsLess(Window(Home).Property(Container(53012).WidgetPage),2) + Integer.IsGreaterOrEqual(Container(53012).NumItems,21)]" />
         </include>
        <include condition="!Skin.HasSetting(VideoInfo.Disable) + Skin.HasSetting(VideoInfo.Episodes) + String.IsEmpty(ListItem.DBID) + String.IsEqual(ListItem.DBType,episode) + String.Contains(ListItem.Path,plugin.video.seren)" content="episode_list">
           <param name="id" value="53011" />
