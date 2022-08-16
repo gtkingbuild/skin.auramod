@@ -6221,6 +6221,7 @@
     <param name="genrecondition" default="false" />
     <param name="submenucondition" default="false" />
     <param name="landscapepanelcondition" default="false" />
+    <param name="tmdbwidgetonfocus" default="false" />
     <definition>
       <itemlayout width="widget_poster_width" height="widget_poster_height" condition="$PARAM[postercondition]">
         <include content="Widget_Items_ItemLayout">
@@ -6418,6 +6419,7 @@
         </include>
       </focusedlayout>
       <focusedlayout width="widget_poster_width" height="widget_poster_height" condition="$PARAM[postercondition]">
+        <include condition="$PARAM[tmdbwidgetonfocus]">Defs_TMDB_Widget_OnFocus</include>
         <include content="Widget_Items_FocusedLayout">
           <param name="id" value="$PARAM[id]" />
           <param name="poster" value="true" />
@@ -8241,10 +8243,9 @@
     <param name="onback" default="9570" />
     <param name="onup" default="" />
     <param name="ondown" default="" />
-    <param name="onfocus" default="Skin.SetBool(TMDbHelper.ForceWidgetContainer)" />
-    <param name="onunfocus" default="Skin.Reset(TMDbHelper.ForceWidgetContainer)" />
     <param name="top" default="" />
     <param name="orientation" default="horizontal" />
+    <param name="tmdbwidgetonfocus" default="true" />
     <definition>
       <control type="group" id="2$PARAM[id]">
         <visible>String.IsEmpty(Window().Property(item.info.title))</visible>
@@ -8275,8 +8276,7 @@
 	<top>$PARAM[top]</top>
         <ondown>$PARAM[ondown]</ondown>
         <onback>$PARAM[onback]</onback>
-        <onfocus>$PARAM[onfocus]</onfocus>
-        <onunfocus>$PARAM[onunfocus]</onunfocus>
+        <onunfocus condition="Skin.HasSetting(TMDbHelper.ForceWidgetContainer)">Skin.Reset(TMDbHelper.ForceWidgetContainer)</onunfocus>
         <onback>Skin.Reset(TMDbHelper.ForceWidgetContainer)</onback>
         <animation effect="fade" start="100" end="0" condition="Window.IsVisible(DialogVideoInfo.xml) + Container($PARAM[id]).IsUpdating">Conditional</animation>
         <movement>1</movement>
@@ -8326,6 +8326,7 @@
           <param name="squarecondition" value="$PARAM[squarecondition]" />
           <param name="genrecondition" value="$PARAM[genrecondition]" />
           <param name="search" value="$PARAM[search]" />
+          <param name="tmdbwidgetonfocus" value="$PARAM[tmdbwidgetonfocus]" />
         </include>
         <content>
             <item>

@@ -1338,8 +1338,8 @@
     </variable>
 
     <variable name="video_heading_container">
-        <value condition="$EXP[clearlogo_container_updating] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
-        <value condition="$EXP[clearlogo_container_updating] + !String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
+        <value condition="[$EXP[clearlogo_container_updating] | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])] + !String.IsEmpty(ListItem.TvShowTitle)">$INFO[ListItem.TvShowTitle]</value>
+        <value condition="[$EXP[clearlogo_container_updating] | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])] + !String.IsEqual(ListItem.DBType,episode) + !String.IsEmpty(ListItem.Label)">$INFO[ListItem.Label]</value>
         <value condition="String.Contains(Container.ListItem.FolderPath,pvr:)">$INFO[Container.ListItem.Title]</value>
         <value condition="!String.IsEmpty(Container.ListItem.TvShowTitle)">$INFO[Container.ListItem.TvShowTitle]</value>
 	      <value condition="!String.IsEmpty(Container.ListItem.Label)">$INFO[Container.ListItem.Label]</value>

@@ -949,6 +949,7 @@
 			    <param name="squarecondition" value="$PARAM[squarecondition]" />
 			    <param name="genrecondition" value="$PARAM[genrecondition]" />
 			    <param name="submenucondition" value="$PARAM[submenucondition]" />
+          <param name="tmdbwidgetonfocus" value="$PARAM[tmdbwidgetonfocus]" />
 		</include>
 		<include condition="Skin.HasSetting(DisableNetflixSmallWidget) + !Window.IsVisible(1138) + !Window.IsVisible(3910) + !Window.IsVisible(3920) + ![Window.IsVisible(2111)| Window.IsVisible(2112) | Window.IsVisible(2113) | Window.IsVisible(2114) | Window.IsVisible(2115) | Window.IsVisible(2116) | Window.IsVisible(2117) | Window.IsVisible(4010) | Window.IsVisible(4020) | Window.IsVisible(DialogVideoInfo.xml)]" content="Widget_Items_Small">
 			<param name="top" value="$PARAM[top]" />

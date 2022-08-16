@@ -469,6 +469,14 @@
         <onunload>ClearProperty(Container(53012).WidgetPage,Home)</onunload>
     </include>
 
+    <include name="Defs_TMDB_Widget_OnFocus">
+        <control type="button">
+            <visible allowhiddenfocus="true">false</visible>
+            <onfocus condition="!Skin.HasSetting(TMDbHelper.ForceWidgetContainer) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])">Skin.SetBool(TMDbHelper.ForceWidgetContainer)</onfocus>
+            <onfocus condition="Skin.HasSetting(TMDbHelper.ForceWidgetContainer) + [String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])]">Skin.Reset(TMDbHelper.ForceWidgetContainer)</onfocus>
+        </control>
+    </include>
+
     <variable name="DefMovieDBMoviesContent">
         <value condition="String.IsEqual(Window(1104).Property(content),1)">plugin://script.extendedinfo?info=topratedmovies</value>
         <value condition="String.IsEqual(Window(1104).Property(content),2)">plugin://script.extendedinfo?info=popularmovies</value>
