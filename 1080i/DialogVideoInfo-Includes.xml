@@ -1307,7 +1307,7 @@
               <height>40</height>
               <visible>!String.IsEmpty(Control.GetLabel(1111))</visible>
               <control type="image">
-                <top>-2</top>
+                <top>0</top>
                 <left>-8</left>
                 <width>45</width>
                 <height>45</height>
@@ -1315,7 +1315,7 @@
                 <texture>special://skin/extras/icons/director.png</texture>
               </control>
               <control type="label" id="1111">
-                <top>0</top>
+                <top>3</top>
                 <height>40</height>
                 <left>55</left>
                 <font>Netflix_Info_main</font>
@@ -1330,7 +1330,7 @@
               <height>40</height>
               <visible>!String.IsEmpty(Control.GetLabel(1112))</visible>
               <control type="image">
-                <top>-6</top>
+                <top>-5</top>
                 <left>-8</left>
                 <width>45</width>
                 <height>45</height>
@@ -1338,7 +1338,7 @@
                 <texture>dialogs/videoinfo/genre-icon.png</texture>
               </control>
               <control type="label" id="1112">
-                <top>-9</top>
+                <top>-5</top>
                 <left>55</left>
                 <width>700</width>
                 <font>Netflix_Info_main</font>
