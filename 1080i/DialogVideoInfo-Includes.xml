@@ -1385,8 +1385,8 @@
           <onright>9601</onright>
           <onup>9570</onup>
           <ondown>9570</ondown>
-          <bottom>5</bottom>
-          <height>202.5</height>
+          <bottom>2</bottom>
+          <height>205.5</height>
           <width>650</width>
           <control type="radiobutton" id="87">
             <include name="netflix_button" content="netflix_button">
