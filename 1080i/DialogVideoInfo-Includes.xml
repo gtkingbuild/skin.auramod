@@ -1119,7 +1119,7 @@
           <texture background="true">$VAR[NetflixInfo_ClearLogo_Container]</texture>
           <visible>Control.IsVisible(8999)</visible>
         </control>
-        <control type="label">
+        <control type="textbox">
           <visible>[String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | !String.IsEmpty(ListItem.ChannelName)] + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo))</visible>
           <top>-190</top>
           <label>$VAR[video_heading]</label>
@@ -1127,14 +1127,14 @@
           <shadowcolor>black</shadowcolor>
           <font>font_showcase_title</font>
           <width>730</width>
-          <height min="30" max="110">auto</height>
+          <height min="30" max="234">auto</height>
           <align>left</align>
           <aligny>center</aligny>
           <wrapmultiline>true</wrapmultiline>
-          <scroll>true</scroll>
-          <visible>!Control.IsVisible(8999)</visible>
+          <autoscroll>false</autoscroll>
+          <visible>!Control.IsVisible(8999) + !Control.HasFocus(9601)</visible>
         </control>
-        <control type="label">
+        <control type="textbox">
           <visible>[String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | !String.IsEmpty(ListItem.ChannelName)] + String.IsEmpty(Control.GetLabel(55442))</visible>
           <top>-190</top>
           <label>$VAR[video_heading_container]</label>
@@ -1142,16 +1142,16 @@
           <shadowcolor>black</shadowcolor>
           <font>font_showcase_title</font>
           <width>730</width>
-          <height min="30" max="110">auto</height>
+          <height min="30" max="234">auto</height>
           <align>left</align>
           <aligny>center</aligny>
           <wrapmultiline>true</wrapmultiline>
-          <scroll>true</scroll>
+          <autoscroll>false</autoscroll>
           <visible>Control.IsVisible(8999)</visible>
         </control>
         <!-- Netflix Info line -->
         <control type="group">
-          <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
+          <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus + [!Control.HasFocus(9601) | !String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)]</visible>
           <visible>!Control.HasFocus(9550)</visible>
           <top>0</top>
           <height>60</height>

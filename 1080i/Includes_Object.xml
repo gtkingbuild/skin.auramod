@@ -6008,13 +6008,36 @@
           <animation effect="fade" condition="true" time="0" start="100" end="0">Conditional</animation>
         </control>
         <!-- Netflix Plot Info -->
-        <control type="group">
-          <include>Animation_FadeIn</include>
-          <visible>Control.HasFocus(9601) + $PARAM[visible] + !Skin.HasSetting(DisableNetflixVideoInfo)</visible>
           <control type="grouplist">
             <top>290</top>
             <left>10</left>
-	    <animation effect="slide" start="0,0" end="0,-50" condition="String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+	    <animation effect="slide" start="0,0" end="0,-252" condition="Control.HasFocus(9601) + String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+            <control type="textbox">
+              <visible>[String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | !String.IsEmpty(ListItem.ChannelName)] + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo))</visible>
+              <top>-190</top>
+              <label>$VAR[video_heading]</label>
+              <textcolor>grey</textcolor>
+              <shadowcolor>black</shadowcolor>
+              <font>font_showcase_title</font>
+              <width>730</width>
+              <height min="30" max="234">auto</height>
+              <align>left</align>
+              <aligny>center</aligny>
+              <wrapmultiline>true</wrapmultiline>
+              <autoscroll>false</autoscroll>
+              <visible>!Control.IsVisible(8999) + String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)</visible>
+            </control>
+            <control type="group">
+              <animation effect="slide" start="0,0" end="0,-5" condition="Control.HasFocus(9601) + String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+              <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus + String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)</visible>
+              <visible>!Control.HasFocus(9550)</visible>
+              <top>0</top>
+              <height>60</height>
+              <include>netflix_infoline</include>
+            </control>
+            <control type="grouplist">
+              <include>Animation_FadeIn</include>
+              <visible>Control.HasFocus(9601) + $PARAM[visible] + !Skin.HasSetting(DisableNetflixVideoInfo)</visible>
             <control type="textbox" id="9610">
               <top>2</top>
               <description>textarea</description>
