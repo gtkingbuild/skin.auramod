@@ -4526,3 +4526,8 @@ msgstr ""
 msgctxt "#31926"
 msgid "Disable Time header in Library Views"
 msgstr ""
+
+#: /1080i/SkinSettings.xml
+msgctxt "#31927"
+msgid "Enable notification icon for addons"
+msgstr ""

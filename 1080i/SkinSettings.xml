@@ -1168,6 +1168,14 @@
                             <onclick>RunScript(script.skin.helper.service,action=selectimage,skinstring=loadingspinner.icon)</onclick>
                         </control>
 
+                        <control type="radiobutton" id="9604" description="Enable notification icon for addons">
+                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
+                            <include>Defs_Settings_Button</include>
+                            <label>$LOCALIZE[31927]</label>
+                            <selected>Skin.HasSetting(EnableNotificationAddonIcon)</selected>
+                            <onclick>Skin.ToggleSetting(EnableNotificationAddonIcon)</onclick>
+                        </control>
+
                         <control type="radiobutton" id="9605" description="Kiosk Mode">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9006)</visible>
                             <include>Defs_Settings_Button</include>

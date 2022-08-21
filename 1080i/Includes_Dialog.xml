@@ -123,6 +123,13 @@
         <height>60</height>
     </include>
 
+    <include name="Dialog_Notification_Addon_Icon">
+        <right>10</right>
+        <centertop>50%</centertop>
+        <width>40</width>
+        <height>40</height>
+    </include>
+
     <include name="Dialog_Notification_MainLabel">
         <right>80</right>
         <left>0</left>
