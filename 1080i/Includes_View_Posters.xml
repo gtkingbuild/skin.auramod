@@ -1525,10 +1525,6 @@
                 <height>300</height>
                 <width>518</width>
                 <include>View_Landscape_Artwork</include>
-                <control type="image">
-                  <bordersize>10</bordersize>
-                  <texture background="true" colordiffuse="69000000">common/white.png</texture>
-                </control>
               </control>
               <control type="label">
                 <top>180</top>
@@ -1639,10 +1635,6 @@
                 <control type="group">
                   <visible>Control.HasFocus(5022)</visible>
                   <include>View_Selectbox</include>
-                </control>
-                <control type="image">
-                  <bordersize>10</bordersize>
-                  <texture background="true" colordiffuse="69000000">common/white.png</texture>
                 </control>
               </control>
               <control type="label">

@@ -291,7 +291,6 @@
     <include name="View_WatchedOverlay_White">
         <control type="group">
             <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
-<!--	    <visible>!Control.IsVisible(504) + !Control.IsVisible(5022)</visible> -->
             <control type="image">
                 <top>10</top>
                 <right>10</right>
@@ -324,7 +323,6 @@
     <include name="View_WatchedOverlay_Black">
         <control type="group">
             <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
-	    <visible>!Control.IsVisible(504) + !Control.IsVisible(5022)</visible>
             <control type="image">
                 <top>10</top>
                 <right>10</right>
@@ -357,7 +355,6 @@
     <include name="View_WatchedOverlay_Focus">
         <control type="group">
             <visible>!Skin.HasSetting(DisableWatchedOverlay)</visible>
-<!--	    <visible>!Control.IsVisible(504) + !Control.IsVisible(5022)</visible> -->
             <control type="image">
                 <top>10</top>
                 <right>10</right>
