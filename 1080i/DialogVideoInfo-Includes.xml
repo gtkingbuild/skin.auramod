@@ -1149,6 +1149,10 @@
           <autoscroll>false</autoscroll>
           <visible>Control.IsVisible(8999)</visible>
         </control>
+        <control type="group">
+          <height>30</height>
+          <visible>String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo))</visible>
+        </control>
         <!-- Netflix Info line -->
         <control type="group">
           <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus + [!Control.HasFocus(9601) | !String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)]</visible>
@@ -1159,7 +1163,7 @@
         </control>
         <!-- Plot and Tagline -->
         <control type="textbox">
-          <top>0</top>
+          <top>10</top>
           <visible>!Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9550)</visible>
           <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
           <height min="0" max="84">auto</height>
@@ -1171,7 +1175,7 @@
           <visible>!Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
         </control>
         <control type="textbox">
-          <top>2</top>
+          <top>12</top>
           <left>0</left>
           <description>textarea</description>
           <height min="0" max="62">auto</height>
@@ -1238,7 +1242,7 @@
               </include>
             </control>
         <control type="label">
-          <height>0</height>
+          <height>20</height>
         </control>
         <control type="group">
          <visible>!Skin.HasSetting(VideoInfo.LargePlot) + !Control.HasFocus(9601) + !Control.HasFocus(8999) + !ControlGroup(9000).HasFocus</visible>
@@ -1282,7 +1286,6 @@
               <height min="30" max="50">auto</height>
               <visible>!String.IsEmpty(Control.GetLabel(1110))</visible>
               <control type="image">
-                <top>-2</top>
                 <left>-13</left>
                 <width>55</width>
                 <height>55</height>
@@ -1307,7 +1310,7 @@
               <height>40</height>
               <visible>!String.IsEmpty(Control.GetLabel(1111))</visible>
               <control type="image">
-                <top>0</top>
+                <top>1</top>
                 <left>-8</left>
                 <width>45</width>
                 <height>45</height>
@@ -1315,7 +1318,7 @@
                 <texture>special://skin/extras/icons/director.png</texture>
               </control>
               <control type="label" id="1111">
-                <top>3</top>
+                <top>4</top>
                 <height>40</height>
                 <left>55</left>
                 <font>Netflix_Info_main</font>
@@ -1330,7 +1333,7 @@
               <height>40</height>
               <visible>!String.IsEmpty(Control.GetLabel(1112))</visible>
               <control type="image">
-                <top>-5</top>
+                <top>-3</top>
                 <left>-8</left>
                 <width>45</width>
                 <height>45</height>
@@ -1338,7 +1341,7 @@
                 <texture>dialogs/videoinfo/genre-icon.png</texture>
               </control>
               <control type="label" id="1112">
-                <top>-5</top>
+                <top>-2</top>
                 <left>55</left>
                 <width>700</width>
                 <font>Netflix_Info_main</font>
@@ -1361,7 +1364,6 @@
                 <texture>netflix/trophy.png</texture>
               </control>
               <control type="label">
-                <top>-3</top>
                 <left>55</left>
                 <width>700</width>
                 <font>Netflix_Info_main</font>
