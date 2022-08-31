@@ -6009,9 +6009,9 @@
         </control>
         <!-- Netflix Plot Info -->
           <control type="grouplist">
-            <top>290</top>
+            <animation effect="slide" start="0,0" end="0,-262" condition="Control.HasFocus(9601) + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
+            <top>300</top>
             <left>10</left>
-	    <animation effect="slide" start="0,0" end="0,-252" condition="Control.HasFocus(9601) + String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
             <control type="textbox">
               <visible>[String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,movie) | String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,season) | !String.IsEmpty(ListItem.ChannelName)] + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo))</visible>
               <top>-190</top>
@@ -6025,15 +6025,22 @@
               <aligny>center</aligny>
               <wrapmultiline>true</wrapmultiline>
               <autoscroll>false</autoscroll>
-              <visible>!Control.IsVisible(8999) + String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)</visible>
+              <visible>!Control.IsVisible(8999) + Control.HasFocus(9601)</visible>
             </control>
             <control type="group">
-              <animation effect="slide" start="0,0" end="0,-5" condition="Control.HasFocus(9601) + String.IsEmpty(Control.GetLabel(55443)) + Window.IsVisible(DialogVideoInfo.xml)">Conditional</animation>
-              <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus + String.IsEmpty(Control.GetLabel(55443)) + Control.HasFocus(9601)</visible>
+              <height>20</height>
+              <visible>String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo)) + Control.HasFocus(9601)</visible>
+            </control>
+            <control type="group">
+              <visible>!Control.HasFocus(8999) + !ControlGroup(9000).HasFocus + String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo)) + Control.HasFocus(9601)</visible>
               <visible>!Control.HasFocus(9550)</visible>
               <top>0</top>
               <height>60</height>
               <include>netflix_infoline</include>
+            </control>
+            <control type="group">
+              <height>2</height>
+              <visible>String.IsEmpty(ListItem.Art(tvshow.clearlogo)) + String.IsEmpty(ListItem.Art(clearlogo)) + String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.ClearLogo)) + Control.HasFocus(9601)</visible>
             </control>
             <control type="grouplist">
               <include>Animation_FadeIn</include>
