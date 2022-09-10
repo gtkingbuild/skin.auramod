@@ -199,6 +199,11 @@
       <animation effect="slide" end="0,0" time="0" condition="$EXP[noSubMenu] + Skin.HasSetting(DisableMenuHor)">Conditional</animation>
       <animation effect="slide" end="0,-70" time="0" condition="$EXP[noSubMenu] + Skin.HasSetting(DisableMenuHor) + [$EXP[TVSpotlight] + Skin.HasSetting(EnableTVFullSpotlight) | $EXP[MovieSpotlight] + Skin.HasSetting(EnableFullSpotlight)]">Conditional</animation>
       <animation effect="slide" end="0,-40" time="0" condition="!$EXP[noSubMenu] + Skin.HasSetting(DisableMenuHor) + [$EXP[TVSpotlight] + Skin.HasSetting(EnableTVFullSpotlight) | $EXP[MovieSpotlight] + Skin.HasSetting(EnableFullSpotlight)]">Conditional</animation>
+      <control type="button" id="329" description="Hidden Button">
+        <include>Defs_Offscreen</include>
+        <onfocus>330</onfocus>
+        <visible>false</visible>
+      </control>
       <control type="group" id="331" description="Spacer">
         <height>210</height>
 	<visible>!Skin.HasSetting(DisableAuraModeGap) | Skin.HasSetting(DisableMenuHor)</visible>
