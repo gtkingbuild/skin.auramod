@@ -8887,7 +8887,6 @@
       <top>50</top>
       <left>50</left>
       <animation effect="slide" end="40,0" time="200" condition="!Skin.HasSetting(DisableMenuVertIcon) + [Control.HasFocus(300) | !Skin.HasSetting(DisableNetflixHomeSidemenuHide)]">Conditional</animation>
-      <animation effect="slide" end="0,50" time="0" condition="!Skin.HasSetting(DisableAuraHomeLayout) + !Skin.HasSetting(DisableMenuHor) + !Window.IsVisible(Settings.xml)">Conditional</animation>
       <!-- Row 1 -->
       <control type="label">
         <top>50</top>
