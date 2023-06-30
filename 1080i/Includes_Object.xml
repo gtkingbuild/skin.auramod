@@ -2441,7 +2441,7 @@
         <control type="textbox">
           <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.DBType)</visible>
           <visible>!Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
-          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline_Container][/COLOR]</label>
           <width>640</width>
           <height min="0" max="63">auto</height>
           <aligny>top</aligny>
@@ -2453,7 +2453,7 @@
         <control type="textbox">
           <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.DBType)</visible>
           <visible>Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
-          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline][/COLOR]</label>
+          <label fallback="19055">[COLOR=white]$VAR[Label_Netflix_Tagline_Container][/COLOR]</label>
           <width>1330</width>
           <height min="20" max="175">auto</height>
           <aligny>top</aligny>
@@ -2464,7 +2464,7 @@
         <control type="textbox">
           <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.DBType)</visible>
           <visible>!Skin.HasSetting(DisableNetflixView) + !Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
-          <label fallback="19055">$VAR[Label_OverlayPlot]</label>
+          <label fallback="19055">$VAR[Label_OverlayPlot_Container]</label>
           <width>640</width>
           <height min="10" max="154">auto</height>
           <aligny>top</aligny>
@@ -2476,7 +2476,7 @@
         <control type="textbox">
           <visible>!String.IsEmpty(Container($PARAM[id]).ListItem.DBType)</visible>
           <visible>Skin.HasSetting(DisableNetflixShowcaseOverlay)</visible>
-          <label fallback="19055">$VAR[Label_OverlayPlot]</label>
+          <label fallback="19055">$VAR[Label_OverlayPlot_Container]</label>
           <width>1330</width>
           <height min="20" max="175">auto</height>
           <aligny>top</aligny>

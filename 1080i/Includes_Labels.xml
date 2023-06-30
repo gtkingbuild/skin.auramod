@@ -1167,6 +1167,11 @@
     <value condition="String.IsEqual(ListItem.DBType,episode)">S$INFO[ListItem.Season]: E$INFO[ListItem.Episode] - $INFO[ListItem.Title]</value>
     <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),episode)">S$INFO[Window(Home).Property(TMDBHelper.ListItem.Season)]: E$INFO[Window(Home).Property(TMDBHelper.ListItem.Episode)] - $INFO[Window(Home).Property(TMDBHelper.ListItem.Title)]</value>
     </variable>
+    <variable name="videoinfo_play_label_container">
+    <value condition="Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,episode)">S$INFO[Container(5055).ListItem.Season]: E$INFO[Container(5055).ListItem.Episode] - $INFO[Container(5055).ListItem.Title]</value>
+    <value condition="Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,episode)">S$INFO[Container(5056).ListItem.Season]: E$INFO[Container(5056).ListItem.Episode] - $INFO[Container(5056).ListItem.Title]</value>
+    <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),episode)">S$INFO[Window(Home).Property(TMDBHelper.ListItem.Season)]: E$INFO[Window(Home).Property(TMDBHelper.ListItem.Episode)] - $INFO[Window(Home).Property(TMDBHelper.ListItem.Title)]</value>
+    </variable>
 
     <variable name="videoinfo_play_label_1505">
     <value condition="String.IsEqual(Container(1505).ListItem.DBType,episode)">S$INFO[Container(1505).ListItem.Season]: E$INFO[Container(1505).ListItem.Episode] - $INFO[Container(1505).ListItem.Label]</value>
@@ -1988,12 +1993,36 @@
         <value>$INFO[ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot]</value>
     </variable>
     
+    <variable name="Label_OverlayPlot_Container">
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogVideoInfo.xml)">$INFO[Window.Property(plot)]</value>
+        <value condition="Window.IsVisible(script-script.extendedinfo-DialogInfo.xml)">$INFO[Window.Property(biography)]</value>
+        <value condition="Control.IsVisible(505) + [!String.IsEmpty(Container(5055).ListItem.AddonDescription) | !String.IsEmpty(Container(5055).ListItem.AddonDisclaimer) | !String.IsEmpty(Container(5055).ListItem.AddonNews)]">$INFO[Container(5055).ListItem.AddonDisclaimer,[B]$LOCALIZE[24052][/B][CR],[CR][CR]]$INFO[Container(5055).ListItem.AddonDescription,[B]$LOCALIZE[21821][/B][CR],[CR][CR]]$INFO[Container(5055).ListItem.AddonNews,[B]$LOCALIZE[31303][/B][CR],[CR][CR]]</value>
+        <value condition="Control.IsVisible(506) + [!String.IsEmpty(Container(5056).ListItem.AddonDescription) | !String.IsEmpty(Container(5056).ListItem.AddonDisclaimer) | !String.IsEmpty(Container(5056).ListItem.AddonNews)]">$INFO[Container(5056).ListItem.AddonDisclaimer,[B]$LOCALIZE[24052][/B][CR],[CR][CR]]$INFO[Container(5056).ListItem.AddonDescription,[B]$LOCALIZE[21821][/B][CR],[CR][CR]]$INFO[Container(5056).ListItem.AddonNews,[B]$LOCALIZE[31303][/B][CR],[CR][CR]]</value>
+        <value condition="Window.IsVisible(Home) + [!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.AddonDescription)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.AddonDisclaimer)) | !String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.AddonNews))]">$INFO[Window(Home).Property(TMDBHelper.ListItem.AddonDisclaimer),[B]$LOCALIZE[24052][/B][CR],[CR][CR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.AddonDescription),[B]$LOCALIZE[21821][/B][CR],[CR][CR]]$INFO[Window(Home).Property(TMDBHelper.ListItem.AddonNews),[B]$LOCALIZE[31303][/B][CR],[CR][CR]]</value>
+        <value condition="Control.IsVisible(505)">$INFO[Container(5055).ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot_Container]</value>
+        <value condition="Control.IsVisible(506)">$INFO[Container(5056).ListItem.Artist,[B],[/B][CR]]$VAR[Label_Plot_Container]</value>
+    </variable>
+
     <variable name="Label_Plot">
         <value condition="!String.IsEmpty(ListItem.Property(Artist_Description))">$INFO[ListItem.Property(Artist_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.Property(Album_Description))">$INFO[ListItem.Property(Album_Description)]</value>
         <value condition="!String.IsEmpty(ListItem.AddonDescription)">$INFO[ListItem.AddonDescription]</value>
         <value condition="!String.IsEmpty(ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[ListItem.PlotOutline]</value>
         <value condition="!String.IsEmpty(ListItem.Plot)">$INFO[ListItem.Plot]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Plot)]</value>
+    </variable>
+
+    <variable name="Label_Plot_Container">
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Property(Artist_Description))">$INFO[Container(5055).ListItem.Property(Artist_Description)]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Property(Artist_Description))">$INFO[Container(5056).ListItem.Property(Artist_Description)]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Property(Album_Description))">$INFO[Container(5055).ListItem.Property(Album_Description)]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Property(Album_Description))">$INFO[Container(5056).ListItem.Property(Album_Description)]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.AddonDescription)">$INFO[Container(5055).ListItem.AddonDescription]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.AddonDescription)">$INFO[Container(5056).ListItem.AddonDescription]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(5055).ListItem.PlotOutline]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.PlotOutline) + Skin.HasSetting(PlotOutline)">$INFO[Container(5056).ListItem.PlotOutline]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Plot)">$INFO[Container(5055).ListItem.Plot]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Plot)">$INFO[Container(5056).ListItem.Plot]</value>
         <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Plot))">$INFO[Window(Home).Property(TMDBHelper.ListItem.Plot)]</value>
     </variable>
 
@@ -2022,6 +2051,26 @@
         <value condition="String.IsEqual(ListItem.DBType,season)">$INFO[ListItem.Season,$LOCALIZE[31750] , ]</value> <!-- Season -->
         <value condition="String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),tvshow)">$VAR[videoinfo_tvshow_label]</value>
 <!--        <value condition="!Control.HasFocus(55) + !Control.HasFocus(56) + String.IsEqual(ListItem.DBType,tvshow) + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate.long))">[I]New Episode on $INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate.long)][/I]</value> -->
+    </variable>
+    <variable name="Label_Netflix_Tagline_Container">
+        <value condition="[Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,episode) | Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,episode)] | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),episode)">$VAR[videoinfo_play_label_container]</value>
+        <value condition="Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,season)">$INFO[Container(5055).ListItem.Label]</value>
+        <value condition="Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,season)">$INFO[Container(5056).ListItem.Label]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Tagline)">[I]$INFO[Container(5055).ListItem.Tagline][/I]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Tagline)">[I]$INFO[Container(5056).ListItem.Tagline][/I]</value>
+        <value condition="!String.IsEmpty(Window(Home).Property(TMDBHelper.ListItem.Tagline))">[I]$INFO[Window(Home).Property(TMDBHelper.ListItem.Tagline)][/I]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Property(Artist_Description))">$INFO[Container(5055).ListItem.Property(Artist_Description)]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Property(Artist_Description))">$INFO[Container(5056).ListItem.Property(Artist_Description)]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.Property(Album_Description))">$INFO[Container(5055).ListItem.Property(Album_Description)]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.Property(Album_Description))">$INFO[Container(5056).ListItem.Property(Album_Description)]</value>
+        <value condition="Control.IsVisible(505) + !String.IsEmpty(Container(5055).ListItem.AddonDescription)">$INFO[Container(5055).ListItem.AddonDescription]</value>
+        <value condition="Control.IsVisible(506) + !String.IsEmpty(Container(5056).ListItem.AddonDescription)">$INFO[Container(5056).ListItem.AddonDescription]</value>
+        <value condition="Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,episode) + String.IsEqual(Container(5055).ListItem.Episode,1)">[I][COLOR=green]$LOCALIZE[31882][/COLOR] $INFO[Container(5055).ListItem.Season, S,: ]$INFO[Container(5055).ListItem.Episode,E, ][/I]</value> <!-- Season Premiere -->
+        <value condition="Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,episode) + String.IsEqual(Container(5056).ListItem.Episode,1)">[I][COLOR=green]$LOCALIZE[31882][/COLOR] $INFO[Container(5056).ListItem.Season, S,: ]$INFO[Container(5056).ListItem.Episode,E, ][/I]</value> <!-- Season Premiere -->
+        <value condition="Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,season)">$INFO[Container(5055).ListItem.Season,$LOCALIZE[31750] , ]</value> <!-- Season -->
+        <value condition="Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,season)">$INFO[Container(5056).ListItem.Season,$LOCALIZE[31750] , ]</value> <!-- Season -->
+        <value condition="[Control.IsVisible(505) + String.IsEqual(Container(5055).ListItem.DBType,tvshow) | Control.IsVisible(506) + String.IsEqual(Container(5056).ListItem.DBType,tvshow)] | String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.DBType),tvshow)">$VAR[videoinfo_tvshow_label]</value>
+<!--        <value condition="!Control.HasFocus(55) + !Control.HasFocus(56) + [String.IsEqual(Container(5055).ListItem.DBType,tvshow) | String.IsEqual(Container(5056).ListItem.DBType,tvshow)] + !String.IsEmpty(Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate.long))">[I]New Episode on $INFO[Window(Home).Property(SkinHelper.ListItem.NextEpisode.Airdate.long)][/I]</value> -->
     </variable>
 
     <variable name="videoinfo_tvshow_label">
