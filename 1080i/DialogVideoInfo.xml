@@ -27,6 +27,7 @@
     <onunload condition="System.HasAlarm(trailer_delay)">CancelAlarm(trailer_delay,true)</onunload>
     <controls>
       <include condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">fanart_multi</include>
+      <include condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">fanart_multi_container</include>
 	<control type="button" id="9005">
 	 <visible allowhiddenfocus="true">false</visible>
 	    <onback condition="!String.IsEmpty(Window(home).Property(TrailerPlaying))">ClearProperty(TrailerPlaying,Home)</onback>

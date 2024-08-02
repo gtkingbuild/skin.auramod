@@ -68,6 +68,7 @@
     </control>
     <!--Multi Image fadelabel and Global Background -->
     <include condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">fanart_multi</include>
+    <include condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">fanart_multi_container</include>
 <!--    <include condition="Skin.HasSetting(SkinHelper.EnableExtraFanart)">fanart_multi_1505</include> -->
     <include condition="!Skin.HasSetting(DisableAuraHomeLayout) | [Skin.HasSetting(DisableAuraHomeLayout) + Skin.HasSetting(DisableNetflixSubmenuBG)]">Global_Background</include>
     <control type="group"> 

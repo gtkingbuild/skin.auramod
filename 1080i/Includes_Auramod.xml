@@ -32,7 +32,14 @@
        <param name="width" default="1440"/>
        <param name="visible" default=""/>
         <definition>
+        <control type="label" id="5148">
+          <description>hidden label for fanart image</description>
+          <include>Defs_Offscreen</include>
+          <label>$VAR[fanart_multi_fadelabel]</label>
+          <visible>false</visible>
+        </control>
         <control type="multiimage">
+          <visible>!String.IsEqual(Control.GetLabel(5148),ListItem.Icon) + !String.Contains(Control.GetLabel(5148),resources/icons/themoviedb/nextpage_wide.png)</visible>
           <visible>$PARAM[visible]</visible>
           <width>$PARAM[width]</width>
           <height>$PARAM[height]</height>
@@ -41,6 +48,42 @@
           <top>$PARAM[top]</top>
           <bottom>$PARAM[bottom]</bottom>
           <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
+          <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
+          <timeperimage>2000</timeperimage>
+          <fadetime>2000</fadetime>
+          <pauseatend>10000</pauseatend>
+          <randomize>false</randomize>
+          <loop>no</loop>
+          <include>animation_image_zoom</include>
+        </control>
+        <control type="multiimage">
+          <visible>String.IsEqual(Control.GetLabel(5148),ListItem.Icon) + String.IsEqual(Control.GetLabel(5148),ListItem.Poster) | String.Contains(Control.GetLabel(5148),resources/icons/themoviedb/nextpage_wide.png)</visible>
+          <visible>$PARAM[visible]</visible>
+          <width>$PARAM[width]</width>
+          <height>$PARAM[height]</height>
+          <left>$PARAM[left]</left>
+          <right>$PARAM[right]</right>
+          <top>$PARAM[top]</top>
+          <bottom>$PARAM[bottom]</bottom>
+          <aspectratio scalediffuse="true" aligny="center">scale</aspectratio>
+          <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
+          <timeperimage>2000</timeperimage>
+          <fadetime>2000</fadetime>
+          <pauseatend>10000</pauseatend>
+          <randomize>false</randomize>
+          <loop>no</loop>
+          <include>animation_image_zoom</include>
+        </control>
+        <control type="multiimage">
+          <visible>String.IsEqual(Control.GetLabel(5148),ListItem.Icon) + !String.IsEqual(Control.GetLabel(5148),ListItem.Poster) + !String.Contains(Control.GetLabel(5148),resources/icons/themoviedb/nextpage_wide.png)</visible>
+          <visible>$PARAM[visible]</visible>
+          <width>$PARAM[width]</width>
+          <height>$PARAM[height]</height>
+          <left>$PARAM[left]</left>
+          <right>$PARAM[right]</right>
+          <top>$PARAM[top]</top>
+          <bottom>$PARAM[bottom]</bottom>
+          <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
           <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
           <timeperimage>2000</timeperimage>
           <fadetime>2000</fadetime>
@@ -61,7 +104,14 @@
         <param name="width" default="1440"/>
         <param name="visible" default=""/>
          <definition>
+         <control type="label" id="5149">
+           <description>hidden label for fanart image</description>
+           <include>Defs_Offscreen</include>
+           <label>$VAR[fanart_multi_fadelabel_container]</label>
+           <visible>false</visible>
+         </control>
          <control type="multiimage">
+           <visible>!String.IsEqual(Control.GetLabel(5149),Container($PARAM[id]).ListItem.Icon) + !String.Contains(Control.GetLabel(5149),resources/icons/themoviedb/nextpage_wide.png)</visible>
            <visible>$PARAM[visible]</visible>
            <width>$PARAM[width]</width>
            <height>$PARAM[height]</height>
@@ -70,7 +120,43 @@
            <top>$PARAM[top]</top>
            <bottom>$PARAM[bottom]</bottom>
            <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
-           <imagepath background="true" diffuse="Right Corner.png">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</imagepath>
+           <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel_container]</imagepath>
+           <timeperimage>2000</timeperimage>
+           <fadetime>2000</fadetime>
+           <pauseatend>10000</pauseatend>
+           <randomize>false</randomize>
+           <loop>no</loop>
+           <include>animation_image_zoom</include>
+         </control>
+         <control type="multiimage">
+           <visible>String.IsEqual(Control.GetLabel(5149),Container($PARAM[id]).ListItem.Icon) + String.IsEqual(Control.GetLabel(5149),Container($PARAM[id]).ListItem.Poster) | String.Contains(Control.GetLabel(5149),resources/icons/themoviedb/nextpage_wide.png)</visible>
+           <visible>$PARAM[visible]</visible>
+           <width>$PARAM[width]</width>
+           <height>$PARAM[height]</height>
+           <left>$PARAM[left]</left>
+           <right>$PARAM[right]</right>
+           <top>$PARAM[top]</top>
+           <bottom>$PARAM[bottom]</bottom>
+           <aspectratio scalediffuse="true" aligny="center">scale</aspectratio>
+           <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel_container]</imagepath>
+           <timeperimage>2000</timeperimage>
+           <fadetime>2000</fadetime>
+           <pauseatend>10000</pauseatend>
+           <randomize>false</randomize>
+           <loop>no</loop>
+           <include>animation_image_zoom</include>
+         </control>
+         <control type="multiimage">
+           <visible>String.IsEqual(Control.GetLabel(5149),Container($PARAM[id]).ListItem.Icon) + !String.IsEqual(Control.GetLabel(5149),Container($PARAM[id]).ListItem.Poster) + !String.Contains(Control.GetLabel(5149),resources/icons/themoviedb/nextpage_wide.png)</visible>
+           <visible>$PARAM[visible]</visible>
+           <width>$PARAM[width]</width>
+           <height>$PARAM[height]</height>
+           <left>$PARAM[left]</left>
+           <right>$PARAM[right]</right>
+           <top>$PARAM[top]</top>
+           <bottom>$PARAM[bottom]</bottom>
+           <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
+           <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel_container]</imagepath>
            <timeperimage>2000</timeperimage>
            <fadetime>2000</fadetime>
            <pauseatend>10000</pauseatend>

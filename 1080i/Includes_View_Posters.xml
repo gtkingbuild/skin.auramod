@@ -613,7 +613,7 @@
             </control>
             <control type="image">
               <aspectratio scalediffuse="false">scale</aspectratio>
-              <texture background="true" diffuse="diffuse/lovefilm.png">$INFO[ListItem.Art(fanart)]</texture>
+              <texture background="true" diffuse="diffuse/lovefilm.png">$VAR[Image_Fanart]</texture>
             </control>
             <include content="Defs_PictureBack">
               <param name="pad" value="-10" />
@@ -631,7 +631,7 @@
             </control>
             <control type="image">
               <aspectratio scalediffuse="false">scale</aspectratio>
-              <texture background="true" diffuse="diffuse/lovefilm.png">$INFO[ListItem.Art(fanart)]</texture>
+              <texture background="true" diffuse="diffuse/lovefilm.png">$VAR[Image_Fanart]</texture>
             </control>
             <include content="Defs_PictureBack">
               <param name="pad" value="-10" />
@@ -3313,7 +3313,7 @@
       </control>
       <control type="image">
         <bordersize>10</bordersize>
-        <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
+        <aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
         <texture background="true" diffuse="diffuse/widgetposter.png">$INFO[ListItem.Icon]</texture>
         <visible>!String.StartsWith(ListItem.Icon,DefaultIcon) + !ListItem.IsParentFolder</visible>
         <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>
@@ -3410,7 +3410,7 @@
       </control>
       <control type="image">
         <bordersize>10</bordersize>
-        <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
+        <aspectratio aligny="center" scalediffuse="false">scale</aspectratio>
         <texture background="true" diffuse="diffuse/widgetposter.png">$INFO[ListItem.Icon]</texture>
         <visible>!String.StartsWith(ListItem.Icon,DefaultIcon) + !ListItem.IsParentFolder</visible>
         <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)]</visible>

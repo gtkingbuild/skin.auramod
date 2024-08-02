@@ -118,9 +118,36 @@
         <resetonlabelchange>true</resetonlabelchange>
    </control>
    </include> 
+     <include name="fanart_multi_container">
+     <control type="fadelabel" id="398065">
+        <description>Randomizer for plugin-free multiple fanart</description>
+        <top>-1000</top> <!-- Don't need to see it, but can't change its visibility. Put it off screen -->
+        <width>1</width>
+        <height>1</height>
+        <info>Container($PARAM[id]).ListItem.Art(fanart)</info>
+        <info>Container($PARAM[id]).ListItem.Art(fanart1)</info>
+        <info>Container($PARAM[id]).ListItem.Art(fanart2)</info>
+        <info>Container($PARAM[id]).ListItem.Art(fanart3)</info>
+        <!-- ... repeat for each numbered fanart -->
+        <!-- tvshow.fanart are filled with the series fanart when navigating season and episode lists -->
+        <randomize>false</randomize>
+	<include>Defs_PauseAtEnd</include>
+        <!-- No scrolling so only the pauseatend above (plus a short fade-in) affects length of time each
+                image is shown -->
+        <scroll>false</scroll>
+        <scrollout>false</scrollout>
+        <!-- Resets the timer when navigating to a new item, so each item's first visible fanart will
+                show for the full amount of time -->
+        <resetonlabelchange>true</resetonlabelchange>
+   </control>
+   </include> 
    <variable name="fanart_multi_fadelabel">
        <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(ListItem.Art(fanart1)) + !String.IsEmpty(Control.GetLabel(398045))">$INFO[Control.GetLabel(398045)]</value>
        <value>$VAR[Spotlight_Fanart]</value>
+   </variable>
+   <variable name="fanart_multi_fadelabel_container">
+       <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(ListItem.Art(fanart1)) + !String.IsEmpty(Control.GetLabel(398045))">$INFO[Control.GetLabel(398065)]</value>
+       <value>$VAR[Spotlight_Fanart_Container]</value>
    </variable>
    <variable name="fanart_multi_fadelabel_1505">
        <value condition="Skin.HasSetting(SkinHelper.EnableExtraFanart) + !String.IsEmpty(ListItem.Art(fanart1)) + !String.IsEmpty(Control.GetLabel(398095))">$INFO[Control.GetLabel(398095)]</value>
@@ -161,6 +188,9 @@
         <value condition="!String.IsEmpty(Window(Home).Property(ListItem.BlurImage.Original)) + Window.IsVisible(DialogVideoInfo.xml)">$INFO[Window(Home).Property(ListItem.BlurImage.Original)]</value>
         <value>$INFO[ListItem.Icon]</value>
    </variable> 
+   <variable name="Spotlight_Fanart_Container">
+        <value condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Art(fanart))">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</value>
+   </variable>
 
    <variable name="Spotlight_Fanart_1505">
         <value condition="!String.IsEmpty(Container(1505).ListItem.Art(fanart))">$INFO[Container(1505).ListItem.Art(fanart)]</value>
@@ -202,6 +232,7 @@
         <value condition="[!Control.HasFocus(5055) + !Control.IsVisible(505)] + !String.IsEmpty(ListItem.Thumb)">$INFO[ListItem.Thumb]</value>
         <value condition="[!Control.HasFocus(5055) + !Control.IsVisible(505)] + !String.IsEmpty(ListItem.Art(thumb))">$INFO[ListItem.Art(thumb)]</value>
         <value condition="!Container.Content(episodes) + !Container.Content(tvshows) + !Container.Content(movies) + !Container.Content(seasons) + !Control.HasFocus(5055) + !Control.IsVisible(505)">$INFO[ListItem.Icon]</value>
+        <value>$INFO[ListItem.Icon]</value>
     </variable>
 
     <variable name="Image_MainMenu_fanart_aurahub"> 
