@@ -190,6 +190,9 @@
    </variable> 
    <variable name="Spotlight_Fanart_Container">
         <value condition="!String.IsEmpty(Container($PARAM[id]).ListItem.Art(fanart))">$INFO[Container($PARAM[id]).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5055).ListItem.Art(fanart)) + Control.IsVisible(5055) + Control.HasFocus(5055)">$INFO[Container(5055).ListItem.Art(fanart)]</value>
+        <value condition="!String.IsEmpty(Container(5056).ListItem.Art(fanart)) + Control.IsVisible(5056) + Control.HasFocus(5056)">$INFO[Container(5056).ListItem.Art(fanart)]</value>
+        <value>$INFO[Window(Home).Property(TMDbHelper.ListItem.BlurImage.Original)]</value>
    </variable>
 
    <variable name="Spotlight_Fanart_1505">
