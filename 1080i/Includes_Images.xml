@@ -243,6 +243,12 @@
     <variable name="Image_MainMenu_fanart_aurahub"> 
         <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container(5055).ListItem.Art(fanart)) + Control.IsVisible(5055)">$INFO[Container(5055).ListItem.Art(fanart)]</value>
         <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container(5056).ListItem.Art(fanart)) + Control.IsVisible(5056)">$INFO[Container(5056).ListItem.Art(fanart)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.ListItem.Art(fanart)) + Control.HasFocus(505)">$INFO[Container.ListItem.Art(fanart)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.ListItem.Art(fanart)) + Control.HasFocus(506)">$INFO[Container.ListItem.Art(fanart)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container(5055).ListItem.Art(landscape)) + Control.IsVisible(5055)">$INFO[Container(5055).ListItem.Art(landscape)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container(5056).ListItem.Art(landscape)) + Control.IsVisible(5056)">$INFO[Container(5056).ListItem.Art(landscape)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.ListItem.Art(landscape)) + Control.HasFocus(505)">$INFO[Container.ListItem.Art(landscape)]</value>
+        <value condition="Window.IsVisible(MyVideoNav.xml) + !String.IsEmpty(Container.ListItem.Art(landscape)) + Control.HasFocus(506)">$INFO[Container.ListItem.Art(landscape)]</value>
         <value condition="!String.IsEmpty(Container(6051).ListItem.Art(fanart)) + Control.IsVisible(6051)">$INFO[Container(6051).ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(6052).ListItem.Art(fanart)) + Control.IsVisible(6052)">$INFO[Container(6052).ListItem.Art(fanart)]</value>
         <value condition="!String.IsEmpty(Container(6053).ListItem.Art(fanart)) + Control.IsVisible(6053)">$INFO[Container(6053).ListItem.Art(fanart)]</value>
