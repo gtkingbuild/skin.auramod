@@ -9432,6 +9432,7 @@
                 <height>24</height>
                 <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
               <control type="label">
                 <left>37</left>
@@ -9443,6 +9444,7 @@
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
               <control type="label">
                 <animation effect="slide" condition="![Container.Content(movies) | Container.Content(episodes)]" end="-73">Conditional</animation>
@@ -9453,6 +9455,7 @@
                 <aligny>top</aligny>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
             </control>
             <control type="textbox">
@@ -9465,6 +9468,7 @@
               <shadowcolor>black</shadowcolor>
               <font>font_plotbox</font>
               <autoscroll>false</autoscroll>
+              <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
             </control>
           </control>
         </control>
@@ -9548,6 +9552,7 @@
                 <height>24</height>
                 <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
               <control type="label">
                 <left>37</left>
@@ -9559,6 +9564,7 @@
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
                 <visible>Container.Content(movies) | Container.Content(episodes)</visible>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
               <control type="label">
                 <animation effect="slide" condition="![Container.Content(movies) | Container.Content(episodes)]" end="-73">Conditional</animation>
@@ -9569,6 +9575,7 @@
                 <aligny>top</aligny>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
+                <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
               </control>
             </control>
             <control type="textbox">
@@ -9580,6 +9587,7 @@
               <shadowcolor>black</shadowcolor>
               <textcolor>main_fg_70</textcolor>
               <font>font_plotbox</font>
+              <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
             </control>
           </control>
         </control>
