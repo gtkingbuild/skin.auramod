@@ -9468,7 +9468,7 @@
               <shadowcolor>black</shadowcolor>
               <font>font_plotbox</font>
               <autoscroll>false</autoscroll>
-              <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
+              <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
             </control>
           </control>
         </control>
@@ -9587,7 +9587,7 @@
               <shadowcolor>black</shadowcolor>
               <textcolor>main_fg_70</textcolor>
               <font>font_plotbox</font>
-              <visible>!String.IsEqual(Container.ListItem.DBType,season) | String.IsEqual(Container.ListItem.DBType,season) + !String.IsEmpty(Container.ListItem.Season)</visible>
+              <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
             </control>
           </control>
         </control>
