@@ -9431,7 +9431,7 @@
                 <width>37</width>
                 <height>24</height>
                 <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
-                <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
+                <visible>[Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]</visible>
               </control>
               <control type="label">
                 <left>37</left>
@@ -9442,10 +9442,10 @@
                 <aligny>top</aligny>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
-                <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
+                <visible>[Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]</visible>
               </control>
               <control type="label">
-                <animation effect="slide" condition="String.IsEqual(Container.ListItem.DBType,season)" end="-73">Conditional</animation>
+                <animation effect="slide" condition="[!Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [!Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]" end="-73">Conditional</animation>
                 <left>73</left>
                 <width>auto</width>
                 <label>$VAR[Label_ShowCase_InfoLine]$INFO[ListItem.Rating, | [COLOR=main_fg_100],[/COLOR]]</label>
@@ -9549,7 +9549,7 @@
                 <width>37</width>
                 <height>24</height>
                 <texture colordiffuse="main_fg_100">$VAR[Image_HDSD]</texture>
-                <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
+                <visible>[Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]</visible>
               </control>
               <control type="label">
                 <left>37</left>
@@ -9560,10 +9560,10 @@
                 <aligny>top</aligny>
                 <textcolor>$VAR[ColorHighlight]</textcolor>
                 <font>font_small</font>
-                <visible>!String.IsEqual(Container.ListItem.DBType,season)</visible>
+                <visible>[Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]</visible>
               </control>
               <control type="label">
-                <animation effect="slide" condition="String.IsEqual(Container.ListItem.DBType,season)" end="-73">Conditional</animation>
+                <animation effect="slide" condition="[!Skin.HasSetting(CastAndMoreDetails.SeasonFlags) + String.IsEqual(Container.ListItem.DBType,season)] | [!Skin.HasSetting(CastAndMoreDetails.EpisodeFlags) + String.IsEqual(Container.ListItem.DBType,episode)]" end="-73">Conditional</animation>
                 <left>73</left>
                 <width>100%</width>
                 <label>$VAR[Label_ShowCase_InfoLine]$INFO[ListItem.Rating, | [COLOR=main_fg_100],[/COLOR]]</label>

@@ -4530,3 +4530,23 @@ msgstr ""
 msgctxt "#31927"
 msgid "Enable notification icon for addons"
 msgstr ""
+
+#: /1080i/Custom_1158_VideoInfo.xml
+msgctxt "#31928"
+msgid "Configure Cast & More Details"
+msgstr ""
+
+#: /1080i/Custom_1159_CastAndMoreDetails.xml
+msgctxt "#31929"
+msgid "Cast & More Details"
+msgstr ""
+
+#: /1080i/Custom_1159_CastAndMoreDetails.xml
+msgctxt "#31930"
+msgid "Season flags"
+msgstr ""
+
+#: /1080i/Custom_1159_CastAndMoreDetails.xml
+msgctxt "#31931"
+msgid "Episode flags"
+msgstr ""
