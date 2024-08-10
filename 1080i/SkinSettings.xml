@@ -692,6 +692,13 @@
                             <onclick>Skin.ToggleSetting(DisableSettingsBackground)</onclick>
                         </control>
 
+                    <control type="radiobutton" id="9207" description="Extra fanart">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
+                        <include>Defs_Settings_Button</include>
+                        <label>$LOCALIZE[31014]</label> <!-- Extra fanart -->
+                        <onclick>Skin.ToggleSetting(SkinHelper.EnableExtraFanart)</onclick>
+                        <selected>Skin.HasSetting(SkinHelper.EnableExtraFanart)</selected>
+                    </control>
                     <control type="button" id="9206" description="Set Timer Per Image">
                         <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
                         <include>Defs_Settings_Button</include>
