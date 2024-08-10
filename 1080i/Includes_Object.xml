@@ -1738,7 +1738,6 @@
         </control>
         <control type="multiimage">
           <animation effect="slide" end="50,-10" condition="Skin.HasSetting(DisableNetflixHomeSidemenu)">Conditional</animation>
-          <animation effect="slide" end="20,0" condition="Skin.HasSetting(DisableNetflixHomeSidemenuHide)">Conditional</animation>
           <visible>!Player.HasVideo + $EXP[DBTvideosImage]</visible>
           <width>1400</width>
           <height>700</height>
@@ -1766,7 +1765,6 @@
 
         <control type="image">
           <animation effect="slide" end="50,-10" condition="Skin.HasSetting(DisableNetflixHomeSidemenu)">Conditional</animation>
-          <animation effect="slide" end="20,0" condition="Skin.HasSetting(DisableNetflixHomeSidemenuHide)">Conditional</animation>
           <visible>[Window.IsVisible(Custom_Hub_TVNetflix.xml) | Window.IsVisible(Custom_Hub_MovieNetflix.xml)] + [Container($PARAM[id]).IsUpdating + !Integer.IsGreater(Container($PARAM[id]).NumItems,0)]</visible>
           <fadetime>500</fadetime>
           <width>1400</width>
