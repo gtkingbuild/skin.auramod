@@ -715,6 +715,19 @@
                         <onclick>SetProperty(Dialog.4.BuiltIn,Skin.SetString(AutoScroll,$LOCALIZE[31478]))</onclick>
                         <onclick>RunScript(script.toolbox,info=selectdialog,header=$LOCALIZE[31128])</onclick>
                     </control>
+                    <control type="button" id="9208">
+                        <visible>Integer.IsEqual(Window.Property(CurrentFocus),9002)</visible>
+                        <label>$LOCALIZE[31321]</label>
+                        <include>Defs_Settings_Button</include>
+                        <onclick>Skin.Reset(NoFanart)</onclick>
+                        <onclick>Skin.Reset(ViewNoFanart)</onclick>
+                        <onclick>Skin.Reset(fanart.fallback)</onclick>
+                        <onclick>Skin.Reset(global.showvideo)</onclick>
+                        <onclick>Skin.Reset(global.showvisualisation)</onclick>
+                        <onclick>Skin.Reset(DisableSettingsBackground)</onclick>
+                        <onclick>Skin.Reset(SkinHelper.EnableExtraFanart)</onclick>
+                        <onclick>Skin.Reset(AutoScroll)</onclick>
+                    </control>
 
                         <!-- ================== -->
                         <!-- Background Effects -->
