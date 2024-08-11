@@ -3302,14 +3302,14 @@
         <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
         <texture colordiffuse="PosterFront_70" background="true" diffuse="diffuse/widgetposter.png">$INFO[ListItem.Icon]</texture>
         <visible>String.StartsWith(ListItem.Icon,Default) + ![Skin.HasSetting(SerenIcons) + String.Contains(ListItem.FolderPath,plugin.video.seren)]</visible>
-        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
+        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] + ListItem.IsParentFolder</visible>
       </control>
       <control type="image">
         <bordersize>10</bordersize>
         <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
         <texture colordiffuse="PosterFront_70" background="true" diffuse="diffuse/widgetposter.png">$VAR[serenicons]</texture>
         <visible>String.StartsWith(ListItem.Icon,Default) + Skin.HasSetting(SerenIcons) + String.Contains(ListItem.FolderPath,plugin.video.seren)</visible>
-        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
+        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] + ListItem.IsParentFolder</visible>
       </control>
       <control type="image">
         <bordersize>10</bordersize>
@@ -3399,14 +3399,14 @@
         <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
         <texture colordiffuse="PosterFront" background="true" diffuse="diffuse/widgetposter.png">$INFO[ListItem.Icon]</texture>
         <visible>String.StartsWith(ListItem.Icon,Default) + ![Skin.HasSetting(SerenIcons) + String.Contains(ListItem.FolderPath,plugin.video.seren)]</visible>
-        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
+        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] + ListItem.IsParentFolder</visible>
       </control>
       <control type="image">
         <bordersize>10</bordersize>
         <aspectratio aligny="center" scalediffuse="false">keep</aspectratio>
         <texture colordiffuse="PosterFront" background="true" diffuse="diffuse/widgetposter.png">$VAR[serenicons]</texture>
         <visible>String.StartsWith(ListItem.Icon,Default) + Skin.HasSetting(SerenIcons) + String.Contains(ListItem.FolderPath,plugin.video.seren)</visible>
-        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] | ListItem.IsParentFolder</visible>
+        <visible>![[Container.Content(genres) | [Container.Content(addons) + String.Contains(Container.FolderPath,Genres)]] | Container.Content(studios) | Container.Content(years) | Container.Content(directors) | Container.Content(countries) | Container.Content(tags) | Container.Content(playlists)] + ListItem.IsParentFolder</visible>
       </control>
       <control type="image">
         <bordersize>10</bordersize>
