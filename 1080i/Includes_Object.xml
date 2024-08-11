@@ -1736,14 +1736,38 @@
           <texture background="true" colordiffuse="FF000000">common/white.png</texture>
           <visible>!Window.IsVisible(MyVideoNav.xml) + ![Skin.HasSetting(DisableNetflixSubmenuBG) + [Control.HasFocus(300) | Control.HasFocus(302) | Control.HasFocus(30222)]]</visible>
         </control>
+        <control type="label" id="5152">
+          <description>hidden label for fanart image</description>
+          <include>Defs_Offscreen</include>
+          <label>$VAR[fanart_multi_fadelabel]</label>
+          <visible>false</visible>
+        </control>
         <control type="multiimage">
           <animation effect="slide" end="50,-10" condition="Skin.HasSetting(DisableNetflixHomeSidemenu)">Conditional</animation>
+          <visible>!String.IsEqual(Control.GetLabel(5152),ListItem.Icon)</visible>
           <visible>!Player.HasVideo + $EXP[DBTvideosImage]</visible>
           <width>1400</width>
           <height>700</height>
 	  <left>500</left>
           <top>0</top>
           <aspectratio scalediffuse="true" aligny="top">scale</aspectratio>
+          <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
+          <timeperimage>2000</timeperimage>
+          <fadetime>2000</fadetime>
+          <pauseatend>10000</pauseatend>
+          <randomize>false</randomize>
+          <loop>no</loop>
+          <include>animation_image_zoom</include>
+        </control>
+        <control type="multiimage">
+          <animation effect="slide" end="50,-10" condition="Skin.HasSetting(DisableNetflixHomeSidemenu)">Conditional</animation>
+          <visible>String.IsEqual(Control.GetLabel(5152),ListItem.Icon)</visible>
+          <visible>!Player.HasVideo + $EXP[DBTvideosImage]</visible>
+          <width>1400</width>
+          <height>700</height>
+	  <left>500</left>
+          <top>0</top>
+          <aspectratio scalediffuse="false" aligny="center">scale</aspectratio>
           <imagepath background="true" diffuse="Right Corner.png">$VAR[fanart_multi_fadelabel]</imagepath>
           <timeperimage>2000</timeperimage>
           <fadetime>2000</fadetime>
