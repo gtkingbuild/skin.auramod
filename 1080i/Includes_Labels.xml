@@ -456,8 +456,8 @@
         <value condition="String.IsEqual(ListItem.PercentPlayed,100)">0</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating">
-        <value condition="String.IsEqual(ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(ListItem.Rating,0)">0</value>
+        <value condition="String.IsEqual(ListItem.Rating,0.0)">0</value>
         <value condition="String.IsEqual(ListItem.Rating,0.1)">1</value>
         <value condition="String.IsEqual(ListItem.Rating,0.2)">2</value>
         <value condition="String.IsEqual(ListItem.Rating,0.3)">3</value>
@@ -570,8 +570,8 @@
         <value condition="String.IsEqual(ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRatingIMDb">
-        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0)"/>
-        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0.0)"/>
+        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0)">0</value>
+        <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0.0)">0</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0.1)">1</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0.2)">2</value>
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),0.3)">3</value>
@@ -684,8 +684,8 @@
         <value condition="String.IsEqual(Window(Home).Property(TMDBHelper.ListItem.IMDb_Rating),10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating1505">
-        <value condition="String.IsEqual(Container(1505).ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(Container(1505).ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(Container(1505).ListItem.Rating,0)">0</value>
+        <value condition="String.IsEqual(Container(1505).ListItem.Rating,0.0)">0</value>
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,0.1)">1</value>
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,0.2)">2</value>
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,0.3)">3</value>
@@ -798,8 +798,8 @@
         <value condition="String.IsEqual(Container(1505).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating1506">
-        <value condition="String.IsEqual(Container(1506).ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(Container(1506).ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(Container(1506).ListItem.Rating,0)">0</value>
+        <value condition="String.IsEqual(Container(1506).ListItem.Rating,0.0)">0</value>
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,0.1)">1</value>
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,0.2)">2</value>
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,0.3)">3</value>
@@ -912,8 +912,8 @@
         <value condition="String.IsEqual(Container(1506).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating5055">
-        <value condition="String.IsEqual(Container(5055).ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(Container(5055).ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(Container(5055).ListItem.Rating,0)">0</value>
+        <value condition="String.IsEqual(Container(5055).ListItem.Rating,0.0)">0</value>
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,0.1)">1</value>
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,0.2)">2</value>
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,0.3)">3</value>
@@ -1026,8 +1026,8 @@
         <value condition="String.IsEqual(Container(5055).ListItem.Rating,10.0)">100</value>
     </variable>
     <variable name="RatingDecimalToPercentageListItemRating5056">
-        <value condition="String.IsEqual(Container(5056).ListItem.Rating,0)"/>
-        <value condition="String.IsEqual(Container(5056).ListItem.Rating,0.0)"/>
+        <value condition="String.IsEqual(Container(5056).ListItem.Rating,0)">0</value>
+        <value condition="String.IsEqual(Container(5056).ListItem.Rating,0.0)">0</value>
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,0.1)">1</value>
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,0.2)">2</value>
         <value condition="String.IsEqual(Container(5056).ListItem.Rating,0.3)">3</value>
