@@ -6872,7 +6872,7 @@
 
   <include name="netflix_infoline">
     <control type="group">
-      <visible>[$EXP[DBTvideos] + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(660) | Window.IsVisible(MyVideoNav.xml)] + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,See More...) + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,Next)] | [String.Contains(Container($PARAM[id]).ListItem.FolderPath,plugin.video.youtube)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
+      <visible>[$EXP[DBTvideos] + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(660) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]] + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,See More...) + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,Next)] | [String.Contains(Container($PARAM[id]).ListItem.FolderPath,plugin.video.youtube)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
       <height>60</height>
       <control type="grouplist">
         <orientation>horizontal</orientation>
@@ -6884,7 +6884,7 @@
           <width>200</width>
           <left>-5</left>
           <top>-20</top>
-          <visible>!$EXP[MainSubMenuHasFocus] | Window.IsVisible(MyVideoNav.xml)</visible>
+          <visible>!$EXP[MainSubMenuHasFocus] | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]</visible>
           <visible>!Skin.HasSetting(DisableStarRating) | [Skin.HasSetting(DisableLiked) + String.IsEmpty(Control.GetLabel(5949))]</visible>
           <include content="Object_StarRating">
             <param name="height" value="50" />
@@ -6900,7 +6900,7 @@
           <align>center</align>
           <font>font_tiny_bold</font>
           <visible>Skin.HasSetting(DisableLiked) + !String.IsEmpty(Control.GetLabel(5949))</visible>
-          <visible>!$EXP[MainSubMenuHasFocus] | Window.IsVisible(MyVideoNav.xml)</visible>
+          <visible>!$EXP[MainSubMenuHasFocus] | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]</visible>
         </control>
         <control type="group">
           <width>auto</width> <!--500-->
@@ -6993,14 +6993,14 @@
               <textcolor>$VAR[ColorHighlight2]</textcolor>
               <font>font_tiny_bold</font>
               <visible>String.IsEqual(ListItem.DBType,episode)</visible>
-              <visible>[!Control.IsVisible(502) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222)] | Window.IsVisible(MyVideoNav.xml)]</visible>
+              <visible>[!Control.IsVisible(502) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222)] | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]]</visible>
             </control>
             <control type="label">
               <width>auto</width>
               <label>$VAR[Label_Info_NextAired_Status]</label>
               <font>font_tiny</font>
               <textcolor>$VAR[ColorHighlight2]</textcolor>
-              <visible>[!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + String.IsEqual(ListItem.DBType,tvshow) | Window.IsVisible(MyVideoNav.xml)]</visible>
+              <visible>[!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + String.IsEqual(ListItem.DBType,tvshow) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]]</visible>
             </control>
           </control>
         </control>
