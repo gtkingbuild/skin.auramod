@@ -3189,7 +3189,7 @@
           <height>45%</height>
           <aspectratio>keep</aspectratio>
           <texture background="true">$VAR[Widget_ClearLogo]</texture>
-          <visible>!Control.IsVisible(507) + Skin.HasSetting(DisableClearlogo) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Season)]</visible>
+          <visible>!Control.IsVisible(507) + !Control.IsVisible(52) + !Control.IsVisible(502) + Skin.HasSetting(DisableClearlogo) + [String.IsEqual(ListItem.DBType,episode) | String.IsEqual(ListItem.DBType,season) + !String.IsEmpty(ListItem.Season)]</visible>
         </control>
 
             <control type="group">
