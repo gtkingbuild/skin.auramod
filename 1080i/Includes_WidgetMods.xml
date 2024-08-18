@@ -39,7 +39,7 @@
             <bottom>25</bottom>
             <aspectratio aligny="bottom" scalediffuse="false">keep</aspectratio>
             <texture background="true" diffuse="diffuse/widgetlandscape.png">$VAR[Widget_ClearLogo]</texture>
-            <visible>!String.IsEqual(ListItem.DBType,episode) + [String.IsEmpty(ListItem.Art(landscape)) | String.Contains(ListItem.Art(landscape),w1280None) | String.Contains(ListItem.Art(landscape),tmdb.org)]</visible>
+            <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape))</visible>
       </control>
           <control type="progress">
             <left>30</left>
@@ -225,7 +225,7 @@
         <right>120</right>
         <aspectratio aligny="bottom" scalediffuse="false">keep</aspectratio>
         <texture background="true" diffuse="diffuse/widgetlandscape.png">$VAR[Widget_ClearLogo]</texture>
-        <visible>!String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + [String.IsEmpty(ListItem.Art(landscape)) | String.Contains(ListItem.Art(landscape),w1280None) | String.Contains(ListItem.Art(landscape),tmdb.org)]</visible>
+        <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo)</visible>
       </control>
       <!-- Add Clearlogo to landscape Image -->
       <control type="image">
@@ -448,7 +448,7 @@
         <height>45%</height>
         <aspectratio>keep</aspectratio>
         <texture background="true">$VAR[Widget_ClearLogo]</texture>
-        <visible>!String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + [String.IsEmpty(ListItem.Art(landscape)) | String.Contains(ListItem.Art(landscape),w1280None) | String.Contains(ListItem.Art(landscape),tmdb.org)]</visible>
+        <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo)</visible>
       </control>
       <control type="group">
         <!-- Add Clearlogo to landscape Image -->
@@ -591,7 +591,7 @@
         <height>45%</height>
         <aspectratio>keep</aspectratio>
         <texture background="true">$VAR[Widget_ClearLogo]</texture>
-        <visible>!String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + [String.IsEmpty(ListItem.Art(landscape)) | String.Contains(ListItem.Art(landscape),w1280None) | String.Contains(ListItem.Art(landscape),tmdb.org)]</visible>
+        <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo)</visible>
       </control>
       <control type="group">
         <!-- Add Clearlogo to landscape Image -->
@@ -761,7 +761,7 @@
         <height>45%</height>
         <aspectratio>keep</aspectratio>
         <texture background="true">$VAR[Widget_ClearLogo]</texture>
-        <visible>!String.IsEqual(ListItem.DBType,episode) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + [String.IsEmpty(ListItem.Art(landscape)) | String.Contains(ListItem.Art(landscape),w1280None) | String.Contains(ListItem.Art(landscape),tmdb.org)]</visible>
+        <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo)</visible>
       </control>
       <control type="group">
         <!-- Add Clearlogo to landscape Image -->
@@ -816,7 +816,7 @@
           <height>45%</height>
           <aspectratio>keep</aspectratio>
           <texture background="true">$VAR[Widget_ClearLogo]</texture>
-          <visible>!Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + [String.IsEqual(ListItem.DBType,tvshow) | String.IsEqual(ListItem.DBType,movie)] + !String.Contains(ListItem.Art(landscape),fanart.tv) + !String.Contains(ListItem.Art(landscape),fanart.tv) + !String.Contains(ListItem.Art(landscape),userdata)</visible>
+          <visible>!String.IsEqual(ListItem.DBType,episode) + String.IsEmpty(ListItem.Art(landscape)) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo)</visible>
         </control>
       </control>
       <control type="group">
