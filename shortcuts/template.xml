@@ -113,7 +113,7 @@
                 <param name="Showcase" value="$PYTHON['true' if widgetShowcase == 'true' else 'false']" />
                 <param name="Showcasehide" value="$PYTHON['true' if widgetShowcasehide == 'true' else 'false']" />
                 <param name="landscapewidebg" value="$PYTHON['true' if widgetLandscapewidebg == 'true' else 'false']" />
-                <param name="mylist1" value="$PYTHON['true' if widgetPath == 'x11' else 'false']" />
+                <param name="mylist1" value="$PYTHON['true' if 'x11' in widgetPath else 'false']" />
                 <param name="onfocus" value="SetProperty(Current_Container_Fanart,$PYTHON[int(mainmenuid)]$PYTHON[int(id) + 3002],Home)" />
                 <param name="movement" value="$SKINSHORTCUTS[widgetMovement]" />
                 <param name="InfoSlide" value="false" />
@@ -2115,7 +2115,7 @@
                 <param name="controltype" value="$PYTHON['list' if widgetControl == 'true' else 'fixedlist']" />
                 <param name="movement" value="$SKINSHORTCUTS[widgetMovement]" />
                 <param name="label" value="$SKINSHORTCUTS[label]" />
-                <param name="mylist1" value="$PYTHON['true' if widgetPath == 'x11' else 'false']" />
+                <param name="mylist1" value="$PYTHON['true' if 'x11' in widgetPath else 'false']" />
                 <param name="visible" value="Window.IsVisible(Custom_Hub_MovieNetflix.xml)" />
             </include>
             </controls>
@@ -2235,7 +2235,7 @@
                 <param name="controltype" value="$PYTHON['list' if widgetControl == 'true' else 'panel' if widgetHubAspect == 'LandscapePanel' else 'fixedlist']" />
                 <param name="movement" value="$SKINSHORTCUTS[widgetMovement]" />
                 <param name="label" value="$SKINSHORTCUTS[label]" />
-                <param name="mylist1" value="$PYTHON['true' if widgetPath == 'x11' else 'false']" />
+                <param name="mylist1" value="$PYTHON['true' if 'x11' in widgetPath else 'false']" />
                 <param name="visible" value="Window.IsVisible(Custom_Hub_TVNetflix.xml)" />
             </include>
             </controls>
