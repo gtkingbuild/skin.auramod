@@ -495,7 +495,7 @@
     <include name="Defs_TMDB_Widget_OnFocus">
         <control type="button">
             <visible allowhiddenfocus="true">false</visible>
-            <onfocus condition="!Skin.HasSetting(TMDbHelper.ForceWidgetContainer) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])">Skin.SetBool(TMDbHelper.ForceWidgetContainer)</onfocus>
+            <onfocus condition="!Skin.HasSetting(TMDbHelper.ForceWidgetContainer) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) + !String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924]) + !Control.IsVisible(53001)">Skin.SetBool(TMDbHelper.ForceWidgetContainer)</onfocus>
             <onfocus condition="Skin.HasSetting(TMDbHelper.ForceWidgetContainer) + [String.IsEqual(Container.ListItem.Label,$LOCALIZE[31923]) | String.IsEqual(Container.ListItem.Label,$LOCALIZE[31924])]">Skin.Reset(TMDbHelper.ForceWidgetContainer)</onfocus>
         </control>
     </include>
