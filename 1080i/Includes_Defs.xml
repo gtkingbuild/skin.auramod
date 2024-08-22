@@ -425,6 +425,29 @@
         <value condition="!Skin.HasSetting(VideoInfo.Pagination) + !String.IsEqual(Skin.String(HomeWidgetItemLimit),10)">23</value>
     </variable>
 
+    <include name="Defs_VideoInfo_WidgetPage_Init">
+        <onload>SetProperty(TMDbWidgetItemLimit_53001,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53002,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53003,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53004,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53005,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53006,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53007,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53008,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+        <onload>SetProperty(TMDbWidgetItemLimit_53009,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
+
+        <onload>SetProperty(Container(53001).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53002).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53003).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53004).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53005).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53006).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53007).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53008).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53009).WidgetPage,1,Home)</onload>
+        <onload>SetProperty(Container(53012).WidgetPage,1,Home)</onload>
+    </include>
+
     <include name="Defs_VideoInfo_WidgetPage">
         <onload>SetProperty(TMDbWidgetItemLimit_53001,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
         <onload>SetProperty(TMDbWidgetItemLimit_53002,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
@@ -436,15 +459,15 @@
         <onload>SetProperty(TMDbWidgetItemLimit_53008,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
         <onload>SetProperty(TMDbWidgetItemLimit_53009,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onload>
 
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53001,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53002,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53003,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53004,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53005,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53006,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53007,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53008,Home)</onunload>
-        <onunload>ClearProperty(TMDbWidgetItemLimit_53009,Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53001,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53002,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53003,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53004,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53005,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53006,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53007,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53008,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
+        <onunload>SetProperty(TMDbWidgetItemLimit_53009,$INFO[Skin.String(HomeWidgetItemLimit)],Home)</onunload>
 
         <onload>SetProperty(Container(53001).WidgetPage,1,Home)</onload>
         <onload>SetProperty(Container(53002).WidgetPage,1,Home)</onload>
@@ -457,16 +480,16 @@
         <onload>SetProperty(Container(53009).WidgetPage,1,Home)</onload>
         <onload>SetProperty(Container(53012).WidgetPage,1,Home)</onload>
 
-        <onunload>ClearProperty(Container(53001).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53002).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53003).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53004).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53005).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53006).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53007).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53008).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53009).WidgetPage,Home)</onunload>
-        <onunload>ClearProperty(Container(53012).WidgetPage,Home)</onunload>
+        <onunload>SetProperty(Container(53001).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53002).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53003).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53004).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53005).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53006).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53007).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53008).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53009).WidgetPage,1,Home)</onunload>
+        <onunload>SetProperty(Container(53012).WidgetPage,1,Home)</onunload>
     </include>
 
     <include name="Defs_TMDB_Widget_OnFocus">

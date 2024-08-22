@@ -22,6 +22,7 @@
   <onload>Skin.SetString(AddonContainer,false)</onload>
   <onload condition="!Skin.HasSetting(TMDbHelper.EnableBlur)">Skin.SetBool(TMDbHelper.EnableBlur)</onload>
   <onload>SetProperty(TMDbHelper.Blur.SourceImage,fanart,Home)</onload>
+  <include>Defs_VideoInfo_WidgetPage_Init</include>
   <onunload>SetProperty(SpotReturnHome,true,Home)</onunload>
   <onunload>ClearProperty(spothubscroll)</onunload>
   <onunload>ClearProperty(TMDBHelper.WidgetContainer)</onunload>
