@@ -197,21 +197,13 @@
       </control>
       <control type="group">
         <visible>String.IsEqual(ListItem.DBType,episode) + [!String.IsEmpty(ListItem.Art(clearlogo)) | !String.IsEmpty(ListItem.Art(tvshow.clearlogo))] + !Skin.HasSetting(WidgetLabels)</visible>
-        <control type="image">
-          <left>0</left>
-          <bottom>40</bottom>
-          <height>45</height>
-          <width>100</width>
-          <texture background="true" colordiffuse="99FF0000" flipy="true">diffuse/halfbox.png</texture>
-        </control>
         <control type="textbox">
-          <bottom>20</bottom>
-          <left>4</left>
-          <height>55</height>
-          <width>85</width>
-          <label>[I]$INFO[ListItem.Season, S,: ]$INFO[ListItem.Episode,E, ][/I]</label>
+          <top>255</top>
+          <left>25</left>
+          <font>font_medium_bold</font>
+          <shadowcolor>black</shadowcolor>
           <textcolor>white</textcolor>
-          <font>widget_overlaybutton</font>
+          <label>S$INFO[ListItem.Season]:E$INFO[ListItem.Episode]</label>
         </control>
       </control>
       <!-- Clearlogo -->
@@ -229,13 +221,45 @@
       </control>
       <!-- Add Clearlogo to landscape Image -->
       <control type="image">
-        <bottom>0</bottom>
+        <bottom>-5</bottom>
         <right>10</right>
         <width>45%</width>
         <height>45%</height>
         <aspectratio>keep</aspectratio>
         <texture background="true">$VAR[Widget_ClearLogo]</texture>
         <visible>!Skin.HasSetting(DisableNetflixSmallWidget) + !Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + String.IsEqual(ListItem.DBType,episode)</visible>
+      </control>
+      <control type="progress">
+        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+        <left>0</left>
+        <top>322</top>
+        <description>progress bar</description>
+        <width>602</width>
+        <height>8</height>
+        <align>center</align>
+        <texturebg colordiffuse="white" border="2">diffuse/progress-bg.png</texturebg>
+        <lefttexture></lefttexture>
+        <midtexture colordiffuse="red" border="2">diffuse/progress-bg.png</midtexture>
+        <righttexture></righttexture>
+        <reveal>true</reveal>
+        <info>ListItem.PercentPlayed</info>
+  <visible>!Container.Content(seasons)</visible>
+      </control>
+      <control type="progress">
+        <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
+        <left>0</left>
+        <top>322</top>
+        <description>progress bar</description>
+        <width>602</width>
+        <height>8</height>
+        <align>center</align>
+        <texturebg colordiffuse="red" border="2">diffuse/progress-bg.png</texturebg>
+        <lefttexture></lefttexture>
+        <midtexture colordiffuse="red" border="2">diffuse/progress-bg.png</midtexture>
+        <righttexture></righttexture>
+        <reveal>true</reveal>
+        <info>ListItem.PercentPlayed</info>
+  <visible>!Container.Content(seasons)</visible>
       </control>
       <control type="group">
         <height>50</height>
@@ -788,23 +812,14 @@
         <aspectratio scalediffuse="false">stretch</aspectratio>
       </control>
       <control type="group">
-        <visible>Skin.HasSetting(WidgetLabels) + String.IsEqual(ListItem.DBType,episode)</visible>
-        <control type="image">
-          <left>0</left>
-          <bottom>40</bottom>
-          <height>45</height>
-          <width>90</width>
-          <texture background="true" colordiffuse="99FF0000" flipy="true">diffuse/halfbox.png</texture>
-        </control>
+        <visible>!Skin.HasSetting(WidgetLabels) + String.IsEqual(ListItem.DBType,episode)</visible>
         <control type="textbox">
-          <bottom>20</bottom>
-          <left>4</left>
-          <height>55</height>
-          <width>75</width>
-          <visible>Skin.HasSetting(WidgetLabels) + String.IsEqual(ListItem.DBType,episode)</visible>
-          <label>[I]$INFO[ListItem.Season, S,: ]$INFO[ListItem.Episode,E, ][/I]</label>
+          <top>265</top>
+          <left>25</left>
+          <font>font_medium_bold</font>
+          <shadowcolor>black</shadowcolor>
           <textcolor>white</textcolor>
-          <font>widget_overlaybutton</font>
+          <label>S$INFO[ListItem.Season]:E$INFO[ListItem.Episode]</label>
         </control>
       </control>
       <control type="group">
@@ -822,7 +837,7 @@
       <control type="group">
         <!-- Add Clearlogo to landscape Image -->
         <control type="image">
-          <bottom>35</bottom>
+          <bottom>0</bottom>
           <right>10</right>
           <width>45%</width>
           <height>45%</height>
@@ -830,6 +845,38 @@
           <texture background="true">$VAR[Widget_ClearLogo]</texture>
           <visible>!Skin.HasSetting(DisableBanners) + Skin.HasSetting(DisableClearlogo) + String.IsEqual(ListItem.DBType,episode)</visible>
         </control>
+      </control>
+      <control type="progress">
+        <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
+        <left>0</left>
+        <top>332</top>
+        <description>progress bar</description>
+        <width>620</width>
+        <height>8</height>
+        <align>center</align>
+        <texturebg colordiffuse="white" border="2">diffuse/progress-bg.png</texturebg>
+        <lefttexture></lefttexture>
+        <midtexture colordiffuse="red" border="2">diffuse/progress-bg.png</midtexture>
+        <righttexture></righttexture>
+        <reveal>true</reveal>
+        <info>ListItem.PercentPlayed</info>
+  <visible>!Container.Content(seasons)</visible>
+      </control>
+      <control type="progress">
+        <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
+        <left>0</left>
+        <top>332</top>
+        <description>progress bar</description>
+        <width>620</width>
+        <height>8</height>
+        <align>center</align>
+        <texturebg colordiffuse="red" border="2">diffuse/progress-bg.png</texturebg>
+        <lefttexture></lefttexture>
+        <midtexture colordiffuse="red" border="2">diffuse/progress-bg.png</midtexture>
+        <righttexture></righttexture>
+        <reveal>true</reveal>
+        <info>ListItem.PercentPlayed</info>
+  <visible>!Container.Content(seasons)</visible>
       </control>
       <!-- Add Banner to landscape Image -->
       <control type="group">
@@ -842,26 +889,6 @@
           <aspectratio align="center" aligny="center">stretch</aspectratio>
           <texture background="true">$VAR[WidgetBannerVar]</texture>
           <visible>Skin.HasSetting(DisableBanners)</visible>
-        </control>
-        <!-- Start Add label box if Episode -->
-        <control type="group">
-          <bottom>0</bottom>
-          <height>60</height>
-          <visible>!Skin.HasSetting(WidgetLabels) + !Skin.HasSetting(DisableBanners) + !String.IsEmpty(ListItem.Episode)</visible>
-          <control type="image">
-            <texture background="true" colordiffuse="99000000" border="10" flipy="true">diffuse/halfbox.png</texture>
-          </control>
-          <control type="label">
-            <top>0</top>
-            <bottom>0</bottom>
-            <left>20</left>
-            <right>20</right>
-            <align>center</align>
-            <aligny>center</aligny>
-            <font>font_tiny_bold</font>
-            <textcolor>main_fg_70</textcolor>
-            <label>[B]$INFO[ListItem.Season,$LOCALIZE[31750] , ]$INFO[ListItem.Episode,$LOCALIZE[31884] , ][/B]</label> <!-- Season SEASON Episode EPISODE -->
-          </control>
         </control>
       </control>
       <!-- Start Add label below widget  -->
