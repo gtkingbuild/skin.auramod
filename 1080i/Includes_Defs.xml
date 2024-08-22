@@ -377,10 +377,10 @@
     </variable>
 
     <variable name="Info_Youtube">
-        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.TvShowTitle,plugin://plugin.video.youtube/search/?q=,]</value>
-        <value condition="!String.IsEmpty(ListItem.Artist) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Artist,plugin://plugin.video.youtube/search/?q=,]</value>
-        <value condition="!String.IsEmpty(ListItem.Title) + System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Title,plugin://plugin.video.youtube/search/?q=,]</value>
-        <value condition="System.HasAddon(plugin.video.youtube)">$INFO[ListItem.Label,plugin://plugin.video.youtube/search/?q=,]</value>
+        <value condition="!String.IsEmpty(ListItem.TvShowTitle) + System.HasAddon(plugin.video.youtube)">plugin://plugin.video.youtube/kodion/goto_page/$INFO[Window(Home).Property(Container(53009).WidgetPage)]/search?q=$INFO[ListItem.TvShowTitle]&amp;search_type=list</value>
+        <value condition="!String.IsEmpty(ListItem.Artist) + System.HasAddon(plugin.video.youtube)">plugin://plugin.video.youtube/kodion/goto_page/$INFO[Window(Home).Property(Container(53009).WidgetPage)]/search?q=$INFO[ListItem.Artist]&amp;search_type=list</value>
+        <value condition="!String.IsEmpty(ListItem.Title) + System.HasAddon(plugin.video.youtube)">plugin://plugin.video.youtube/kodion/goto_page/$INFO[Window(Home).Property(Container(53009).WidgetPage)]/search?q=$INFO[ListItem.Title]&amp;search_type=list</value>
+        <value condition="System.HasAddon(plugin.video.youtube)">plugin://plugin.video.youtube/kodion/goto_page/$INFO[Window(Home).Property(Container(53009).WidgetPage)]/search?q=$INFO[ListItem.Label]&amp;search_type=list</value>
     </variable>
 
     <variable name="Info_FromDirector">
