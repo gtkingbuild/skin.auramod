@@ -1483,7 +1483,7 @@
                     <include condition="$PARAM[landscapedetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeDetails</include>
                     <include condition="$PARAM[widgetlive] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_WidgetLive</include>
 		    <include condition="$PARAM[landscapenetflix] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix</include>
-		    <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix</include>
+		    <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapePanel</include>
 		    <include condition="$PARAM[category] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Category</include>
                     <include condition="$PARAM[submenuwidget] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_SubmenuWidget</include>
                 </control>
@@ -1556,7 +1556,7 @@
 		    <include condition="$PARAM[widgetlive] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_WidgetLive</include>
                     <include condition="$PARAM[landscapedetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeDetails_Focused</include>
 		    <include condition="$PARAM[landscapenetflix] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix</include>
-		    <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix</include>
+		    <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapePanel</include>
 		    <include condition="$PARAM[category] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Category</include>
 	            <include condition="$PARAM[submenuwidget] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_SubmenuWidget</include>
                 </control>
