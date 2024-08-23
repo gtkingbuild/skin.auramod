@@ -232,10 +232,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
         <left>0</left>
-        <top>322</top>
+        <top>326</top>
         <description>progress bar</description>
-        <width>602</width>
-        <height>8</height>
+        <width>603</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="white" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
@@ -248,10 +248,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
         <left>0</left>
-        <top>322</top>
+        <top>326</top>
         <description>progress bar</description>
-        <width>602</width>
-        <height>8</height>
+        <width>603</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="red" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
@@ -873,10 +873,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
         <left>0</left>
-        <top>332</top>
+        <top>336</top>
         <description>progress bar</description>
-        <width>620</width>
-        <height>8</height>
+        <width>621</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="white" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
@@ -889,10 +889,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
         <left>0</left>
-        <top>332</top>
+        <top>336</top>
         <description>progress bar</description>
-        <width>620</width>
-        <height>8</height>
+        <width>621</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="red" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
@@ -1183,10 +1183,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PercentPlayed,0)</visible>
         <left>0</left>
-        <top>351</top>
+        <top>355</top>
         <description>progress bar</description>
-        <width>620</width>
-        <height>8</height>
+        <width>621</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="white" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
@@ -1199,10 +1199,10 @@
       <control type="progress">
         <visible>Integer.IsGreater(ListItem.PlayCount,0)</visible>
         <left>0</left>
-        <top>351</top>
+        <top>355</top>
         <description>progress bar</description>
-        <width>620</width>
-        <height>8</height>
+        <width>621</width>
+        <height>4</height>
         <align>center</align>
         <texturebg colordiffuse="red" border="2">diffuse/progress-bg.png</texturebg>
         <lefttexture></lefttexture>
