@@ -6964,14 +6964,15 @@
               <textcolor>$VAR[ColorHighlight2]</textcolor>
               <font>font_tiny_bold</font>
               <visible>String.IsEqual(ListItem.DBType,episode)</visible>
-              <visible>[!Control.IsVisible(502) + !Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222)] | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]</visible>
+              <visible>!Control.IsVisible(502) + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]]</visible>
             </control>
             <control type="label">
               <width>auto</width>
               <label>$VAR[Label_Info_NextAired_Status]</label>
               <font>font_tiny</font>
               <textcolor>$VAR[ColorHighlight2]</textcolor>
-              <visible>[!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + String.IsEqual(ListItem.DBType,tvshow)] | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]</visible>
+              <visible>!String.IsEqual(ListItem.DBType,episode)</visible>
+              <visible>[!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + String.IsEqual(ListItem.DBType,tvshow) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]]</visible>
             </control>
           </control>
         </control>
