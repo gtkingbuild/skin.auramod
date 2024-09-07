@@ -483,10 +483,10 @@
     <height>570</height>
   </include>
   <include name="Widget_Items_LandscapeWide">
-    <height>700</height>
+    <height>670</height>
   </include>
   <include name="Widget_Items_LandscapeWide_small">
-    <height>755</height>
+    <height>710</height>
   </include>
   <include name="Widget_Items_Landscape_Big_Height_Label">
     <height>695</height>
@@ -1061,20 +1061,6 @@
           <param name="studios" value="$PARAM[studios]" />
           <param name="text" value="$PARAM[text]" />
         </include>
-
-        <control type="group">
-	    <left>90</left>
-          <control type="label">
-            <bottom>-30</bottom>
-	    <align>center</align>
-            <height>40</height>
-            <font>font_small</font>
-            <shadowcolor>black</shadowcolor>
-            <textcolor>white</textcolor>
-            <label>$VAR[video_heading]</label>
-            <visible>$PARAM[landscapewidecondition] + !String.StartsWith(ListItem.Label,See More)</visible>
-          </control>
-         </control>
       </itemlayout>
       <itemlayout width="widget_poster_width" height="widget_poster_height" condition="$PARAM[landscapewidepostercondition]">
         <include content="Widget_Items_ItemLayout">
@@ -1244,19 +1230,6 @@
           <param name="studios" value="$PARAM[studios]" />
           <param name="text" value="$PARAM[text]" />
         </include>
-        <control type="group">
-            <left>90</left>
-          <control type="label">
-	    <bottom>-30</bottom>
-            <align>center</align>
-            <height>40</height>
-            <font>font_small</font>
-            <shadowcolor>black</shadowcolor>
-            <textcolor>white</textcolor>
-            <label>$VAR[video_heading]</label>
-            <visible>$PARAM[landscapewidecondition] + !String.StartsWith(ListItem.Label,See More)</visible>
-          </control>
-         </control>
       </focusedlayout>
       <focusedlayout width="380" height="widget_landscape_height" condition="$PARAM[widgetlivecondition]">
         <include content="Widget_Items_FocusedLayout">
