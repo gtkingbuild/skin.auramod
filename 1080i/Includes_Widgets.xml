@@ -1843,7 +1843,7 @@
           <include condition="$PARAM[landscape] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Landscape_Aura</include>
           <include condition="$PARAM[landscapewide] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Landscape_Wide</include>
           <include condition="$PARAM[landscapewideposter] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeWidePoster_Aura</include>
-          <include condition="$PARAM[posterdetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_PosterDetails</include>
+          <include condition="$PARAM[posterdetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_PosterDetails_Aura</include>
           <include condition="$PARAM[widgetlive] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_WidgetLive</include>
           <include condition="$PARAM[landscapenetflix] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix_Aura</include>
           <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapePanel_Aura</include>
@@ -1918,7 +1918,7 @@
           <include condition="$PARAM[landscape] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Landscape_Aura</include>
           <include condition="$PARAM[landscapewide] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_Landscape_Wide</include>
           <include condition="$PARAM[landscapewideposter] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeWidePoster_Aura</include>
-          <include condition="$PARAM[posterdetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_PosterDetails</include>
+          <include condition="$PARAM[posterdetails] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_PosterDetails_Aura</include>
           <include condition="$PARAM[widgetlive] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_WidgetLive</include>
           <include condition="$PARAM[landscapenetflix] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapeNetflix_Aura</include>
           <include condition="$PARAM[landscapepanel] + !$PARAM[studios] + !$PARAM[genres] + !$PARAM[text]">Widget_Items_LandscapePanel_Aura</include>

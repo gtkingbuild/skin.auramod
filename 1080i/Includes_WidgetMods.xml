@@ -2161,6 +2161,88 @@
     </definition>
   </include>
   <!-- END Poster Details  Widget -->
+  <!-- START Poster Details Widget -->
+  <include name="Widget_Items_PosterDetails_Aura">
+    <param name="posterdetails" default="false" />
+    <definition>
+      <control type="image">
+        <height>100%</height>
+        <texture background="true" colordiffuse="70000000" border="10" flipy="true">diffuse/halfbox.png</texture>
+      </control>
+      <control type="image">
+        <left>-10</left>
+        <width>260</width>
+        <texture background="true" diffuse="diffuse/widgetlandscape.png">$VAR[Image_Poster]</texture>
+        <aspectratio scalediffuse="false">keep</aspectratio>
+      </control>
+      <control type="label">
+        <left>280</left>
+        <right>30</right>
+        <top>8</top>
+        <aligny>top</aligny>
+        <height>40</height>
+        <font>font_posterdetails_label</font>
+        <textcolor>$VAR[ColorHighlight2]</textcolor>
+        <width min="150" max="470">auto</width>
+        <scroll>true</scroll>
+        <label>$VAR[Label_Widget]</label>
+      </control>
+      <control type="textbox">
+        <left>280</left>
+        <right>30</right>
+        <top>60</top>
+        <height>60</height>
+        <width>490</width>
+        <font>font_posterdetail_small</font>
+        <textcolor>main_fg_100</textcolor>
+        <label>$VAR[date_aired] $LOCALIZE[31792]: [/COLOR][B]$VAR[Label_Duration][/B][COLOR=$VAR[ColorHighlight]] $LOCALIZE[31748]: [/COLOR][B]$INFO[ListItem.EndTime][/B]</label> <!-- Length: DURATION Ends: ENDTIME -->
+        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+      </control>
+      <control type="textbox">
+        <left>280</left>
+        <right>30</right>
+        <top>90</top>
+        <height>30</height>
+        <width min="150" max="400">auto</width>
+        <align>justify</align>
+        <scroll>true</scroll>
+        <font>font_posterdetail_small</font>
+        <textcolor>main_fg_100</textcolor>
+        <label>[COLOR=$VAR[ColorHighlight]]$LOCALIZE[31497]: [/COLOR]$INFO[ListItem.Genre]</label> <!-- Genre -->
+        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+      </control>
+      <control type="textbox">
+        <height>200</height>
+        <left>280</left>
+        <right>30</right>
+        <top>130</top>
+        <bottom>20</bottom>
+        <align>left</align>
+        <font>font_widget_plot</font>
+        <textcolor>main_fg_70</textcolor>
+        <width min="150" max="470">auto</width>
+        <scroll>true</scroll>
+        <label>$INFO[ListItem.Plot]</label>
+        <visible>!Skin.HasSetting(DisableAuraHomeLayout)</visible>
+      </control>
+      <control type="textbox">
+        <height>200</height>
+        <left>280</left>
+        <right>30</right>
+        <top>130</top>
+        <bottom>20</bottom>
+        <align>justify</align>
+        <font>font_widget_plot</font>
+        <textcolor>main_fg_70</textcolor>
+        <width min="150" max="470">auto</width>
+        <scroll>true</scroll>
+        <label>$INFO[ListItem.Plot]</label>
+        <visible>Skin.HasSetting(DisableAuraHomeLayout)</visible>
+      </control>
+      <include>seemore</include>
+    </definition>
+  </include>
+  <!-- END Poster Details  Widget -->
 
     <include name="widget_landscapewide_bg">
     	<param name="id" default="$PARAM[id]" />
