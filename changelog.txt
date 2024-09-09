@@ -1,3 +1,5 @@
+v2.0.1
+-Increase xbmc.gui version for Nexus
 v2.0.0
 -Fix Netflix Info "Cast & More" clearlogo image fallbacks
 -Fix episode thumb artwork priority
