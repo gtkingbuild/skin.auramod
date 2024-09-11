@@ -474,6 +474,11 @@
     <propertydefault labelID="tvshows" property="widgetSpotlighttype">TVShows</propertydefault>
     <propertydefault labelID="tvshows" property="widgetspotlight">true</propertydefault>
 
+    <!-- Favourites -->
+    <override action="ActivateWindow(Favourites)">
+        <action>ActivateWindow(favouritesbrowser)</action>
+    </override>
+
     <!-- Music -->
 
     <!-- PVR -->
