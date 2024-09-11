@@ -977,6 +977,7 @@
     <param name="path" default="" />
     <param name="path2" default="" />
     <param name="InfoSlide" default="false" />
+    <param name="browse" default="auto" />
     <definition>
       <include content="Widget_Common">
         <param name="top" value="$PARAM[top]" />
@@ -1276,6 +1277,7 @@
         <param name="limit" value="$VAR[Label_WidgetItemLimit]" />
         <param name="id" value="$PARAM[id]" />
         <param name="mylist1" value="$PARAM[mylist1]" />
+        <param name="browse" value="$PARAM[browse]" />
       </include>
       <include condition="!$PARAM[search] + !$PARAM[mylist1] + !$PARAM[videos]" content="Widget_ContentInclude">
         <param name="target" value="$PARAM[target]" />
@@ -1286,6 +1288,7 @@
         <param name="limit" value="$VAR[Label_WidgetItemLimit]" />
         <param name="id" value="$PARAM[id]" />
         <param name="mylist1" value="$PARAM[mylist1]" />
+        <param name="browse" value="$PARAM[browse]" />
       </include>
       <include condition="!$PARAM[search] + $PARAM[mylist1]" content="Widget_ContentInclude_mylist1">
         <param name="target" value="$PARAM[target]" />
@@ -1296,6 +1299,7 @@
         <param name="limit" value="$VAR[Label_WidgetItemLimit]" />
         <param name="id" value="$PARAM[id]" />
         <param name="mylist1" value="$PARAM[mylist1]" />
+        <param name="browse" value="$PARAM[browse]" />
       </include>
       <include condition="$PARAM[search]" content="Widget_ContentInclude_Search">
         <param name="target" value="$PARAM[target]" />
@@ -1307,17 +1311,18 @@
         <param name="content" value="$PARAM[content]" />
         <param name="limit" value="$VAR[Label_WidgetItemLimit]" />
         <param name="id" value="$PARAM[id]" />
+        <param name="browse" value="$PARAM[browse]" />
       </include>
     </definition>
   </include>
   <include name="Widget_ContentInclude_Search">
-    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]$PARAM[path2]</content>
+    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]" browse="$PARAM[browse]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]$PARAM[path2]</content>
   </include>
   <include name="Widget_ContentInclude">
-    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$PARAM[widgetContent]</content>
+    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]" browse="$PARAM[browse]">$PARAM[widgetContent]</content>
   </include>
   <include name="Widget_ContentInclude_mylist1">
-    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">
+    <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]" browse="$PARAM[browse]">
       <include>skinshortcuts-group-$PARAM[widgetContent]</include>
     </content>
   </include>

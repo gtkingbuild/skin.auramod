@@ -8270,6 +8270,7 @@
     <param name="top" default="" />
     <param name="orientation" default="horizontal" />
     <param name="tmdbwidgetonfocus" default="true" />
+    <param name="browse" default="never" />
     <definition>
       <control type="group" id="2$PARAM[id]">
         <visible>String.IsEmpty(Window().Property(item.info.title))</visible>
@@ -8351,6 +8352,7 @@
           <param name="genrecondition" value="$PARAM[genrecondition]" />
           <param name="search" value="$PARAM[search]" />
           <param name="tmdbwidgetonfocus" value="$PARAM[tmdbwidgetonfocus]" />
+          <param name="browse" value="$PARAM[browse]" />
         </include>
         <content>
             <item>
