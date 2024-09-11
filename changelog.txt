@@ -1,3 +1,9 @@
+v2.0.2
+-Fix missing Timers.xml log warning
+-Fix deprecated Player.DisplayAfterSeek
+-Add MyFavourites browser
+-Fix Video calibration screen
+-Fix Addon Info topbar focus
 v2.0.1
 -Increase xbmc.gui version for Nexus
 v2.0.0
