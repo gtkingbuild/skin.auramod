@@ -1014,29 +1014,11 @@
 
     <include name="Widget_ContentInclude_Search">
     <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$PARAM[path]$INFO[Skin.String(CustomSearchTerm)]$PARAM[path2]</content>
-        <content>
-            <item>
-                <label>$LOCALIZE[31373]...</label>
-                <icon>DefaultFolder.png</icon>
-                <onclick>ActivateWindow($PARAM[target],$PARAM[widgetContent],return)</onclick>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,9)</visible>
-                <visible>!Skin.HasSetting(HideShowMoreItem)</visible>
-            </item>
-        </content>
     </include>
 
 
     <include name="Widget_ContentInclude">
 <content target="$PARAM[target]" sortby="$PARAM[sortby]" sortorder="$PARAM[sortorder]" limit="$PARAM[limit]">$PARAM[widgetContent]</content>
-        <content>
-            <item>
-                <label>$LOCALIZE[31373]...</label>
-                <icon>DefaultFolder.png</icon>
-                <onclick>ActivateWindow($PARAM[target],$PARAM[widgetContent],return)</onclick>
-                <visible>Integer.IsGreater(Container($PARAM[id]).NumItems,9) + !Window.IsVisible(DialogVideoInfo.xml)</visible>
-                <visible>!Skin.HasSetting(HideShowMoreItem)</visible>
-            </item>
-        </content>
     </include>
 
 

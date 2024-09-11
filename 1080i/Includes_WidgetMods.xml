@@ -171,7 +171,7 @@
   <include name="Widget_Items_Landscape">
     <control type="group">
         <control type="button">
-          <onfocus condition="!String.StartsWith(ListItem.Label,See More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
+          <onfocus condition="!String.StartsWith(ListItem.Label,More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
           <onunfocus>ClearProperty(widgetslide,home)</onunfocus>
           <onunfocus>CancelAlarm(widgetslide,true)</onunfocus>
         </control>
@@ -313,7 +313,7 @@
   <include name="Widget_Items_Landscape_Aura">
     <control type="group">
         <control type="button">
-          <onfocus condition="!String.StartsWith(ListItem.Label,See More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
+          <onfocus condition="!String.StartsWith(ListItem.Label,More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
           <onunfocus>ClearProperty(widgetslide,home)</onunfocus>
           <onunfocus>CancelAlarm(widgetslide,true)</onunfocus>
         </control>
@@ -1034,7 +1034,7 @@
   <include name="Widget_Items_LandscapeDetails_Unfocused_Aura">
     <control type="group">
         <control type="button">
-          <onfocus condition="!String.StartsWith(ListItem.Label,See More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
+          <onfocus condition="!String.StartsWith(ListItem.Label,More)">AlarmClock(widgetslide,SetProperty(widgetslide,1,home),00:02,silent)</onfocus>
           <onunfocus>ClearProperty(widgetslide,home)</onunfocus>
           <onunfocus>CancelAlarm(widgetslide,true)</onunfocus>
         </control>
@@ -2127,7 +2127,7 @@
         <font>font_posterdetail_small</font>
         <textcolor>main_fg_100</textcolor>
         <label>$VAR[date_aired] $LOCALIZE[31792]: [/COLOR][B]$VAR[Label_Duration][/B][COLOR=$VAR[ColorHighlight]] $LOCALIZE[31748]: [/COLOR][B]$INFO[ListItem.EndTime][/B]</label> <!-- Length: DURATION Ends: ENDTIME -->
-        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+        <visible>!String.IsEqual(ListItem.Label,More...)</visible>
       </control>
       <control type="textbox">
         <left>280</left>
@@ -2140,7 +2140,7 @@
         <font>font_posterdetail_small</font>
         <textcolor>main_fg_100</textcolor>
         <label>[COLOR=$VAR[ColorHighlight]]$LOCALIZE[31497]: [/COLOR]$INFO[ListItem.Genre]</label> <!-- Genre -->
-        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+        <visible>!String.IsEqual(ListItem.Label,More...)</visible>
       </control>
       <control type="textbox">
         <height>225</height>
@@ -2209,7 +2209,7 @@
         <font>font_posterdetail_small</font>
         <textcolor>main_fg_100</textcolor>
         <label>$VAR[date_aired] $LOCALIZE[31792]: [/COLOR][B]$VAR[Label_Duration][/B][COLOR=$VAR[ColorHighlight]] $LOCALIZE[31748]: [/COLOR][B]$INFO[ListItem.EndTime][/B]</label> <!-- Length: DURATION Ends: ENDTIME -->
-        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+        <visible>!String.IsEqual(ListItem.Label,More...)</visible>
       </control>
       <control type="textbox">
         <left>280</left>
@@ -2222,7 +2222,7 @@
         <font>font_posterdetail_small</font>
         <textcolor>main_fg_100</textcolor>
         <label>[COLOR=$VAR[ColorHighlight]]$LOCALIZE[31497]: [/COLOR]$INFO[ListItem.Genre]</label> <!-- Genre -->
-        <visible>!String.IsEqual(ListItem.Label,See More...)</visible>
+        <visible>!String.IsEqual(ListItem.Label,More...)</visible>
       </control>
       <control type="textbox">
         <height>200</height>

@@ -1414,13 +1414,6 @@
                             <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),50)">Skin.SetString(HomeWidgetItemLimit,$LOCALIZE[21428])</onclick>
                             <onclick condition="String.IsEqual(Skin.String(HomeWidgetItemLimit),$LOCALIZE[21428])">Skin.SetString(HomeWidgetItemLimit,$NUMBER[10])</onclick>
                         </control>
-                       <control type="radiobutton" id="9106" description="Show more item">
-                            <visible>Integer.IsEqual(Window.Property(CurrentFocus),9011)</visible>
-                            <include>Defs_Settings_Button</include>
-                            <label>$LOCALIZE[31376]</label>
-                            <selected>!Skin.HasSetting(HideShowMoreItem)</selected>
-                            <onclick>Skin.ToggleSetting(HideShowMoreItem)</onclick>
-                        </control>
                         <control type="radiobutton" id="9611" description="Enable bounce animations">
                             <visible>Integer.IsEqual(Window.Property(CurrentFocus),9011)</visible>
                             <include>Defs_Settings_Button</include>

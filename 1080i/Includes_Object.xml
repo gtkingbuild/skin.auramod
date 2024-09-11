@@ -6843,7 +6843,7 @@
 
   <include name="netflix_infoline">
     <control type="group">
-      <visible>[$EXP[DBTvideos] + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(660) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]] + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,See More...) + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,Next)] | [String.Contains(Container($PARAM[id]).ListItem.FolderPath,plugin.video.youtube)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
+      <visible>[$EXP[DBTvideos] + [!Control.HasFocus(300) + !Control.HasFocus(302) + !Control.HasFocus(30222) + !Control.HasFocus(660) | Window.IsVisible(MyVideoNav.xml) | $EXP[ListHubsActive]] + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,More...) + !String.IsEqual(Container($PARAM[id]).ListItem.Container($PARAM[id]).Label,Next)] | [String.Contains(Container($PARAM[id]).ListItem.FolderPath,plugin.video.youtube)] | Window.IsVisible(DialogVideoInfo.xml)</visible>
       <height>60</height>
       <control type="grouplist">
         <orientation>horizontal</orientation>
@@ -7425,7 +7425,7 @@
   </include>
   <include name="seemore">
     <control type="group">
-      <visible>String.IsEqual(ListItem.Label,See More...) | String.IsEqual(ListItem.Label,Next)</visible>
+      <visible>String.IsEqual(ListItem.Label,More...) | String.IsEqual(ListItem.Label,Next)</visible>
       <control type="image">
         <texture background="true" colordiffuse="darkgrey">common/white.png</texture>
         <aspectratio scalediffuse="false">scale</aspectratio>
